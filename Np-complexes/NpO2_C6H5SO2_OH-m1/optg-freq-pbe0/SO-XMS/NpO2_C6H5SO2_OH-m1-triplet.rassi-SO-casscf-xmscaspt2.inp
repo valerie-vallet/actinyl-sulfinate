@@ -1,0 +1,71 @@
+ &GATEWAY
+   COORD=$HomeDir/NpO2_C6H5SO2_OH-m1-triplet.pbe0.xyz
+   BASIS=ANO-RCC-VTZP
+   Group=Nosym
+   ANGM=0.0 0.0 0.0
+   RICD
+
+/*
+  Compute integrals with Cholesky decomposition
+*/
+ &SEWARD
+
+>> COPY $HomeDir/NpO2_C6H5SO2_OH-m1-triplet.casscf.ExpOrb INPORB
+ &RASSCF
+   Spin=3
+   Symmetry=1
+   Nactel=2 0 0
+   Inactive=95
+   Ras2=4
+   CIRoots=6 6 1
+>> COPY $Project.JobIph $Project.JobIph_triplets
+
+  Perform a XMS-CASPT2 calculation for the triplets F states
+  &CASPT2
+    IPEA=0.0
+    XMUL= ALL
+    THRESHOLDS= 1.0D-09 1.0D-07
+    MAXITER=100
+    CONVERGENCE=1.0D-5
+    IMAG=0.1
+>> COPY $Project.JobMix $Project.JobMix_triplets
+
+
+>> COPY $HomeDir/NpO2_C6H5SO2_OH-m1-triplet.casscf.ExpOrb INPORB
+ &RASSCF
+   Spin=1
+   Symmetry=1
+   Nactel=2 0 0
+   Inactive=95
+   Ras2=4
+   CIRoots=10 10 1
+>> COPY $Project.JobIph $Project.JobIph_singlets
+
+  Perform a XMS-CASPT2 calculation for the triplet F states
+  &CASPT2
+    IPEA=0.0
+    XMUL= ALL
+    THRESHOLDS= 1.0D-09 1.0D-07
+    MAXITER=100
+    CONVERGENCE=1.0D-5
+    IMAG=0.1
+>> COPY $Project.JobMix $Project.JobMix_singlets
+
+
+/*
+  Perform a RASSI-SO calculation for the CASSCF triplets, triplets, and singlets F states (JobIph file)
+*/
+>> COPY $Project.JobIph_triplets JOB001
+>> COPY $Project.JobIph_singlets JOB002
+  &RASSI
+    EJob
+    SPINorbit
+
+/*
+  Perform a RASSI-SO calculation for the XMS-CASPT2 triplets, triplets, and singlets F states (JobIph file)
+*/
+>> COPY $Project.JobMix_triplets JOB001
+>> COPY $Project.JobMix_singlets JOB002
+  &RASSI
+    EJob
+    SPINorbit

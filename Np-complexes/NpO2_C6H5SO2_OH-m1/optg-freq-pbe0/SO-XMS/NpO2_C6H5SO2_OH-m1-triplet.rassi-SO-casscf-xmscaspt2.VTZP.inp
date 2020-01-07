@@ -1,0 +1,88 @@
+ &GATEWAY
+   COORD=$HomeDir/NpO2_C6H5SO2_OH-m1-triplet.pbe0-zaxis.xyz
+   BASIS=ANO-RCC-VTZP
+   Group=Nosym
+   ANGM=0.0 0.0 0.0
+   RICD
+
+/*
+  Compute integrals with Cholesky decomposition
+*/
+ &SEWARD
+
+>> COPY $HomeDir/NpO2_C6H5SO2_OH-m1-triplet.casscf.MB.RunFile RUNFIL1
+>> COPY $Project.RunFile RUNFIL2
+>> COPY $HomeDir/NpO2_C6H5SO2_OH-m1-triplet.casscf.MB.RasOrb_triplets INPORB
+ &EXPBAS &END
+>> COPY $Project.ExpOrb $HomeDir/$Project.ExpOrb_triplets
+
+>> COPY $HomeDir/NpO2_C6H5SO2_OH-m1-triplet.casscf.MB.RasOrb_singlets INPORB
+ &EXPBAS &END
+>> COPY $Project.ExpOrb $HomeDir/$Project.ExpOrb_singlets
+
+>> COPY $HomeDir/$Project.ExpOrb_triplets INPORB
+ &RASSCF
+   Spin=3
+   Symmetry=1
+   Nactel=2 0 0
+   Inactive=95
+   Ras2=4
+   CIRoots=6 6 1
+   Lumorb
+>> COPY $Project.JobIph $Project.JobIph_triplets
+>> COPY $Project.RasOrb $Project.RasOrb_triplets
+
+/*
+  Perform a XMS-CASPT2 calculation for the triplet F states
+*/
+  &CASPT2
+    IPEA=0.0
+    XMUL= ALL
+    THRESHOLDS= 1.0D-09 1.0D-07
+    MAXITER=150
+    CONVERGENCE=1.0D-6
+    IMAG=0.1
+>> COPY $Project.JobMix $Project.JobMix_triplets
+
+
+
+>> COPY $HomeDir/$Project.ExpOrb_singlets INPORB
+ &RASSCF
+   Spin=1
+   Symmetry=1
+   Nactel=2 0 0
+   Inactive=95
+   Ras2=4
+   CIRoots=10 10 1
+   Lumorb
+>> COPY $Project.JobIph $Project.JobIph_singlets
+
+/*
+  Perform a XMS-CASPT2 calculation for the singlet F states
+*/
+  &CASPT2
+    IPEA=0.0
+    XMUL= ALL
+    THRESHOLDS= 1.0D-09 1.0D-07
+    MAXITER=150
+    CONVERGENCE=1.0D-6
+    IMAG=0.1
+>> COPY $Project.JobMix $Project.JobMix_singlets
+
+/*
+  Perform a RASSI-SO calculation for the CASSCF triplets and doublets F states (JobIph file)
+*/
+>> COPY $Project.JobIph_triplets JOB001
+>> COPY $Project.JobIph_singlets JOB002
+  &RASSI
+    EJob
+    SPINorbit
+
+/*
+  Perform a RASSI-SO calculation for the XMS-CASPT2 triplets and doublets F states (JobMix file)
+*/
+>> COPY $Project.JobMix_triplets JOB001
+>> COPY $Project.JobMix_singlets JOB002
+  &RASSI
+    EJob
+    SPINorbit

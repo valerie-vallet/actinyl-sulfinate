@@ -1,0 +1,98 @@
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
+tput: No value for $TERM and no -T specified
++-----------------------------------------------------------------------------------+
+| Welcome to sakura:                                                                |
+|                                                                                   |
+| For questions on sakura HPC cluster, email hotline-sakura@univ-lille1.fr          |
+|                                                                                   |
+| Documentation accessible on the WIKI page:                                        |
+| ------------------------------------------                                        |
+| https://wikis.univ-lille1.fr/phlam-pcmt/                                          |
+|                                                                                   |
+| New commands to check the status of the cluster:                                  |
+| ------------------------------------------------                                  |
+| cnodes           : to list the status of all nodes                                |
+| cnodes -f        : to check for free nodes                                        |
+| checkjob <jobid> : to check the status of your job (especially when not running ! |
+| showstart <jobid>: to check when your job is expected to start when not running ! |
+| cdjob <jobid>    : to move to the <jobid> directory                               |
+| cdtmp <jobid>    : to move to the <jobid> working directory on node               |
+| rmtmp <jobid>    : removing the <jobid> working directory on node                 |
+|                                                                                   |
++-----------------------------------------------------------------------------------+
+
+	------------------------------------------------
+	Loading the turbomole 7.3 SMP software
+	------------------------------------------------
+
+	------------------------------------------------
+	Loading the gcc 4.9.3 software
+	------------------------------------------------
+
+	------------------------------------------------
+	Loading the gnuplot 5.0.6 software
+	------------------------------------------------
+
+Nb of jobs already running = 1
+HERE
+-------------------------------
+Status of the TMPDIR partition:
+-------------------------------
+/state/partition2: 33% used [Available 2.5T / 3.6T]
+
+-------------
+Define TMPDIR
+-------------
+Set TMPDIR to /state/partition2/vallet/499020.phlam-s-sakura
+Create TMPDIR
+	------------------------------------------------
+	Loading the gcc 4.9.3 software
+	------------------------------------------------
+
+	------------------------------------------
+	| Loading the Intel compiler and libraries
+	------------------------------------------
+	This adds the following 64 bits softwares :
+	 - C/C++ compiler                        : icc/icpc 15.0.update3
+	 - Fortran compiler                      : ifort 15.0.update3
+	 - Debugger                              : idbe 15.0.update3
+	 - MKL                                   : mkl 11.2.update3
+	 - ITAC                                  : trace 9.0.update3
+
+
+	------------------------------------------------
+	Loading the atlas 3.10.2 software
+	------------------------------------------------
+
+	------------------------------------------------
+	Loading the openblas 0.2.15 software
+	------------------------------------------------
+
+	------------------------------------------------
+	Loading the hdf5 1.10.3 software
+	------------------------------------------------
+
+	------------------------------------------------
+	Loading the python 2.7.14 software
+	------------------------------------------------
+
+	------------------------------------------------
+	Loading the python 3.6.5 software
+	------------------------------------------------
+
+	--------------------------------------------------
+	Loading the OpenMolcas 20181005 software
+	-------------------------------------------------
+
+#--- Job started at Fri Nov 16 14:54:03 CET 2018 in SMP with 8 CPUs:
+#--- on nodes: 
+u-0-9
+u-0-9
+u-0-9
+u-0-9
+u-0-9
+u-0-9
+u-0-9
+u-0-9
+#--- Job ended at Fri Nov 16 17:37:47 CET 2018

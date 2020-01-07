@@ -1,0 +1,84 @@
+AIMSum (Version 17.11.14, Professional)
+Copyright (c) 1997-2017 by Todd A. Keith
+AIMSum is a component of the AIMAll package ( http://aim.tkgristmill.com )
+
+TP:  64-bit Linux
+
+Much of the Quantum Theory of Atoms in Molecules (QTAIM) is described in the book:
+  "Atoms in Molecules - A Quantum Theory"
+  R.F.W. Bader, Oxford University Press, Oxford, 1990
+
+For additional references see:  http://aim.tkgristmill.com/references.html
+
+Wfn File:  /home/vallet/John-methylsulfonyl/NpO2_CH3SO2_SO2-m1/doublet-geom/optg-freq-pbe0/SO-XMS/NaturalOrbitals-openmolcas/Plotting/NpO2_CH3SO2_SO2-m1-doublet.dump_SOOrb.VTZP.SODSOrb.Z.Z1.wfn
+Sum File:  /home/vallet/John-methylsulfonyl/NpO2_CH3SO2_SO2-m1/doublet-geom/optg-freq-pbe0/SO-XMS/NaturalOrbitals-openmolcas/Plotting/NpO2_CH3SO2_SO2-m1-doublet.dump_SOOrb.VTZP.SODSOrb.Z.Z1.sum
+
+SumViz File:  /home/vallet/John-methylsulfonyl/NpO2_CH3SO2_SO2-m1/doublet-geom/optg-freq-pbe0/SO-XMS/NaturalOrbitals-openmolcas/Plotting/NpO2_CH3SO2_SO2-m1-doublet.dump_SOOrb.VTZP.SODSOrb.Z.Z1.sumviz
+
+Wfn Title:   Molden2AIM, Version 4.2.1 (05/11/2018)           Time: Fri Dec 14 17:37:39 201
+ 
+Total memory allocated for AIMSum =        4.467 Megabytes
+
+Atomic units (a.u.) used throughout, except where stated otherwise
+
+Model:  Unknown
+ 
+Unrestricted, natural orbital wavefunction.
+  Number of electrons (from MO Occs)                   =           0.9622800000
+  Number of Alpha electrons (from MO Occs)             =           0.9622800000
+  Number of Beta electrons (from MO Occs)              =           0.0000000000
+  Number of electron pairs (N*(N-1)/2)                 =          -0.0181486008
+  Number of electron pairs (from Muller 2EDM)          =          -0.1905586008
+  Number of electron pairs (from Muller 2EDM, no SOSI) =           0.1884574637
+ 
+Nuclear Charges and Cartesian Coordinates:
+-------------------------------------------------------------------------------
+Atom      Charge                X                  Y                  Z
+-------------------------------------------------------------------------------
+C1         6.0           2.8605918200E+00   5.8008356000E+00  -3.7653926900E+00
+S2        16.0           2.5860335100E+00   5.2474293000E+00  -3.9151346000E-01
+O3         8.0          -2.5377132000E-01   4.7393386400E+00  -1.1795670000E-01
+Np4       93.0           0.0000000000E+00   0.0000000000E+00   0.0000000000E+00
+O5         8.0           2.3661261000E-01  -4.8091073200E+00  -9.9777500000E-03
+S6        16.0          -2.6101653100E+00  -5.3007006800E+00  -8.0899180000E-02
+O7         8.0          -3.9559526700E+00  -2.7442413800E+00  -1.4607580000E-02
+O8         8.0           3.9134527300E+00   2.6862645800E+00  -1.1553786000E-01
+O9         8.0           0.0000000000E+00   0.0000000000E+00   3.3487836700E+00
+O10        8.0          -6.4439700000E-03  -1.2150940000E-02  -3.3617282900E+00
+H11        1.0           4.8579756400E+00   6.0169635700E+00  -4.2238591400E+00
+H12        1.0           2.0481607600E+00   4.1532967700E+00  -4.7000512300E+00
+H13        1.0           1.8168771800E+00   7.5171226600E+00  -4.2252008500E+00
+ 
+Molecular charge q(Mol) from the wfn file:   1.8103772000E+02
+Molecular energy E(Mol) from the wfn file:   0.0000000000E+00
+Molecular virial ratio (-V(Mol)/T(Mol)) from the wfn file:   2.0000000000E+00
+ 
+ 
+
+2EDM Note:
+---------
+For post-HF, natural orbital "wavefunctions" the Muller approximation
+of the two-electron density matrix (2EDM) in terms of natural orbitals
+of the one-electron density matrix (1EDM) is used to calculate 2EDM-
+dependent properties (i.e., Vee contributions and electronic localization
+and delocalization properties).  For HF single-determinant wavefunctions the
+expression used for the 2EDM is exact.
+
+DFT Note:
+--------
+VeeX represents the exchange-correlation functional for the wavefunction's
+underlying model.  For Hartree-Fock wavefunctions, VeeX is the two-electron
+Hartree-Fock exchange functional.  For wavefunctions of supported DFT models
+(currently LSDA, B3LYP and M062X), VeeX is the actual exchange-correlation functional
+of the corresponding DFT model and atomic contributions VeeX(A) to VeeX are
+explicitly calculated and unambiguous.  However, since VeeX is at least partly
+just a one-electron functional for DFT models, the partitioning of VeeX(A)
+into interatomic (VeeX(A,B) and VeeX(A,A')) and intraatomic (VeeX(A,A))
+contributions is ambiguous.  Currently, interatomic contributions VeeX(A,B)
+and VeeX(A,A') are calculated using the Hartree-Fock exchange functional while
+the intratomic contribution VeeX(A,A) is calculated as VeeX(A) - VeeX(A,A').
+For wavefunctions of non-supported DFT models, VeeX is (incorrectly) assumed
+to be the Hartree-Fock exchange functional and the atomic energies E_IQA(A)
+will not be correct and will not sum to the correct molecular energy.
+
+Total time for AIMSum = 0 sec (NProc = 8)                                       

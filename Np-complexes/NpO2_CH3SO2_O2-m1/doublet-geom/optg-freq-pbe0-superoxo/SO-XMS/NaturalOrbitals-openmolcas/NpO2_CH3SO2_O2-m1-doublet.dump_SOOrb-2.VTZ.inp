@@ -1,0 +1,35 @@
+ &GATEWAY
+   COORD=$HomeDir/NpO2_CH3SO2_O2-m1-doublet.pbe0.optg-zaxis.xyz
+   BASIS=ANO-RCC-VTZP, Np.ANO-RCC...9s8p6d4f2g.
+   Group=Nosym
+   ANGM=0.0 0.0 0.0
+   RICD
+
+/*
+  Compute integrals with Cholesky decomposition
+*/
+ &SEWARD
+
+>> COPY $HomeDir/NpO2_CH3SO2_O2-m1-doublet.dump_SOOrb.VTZ.SOOrb.1 INPORB
+ &RASSCF
+   Spin=4
+   Symmetry=1
+   Nactel=5 0 0
+   Inactive=81
+   Ras2=6
+   CIRoots=1 1 1
+   LUMORB
+   CIONLY
+>> COPY $Project.rasscf.molden $HomeDir/NpO2_CH3SO2_O2-m1-doublet.dump_SOOrb.VTZ.SOOrb.1.molden
+
+>> COPY $HomeDir/NpO2_CH3SO2_O2-m1-doublet.dump_SOOrb.VTZ.SODSOrb.Z.Z1 INPORB
+ &RASSCF
+   Spin=4
+   Symmetry=1
+   Nactel=5 0 0
+   Inactive=81
+   Ras2=6
+   CIRoots=1 1 1
+   LUMORB
+   CIONLY
+>> COPY $Project.rasscf.molden $HomeDir/NpO2_CH3SO2_O2-m1-doublet.dump_SOOrb.VTZ.SODSOrb.Z.Z1.molden

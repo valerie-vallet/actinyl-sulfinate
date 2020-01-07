@@ -1,0 +1,60 @@
+ AIMExt (Version 17.11.14, Professional)
+ Portions Copyright (c) 1997-2017 by Todd A. Keith
+ AIMExt is a component of the AIMAll package ( http://aim.tkgristmill.com )
+
+ TP:  64-bit Linux
+
+ AIMExt is a heavily modified and extended version of the EXTREME program
+ developed by members of R.F.W. Bader's research group
+
+ Much of the Quantum Theory of Atoms in Molecules (QTAIM) is described in the book:
+   "Atoms in Molecules - A Quantum Theory"
+   R.F.W. Bader, Oxford University Press, Oxford, 1990
+
+ For additional references see:  http://aim.tkgristmill.com/references.html
+
+ Wfn File:  /home/vallet/John-methylsulfonyl/NpO2_CH3SO2_O2-m1/doublet-geom/optg-freq-pbe0-superoxo/SO-XMS/NaturalOrbitals-openmolcas/Plotting/NpO2_CH3SO2_O2-m1-doublet.dump_SOOrb.VTZ.SOOrb.1.wfn
+ ExtOut File:  /home/vallet/John-methylsulfonyl/NpO2_CH3SO2_O2-m1/doublet-geom/optg-freq-pbe0-superoxo/SO-XMS/NaturalOrbitals-openmolcas/Plotting/NpO2_CH3SO2_O2-m1-doublet.dump_SOOrb.VTZ.SOOrb.1.extout
+ Mgp File:  /home/vallet/John-methylsulfonyl/NpO2_CH3SO2_O2-m1/doublet-geom/optg-freq-pbe0-superoxo/SO-XMS/NaturalOrbitals-openmolcas/Plotting/NpO2_CH3SO2_O2-m1-doublet.dump_SOOrb.VTZ.SOOrb.1.mgp
+
+ Wfn Title:   Molden2AIM, Version 4.2.1 (05/11/2018)           Time: Sat Dec 15 02:02:45 201
+ Job Title:  Calculate Normals                                                              
+
+ The nuclear coordinates:
+      C1           -5.4307138400E+00  3.6159720400E+00 -3.7234029700E+00
+      S2           -4.9047274700E+00  3.2798275600E+00 -3.4750174000E-01
+      O3           -4.7710671400E+00  3.9911016000E-01 -7.3982780000E-02
+      Np4           0.0000000000E+00  0.0000000000E+00  0.0000000000E+00
+      O5            4.0084492600E+00 -1.9579830300E+00 -6.0527930000E-02
+      O6           -2.2020789600E+00  4.2832532400E+00 -8.4565240000E-02
+      O7            0.0000000000E+00  0.0000000000E+00  3.3544717400E+00
+      O8            5.1306060000E-02  8.7059680000E-02 -3.3622007200E+00
+      H9           -5.3956783100E+00  5.6233525200E+00 -4.1883889800E+00
+      H10          -3.8980892600E+00  2.6014347800E+00 -4.6571922400E+00
+      H11          -7.2646741400E+00  2.7931474900E+00 -4.1779199000E+00
+      O12           2.3373077600E+00 -3.7837797200E+00 -1.2986198000E-01
+
+ Number of primitives read from wavefunction =   4100
+ Number of unique primitives to be used =   1304
+
+ Using MO basis.
+
+ Number of processors used for this job =    4
+
+ Total memory allocated for AIMExt =       11.954 Megabytes
+ 
+Model:  Unknown
+ 
+ Restricted, natural orbital wavefunction.
+   Number of electrons (from MO Occs)                   =         167.0000000000
+   Number of Alpha electrons (from MO Occs)             =          83.5000000000
+   Number of Beta electrons (from MO Occs)              =          83.5000000000
+   Number of electron pairs (N*(N-1)/2)                 =       13861.0000000000
+   Number of electron pairs (from Muller 2EDM)          =       13861.0000000000
+   Number of electron pairs (from Muller 2EDM, no SOSI) =       13861.9898713154
+
+ Analyzing MO (Molecular Orbital) 1
+
+ Total memory allocated for AIMExt =       11.954 Megabytes
+
+ Total time = 0 sec (NProc = 4)                                                                                    

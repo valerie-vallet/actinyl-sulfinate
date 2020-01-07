@@ -1,0 +1,51 @@
+/*
+ Define geometry, basis set and point group
+ Start the calculation with a minimal basis set
+*/
+ &GATEWAY
+   COORD=$HomeDir/NpO2_C6H5SO2_OH-m1-triplet.pbe0-zaxis.xyz
+   BASIS=ANO-RCC-MB    
+   Group=Nosym
+   ANGM=0.0 0.0 0.0
+   RICD
+>> COPY $Project.RunFile $HomeDir
+
+/*
+  Compute integrals with Cholesky decomposition
+*/
+ &SEWARD
+
+/*
+ Perform an SCF calculation on the neutral molecule with a closed-shell ground state
+ In Gaussian  98 alpha electrons       97 beta electrons
+ Here we will have 60 electrons more cause we are doing an all-electron calculation
+ &SCF
+   Occupied=127
+*/
+
+/*
+ Perform a CASSCF calculation on the real molecule
+ 1 active electron in 4 (2*5f_delta, 2*5f_phi) orbitals
+*/
+ &RASSCF
+   Spin=3
+   Symmetry=1
+   Nactel=2 0 0
+   Inactive=95
+   Ras2=4
+   CIRoots=6 6 1
+   Lumorb
+>> COPY $Project.RasOrb $HomeDir/$Project.RasOrb_triplets
+>> COPY $Project.rasscf.molden $HomeDir/$Project.rasscf_triplets.molden
+
+ &RASSCF
+   Spin=1
+   Symmetry=1
+   Nactel=2 0 0
+   Inactive=95
+   Ras2=4
+   CIRoots=10 10 1
+   Lumorb
+>> COPY $Project.RasOrb $HomeDir/$Project.RasOrb_singlets
+>> COPY $Project.rasscf.molden $HomeDir/$Project.rasscf_singlets.molden
+
