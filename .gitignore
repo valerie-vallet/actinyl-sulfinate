@@ -9,6 +9,9 @@
 *QZ4P*
 *VQZP*
 
+#
+caspt2-geom/
+
 # OpenMolcas files Orb, molden
 *molden*
 *.RasOrb.*
