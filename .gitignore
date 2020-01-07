@@ -1,0 +1,38 @@
+# B3LYP calculations
+**/sp-b3lyp
+
+# SAVE calculations
+**/sp-b3lyp
+**/SAVE
+
+# QZ4P files
+*QZ4P*
+*VQZP*
+
+# OpenMolcas files Orb, molden
+*molden*
+*.RasOrb.*
+*.SpdOrb*
+*.JobIph*
+*.JobMix*
+*xmldump*
+*.xml
+
+# Gaussian checkpoint files
+*.chk*
+
+# Shell scripts
+*.pbs
+*.sh
+
+# Natural Orbitals files
+**/NaturalOrbitals-openmolcas
+
+# Exclude non-GS spin-states
+Np-complexes/NpO2_CH3SO2_O2-m1/quartet-geom
+Np-complexes/NpO2_CH3SO2_SO2-m1/quartet-geom
+Np-complexes/NpO2_C6H5SO2_SO2-m1/quartet-geom
+Pu-complexes/PuO2+
+Pu-complexes/PuO2_C6H5SO2_SO2-m1/quintet-geom
+Pu-complexes/PuO2_CH3SO2_O2-m1/triplet-geom
+Pu-complexes/PuO2_CH3SO2_SO2-m1/quintet-geom
