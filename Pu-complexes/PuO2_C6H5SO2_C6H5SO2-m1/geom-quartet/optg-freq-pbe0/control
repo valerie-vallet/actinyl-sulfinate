@@ -1,0 +1,124 @@
+$atoms
+c  1,7,12-16,22-26                                                             \
+   basis =c aug-cc-pVTZ                                                        \
+   jbas  =c aug-cc-pVTZ
+s  2,6                                                                         \
+   basis =s aug-cc-pVTZ                                                        \
+   jbas  =s aug-cc-pVTZ
+o  3,5,8-11                                                                    \
+   basis =o aug-cc-pVTZ                                                        \
+   jbas  =o aug-cc-pVTZ
+pu 4                                                                           \
+   basis =pu ecp-60-SVP(6g)                                                    \
+   ecp   =pu def-ecp                                                           \
+   jbas  =pu def-TZVPP
+h  17-21,27-31                                                                 \
+   basis =h aug-cc-pVTZ                                                        \
+   jbas  =h aug-cc-pVTZ
+#
+# NumForce insertion:
+#
+$scfconv 8
+$drvopt
+   frequency analysis only nofreeze
+$grad  file=gradient
+$title
+$operating system unix
+$symmetry c1
+$redundant    file=coord
+$user-defined bonds    file=coord
+$coord    file=coord
+$optimize
+ internal   on
+ redundant  on
+ cartesian  off
+ global     off
+ basis      off
+$basis    file=basis
+$ecp    file=basis
+$newecp
+$rundimensions
+   dim(fock,dens)=1144738
+   natoms=31
+   nshell=405
+   nbf(CAO)=1510
+   dim(trafo[SAO<-->AO/CAO])=1983
+   rhfshells=2
+   nbf(AO)=1275
+$uhfmo_alpha   file=alpha
+$uhfmo_beta   file=beta
+$uhf
+$scfiterlimit       150
+$thize     0.10000000E-04
+$thime        5
+$scfintunit
+ unit=30       size=0        file=twoint
+$scfdiis
+$maxcor    500 MiB  per_core
+$interconversion  off
+   qconv=1.d-7
+   maxiter=25
+$coordinateupdate
+   dqmax=0.3
+   interpolate  on
+   statistics    5
+$forceupdate
+   ahlrichs numgeo=0  mingeo=3 maxgeo=4 modus=<g|dq> dynamic fail=0.3
+   threig=0.005  reseig=0.005  thrbig=3.0  scale=1.00  damping=0.0
+$forceapprox    file=forceapprox
+$dft
+   functional pbe0
+   gridsize   m5
+   weight derivatives
+$last SCF energy change = -2264.2245
+$ssquare from ridft
+          3.793 (not to be modified here)
+$charge from ridft
+         -1.000 (not to be modified here)
+$dipole from ridft
+  x    -0.00278786746984    y    -0.00251275506585    z    -0.00002949262342    a.u.
+   | dipole | =    0.0095399251  debye
+$optinfo       file=optinfo
+$hessapprox   file=hessapprox
+$ricore      500
+$rij
+$jbas    file=auxbasis
+$scfdamp   start=0.700  step=0.050  min=0.050
+$scforbitalshift  closedshell=.05
+$alpha shells
+ a       1-100                                  ( 1 )
+$beta shells
+ a       1-97                                   ( 1 )
+$forceinit on
+ diag = carthess
+$last step     tm2molden
+$orbital_max_rnorm 0.10644565630070E-04
+$subenergy  Etot         E1                  Ej                Ex                 Ec                 En
+-2264.224511441    -8358.064695373     3728.611287502    -147.1279618642    -7.388211063966     2519.745069358
+$TMPDIR /state/partition2/vallet/285976.phlam-s-sakura
+$hessian (projected)  file=hessian
+$dipgrad  file=dipgrad
+$vibrational spectrum    file=vibspectrum
+$vibrational normal modes    file=vib_normal_modes
+$vibrational reduced masses
+   7.9246382570  14.6627445028   9.2391736510  10.2189138599  11.7365256348
+  13.0609567492   8.6617762998   7.6929981278   4.0690931484   4.1747019405
+  10.5898110511   7.6415293600  10.6487074390   8.4132599747  10.2603434987
+   8.6767669576   7.0775721839   9.9216824632  10.8563958492   8.5616034423
+  11.8790267437  11.0295957719  11.7296376573  18.2852913523   8.5833209615
+   8.5256195592   6.9308452258  10.1530763250  14.0644097602   2.8673343195
+   2.8861270307  14.3523321066  13.3688975716   3.6989983545   3.7375217012
+  14.7014033852  14.9716555867   6.4419858644   6.4713679384   6.8498863390
+   6.8580752597   1.9970403858   2.0321049004   1.6554759552   1.6290276678
+  15.9683070375   1.2457011867   1.2435931852  17.6384720851   1.3784827490
+   1.3757231793  16.6867439605  15.2322171959   1.3576565127   1.3615786292
+   7.8654322848   5.4784029293   6.4868691787   6.5463530868   1.4971948809
+   1.4963378126   2.6644311357   2.6666807447   1.5612046938   1.5570804847
+   2.7851080527   2.8089715542   1.0968272411   1.0968703387   1.1433918055
+   1.1433304995   1.4817852942   1.4835486197   4.5647033373   4.5597791665
+   2.2667242671   2.2664062300   2.1167005967   2.1152416839   6.2021484315
+   6.2042133123   5.6451717570   5.6425533034   1.0846420288   1.0846352932
+   1.0876165650   1.0876306618   1.0914734128   1.0914186070   1.0952724689
+   1.0952078826   1.0983750512   1.0984076584
+$nvibro       93
+$end

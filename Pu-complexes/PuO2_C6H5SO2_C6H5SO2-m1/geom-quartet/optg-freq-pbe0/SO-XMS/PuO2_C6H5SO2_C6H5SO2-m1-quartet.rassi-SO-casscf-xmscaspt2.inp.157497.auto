@@ -1,0 +1,115 @@
+&GATEWAY
+COORD
+$HomeDir/PuO2_C6H5SO2_C6H5SO2-m1-quartet.pbe0.optg.xyz
+BASIS
+ANO-RCC-VTZP
+Group
+Nosym
+ANGM
+0.0 0.0 0.0
+RICD
+
+
+
+End of input
+
+&SEWARD
+
+End of input
+
+>> COPY $HomeDir/PuO2_C6H5SO2_C6H5SO2-m1-quartet.casscf.ExpOrb INPORB
+&RASSCF
+Spin
+4
+Symmetry
+1
+Nactel
+3 0 0
+Inactive
+127
+Ras2
+5
+CIRoots
+4 4 1
+End of input
+
+>> COPY $Project.JobIph $Project.JobIph_quartets
+
+
+
+&CASPT2
+IPEA
+0.0
+XMUL
+ALL
+THRESHOLDS
+1.0D-09 1.0D-07
+MAXITER
+100
+CONVERGENCE
+1.0D-5
+IMAG
+0.1
+End of input
+
+>> COPY $Project.JobMix $Project.JobMix_quartets
+
+
+>> COPY $HomeDir/PuO2_C6H5SO2_C6H5SO2-m1-quartet.casscf.ExpOrb INPORB
+&RASSCF
+Spin
+2
+Symmetry
+1
+Nactel
+3 0 0
+Inactive
+127
+Ras2
+4
+CIRoots
+20 20 1
+End of input
+
+>> COPY $Project.JobIph $Project.JobIph_doublets
+
+
+
+&CASPT2
+IPEA
+0.0
+XMUL
+ALL
+THRESHOLDS
+1.0D-09 1.0D-07
+MAXITER
+100
+CONVERGENCE
+1.0D-5
+IMAG
+0.1
+End of input
+
+>> COPY $Project.JobMix $Project.JobMix_doublets
+
+
+
+
+>> COPY $Project.JobIph_quartets JOB001
+>> COPY $Project.JobIph_doublets JOB002
+&RASSI
+EJob
+SPINorbit
+
+
+
+End of input
+
+>> COPY $Project.JobMix_quartets JOB001
+>> COPY $Project.JobMix_doublets JOB002
+&RASSI
+EJob
+SPINorbit
+
+End of input
+

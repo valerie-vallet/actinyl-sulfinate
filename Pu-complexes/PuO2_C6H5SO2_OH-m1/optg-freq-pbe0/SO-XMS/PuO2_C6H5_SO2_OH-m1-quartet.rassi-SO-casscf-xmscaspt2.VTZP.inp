@@ -1,0 +1,88 @@
+ &GATEWAY
+   COORD=$HomeDir/PuO2_C6H5_SO2_OH-quartet.pbe0.optg-zaxis.xyz
+   BASIS=ANO-RCC-VTZP
+   Group=Nosym
+   ANGM=0.0 0.0 0.0
+   RICD
+
+/*
+  Compute integrals with Cholesky decomposition
+*/
+ &SEWARD
+
+>> COPY $HomeDir/PuO2_C6H5_SO2_OH-m1-quartet.casscf.MB.RunFile RUNFIL1
+>> COPY $Project.RunFile RUNFIL2
+>> COPY $HomeDir/PuO2_C6H5_SO2_OH-m1-quartet.casscf.MB.RasOrb_quartets INPORB
+ &EXPBAS &END
+>> COPY $Project.ExpOrb $HomeDir/$Project.ExpOrb_quartets
+
+>> COPY $HomeDir/PuO2_C6H5_SO2_OH-m1-quartet.casscf.MB.RasOrb_doublets INPORB
+ &EXPBAS &END
+>> COPY $Project.ExpOrb $HomeDir/$Project.ExpOrb_doublets
+
+>> COPY $HomeDir/$Project.ExpOrb_quartets INPORB
+ &RASSCF
+   Spin=4
+   Symmetry=1
+   Nactel=3 0 0
+   Inactive=95
+   Ras2=4
+   CIRoots=4 4 1
+   Lumorb
+>> COPY $Project.JobIph $Project.JobIph_quartets
+>> COPY $Project.RasOrb $Project.RasOrb_quartets
+
+/*
+  Perform a XMS-CASPT2 calculation for the quartet F states
+*/
+  &CASPT2
+    IPEA=0.0
+    XMUL= ALL
+    THRESHOLDS= 1.0D-09 1.0D-07
+    MAXITER=150
+    CONVERGENCE=1.0D-6
+    IMAG=0.1
+>> COPY $Project.JobMix $Project.JobMix_quartets
+
+
+
+>> COPY $HomeDir/$Project.ExpOrb_doublets INPORB
+ &RASSCF
+   Spin=2
+   Symmetry=1
+   Nactel=3 0 0
+   Inactive=95
+   Ras2=4
+   CIRoots=20 20 1
+   Lumorb
+>> COPY $Project.JobIph $Project.JobIph_doublets
+
+/*
+  Perform a XMS-CASPT2 calculation for the doublet F states
+*/
+  &CASPT2
+    IPEA=0.0
+    XMUL= ALL
+    THRESHOLDS= 1.0D-09 1.0D-07
+    MAXITER=150
+    CONVERGENCE=1.0D-6
+    IMAG=0.1
+>> COPY $Project.JobMix $Project.JobMix_doublets
+
+/*
+  Perform a RASSI-SO calculation for the CASSCF quartets and doublets F states (JobIph file)
+*/
+>> COPY $Project.JobIph_quartets JOB001
+>> COPY $Project.JobIph_doublets JOB002
+  &RASSI
+    EJob
+    SPINorbit
+
+/*
+  Perform a RASSI-SO calculation for the XMS-CASPT2 quartets and doublets F states (JobMix file)
+*/
+>> COPY $Project.JobMix_quartets JOB001
+>> COPY $Project.JobMix_doublets JOB002
+  &RASSI
+    EJob
+    SPINorbit

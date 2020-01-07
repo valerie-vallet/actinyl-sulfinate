@@ -1,0 +1,75 @@
+/*
+ Define geometry, basis set and point group
+ Start the calculation with a minimal basis set
+*/
+ &GATEWAY
+   COORD=$HomeDir/PuO2_C6H5_SO2_OH-m1-quartet.pbe0.optg.xyz
+   BASIS=ANO-RCC-MB    
+   Group=Nosym
+   ANGM=0.0 0.0 0.0
+   RICD
+>> COPY $Project.RunFile RUNFIL1
+
+/*
+  Compute integrals with Cholesky decomposition
+*/
+ &SEWARD
+
+/*
+ Perform an SCF calculation on the neutral molecule with a closed-shell ground state
+ In Gaussian  98 alpha electrons       97 beta electrons
+ Here we will have 60 electrons more cause we are doing an all-electron calculation
+ &SCF
+   Occupied=127
+*/
+
+/*
+ Perform a CASSCF calculation on the real molecule
+ 1 active electron in 5 (2*5f_delta, 2*5f_phi, O peroxo) orbitals
+*/
+ &RASSCF
+   Spin=4
+   Symmetry=1
+   Nactel=3 0 0
+   Inactive=95
+   Ras2=4
+   CIRoots=4 4 1
+>> COPY $Project.RasOrb $Project.RasOrb_quartets_MB
+
+ &RASSCF
+   Spin=2
+   Symmetry=1
+   Nactel=3 0 0
+   Inactive=95
+   Ras2=4
+   CIRoots=20 20 1
+>> COPY $Project.RasOrb $Project.RasOrb_doublets_MB
+
+ &GATEWAY
+   COORD=$HomeDir/PuO2_C6H5_SO2_OH-m1-quartet.pbe0.optg.xyz
+   BASIS=ANO-RCC-VTZP
+   Group=Nosym
+   ANGM=0.0 0.0 0.0
+   RICD
+>> COPY $Project.RunFile RUNFIL2
+
+>> COPY $Project.RasOrb_quartets_MB INPORB
+ &EXPBAS &END
+>> COPY  $Project.ExpOrb INPORB
+
+/*
+  Compute integrals with Cholesky decomposition
+*/
+ &SEWARD
+/*
+ Perform a CASSCF calculation on the real molecule
+ 1 active electron in 4 (2*5f_delta, 2*5f_phi) orbitals
+*/
+ &RASSCF
+   Spin=4
+   Symmetry=1
+   Nactel=3 0 0
+   Inactive=95
+   Ras2=4
+   CIRoots=4 4 1
+>> COPY $Project.RasOrb $Project.RasOrb_quartets_VTZP

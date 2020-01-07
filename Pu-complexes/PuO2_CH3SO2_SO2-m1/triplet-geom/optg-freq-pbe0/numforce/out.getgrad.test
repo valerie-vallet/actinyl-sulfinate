@@ -1,0 +1,235 @@
+ operating system is UNIX !
+
+ rdgrad (u-1-2.local) : TURBOMOLE V7.2 ( 21454 ) 4 Oct 2017 at 12:24:43
+ Copyright (C) 2017 TURBOMOLE GmbH, Karlsruhe
+
+
+    2018-02-01 10:20:16.009 
+
+
+ UHF modus switched on !
+
+
+                                 r d g r a d
+
+                          gradient for ridft program 
+
+                        by K.Eichkorn, O.Treutler, H.Oehm, 
+                             M.Haeser and R.Ahlrichs
+                  (Chemical Physics Letters 242 (1995) 652-660)
+                    parallel version: M.v.Arnim  &  R.Ahlrichs
+                            quantum chemistry group
+                             university  karlsruhe
+                                   germany
+
+
+
+
+                          References             
+                                                 
+          Density Functional:                              
+              O. Treutler and R. Ahlrichs                      
+              Efficient Molecular Numerical Integration Schemes
+              J. chem. Phys. 102: 346 (1995)                   
+          Parallel Version:                                
+              Performance of parallel TURBOMOLE for Density    
+              Functional Calculations                          
+              M. v.Arnim and R. Ahlrichs                      
+              J. comp. Chem. 19: 1746 (1998)                   
+          RI-J Method:                                     
+              Auxiliary Basis Sets to approximate Coulomb      
+              Potentials                                       
+              Chem. Phys. Lett. 240: 283 (1995)                
+              K. Eichkorn, O. Treutler, H. Oehm, M. Haeser     
+              and R. Ahlrichs                                  
+              Chem. Phys. Lett. 242: 652 (1995)                
+                                                           
+              Auxiliary Basis Sets for Main Row Atoms and their
+              Use to approximate Coulomb Potentials            
+              K. Eichkorn, F. Weigend, O. Treutler and         
+              R. Ahlrichs                                      
+              Theo. Chem. Acc. 97: 119 (1997)                   
+                                         
+
+
+
+ integral neglect threshold       :  0.46E-11
+ integral storage threshold THIZE :  0.10E-04
+ integral storage threshold THIME :         5
+
+ number of unique ecp types :                     1
+
+          ------------------
+          -ecp- potential(s)
+          ------------------
+
+ center   4  pu def-ecp  (ecp no.  1)  ncore = 60,  lmax = 5
+ PBE0 hybrid functional
+ exchange:    3/4 (LDA+PBE) + 1/4 HF
+ correlation: LDA (PW) + PBE
+ A Hybrid-DFT calculation using the RI-J approximation will be carried out.
+  
+  
+ AUXILIARY BASIS SET information:
+
+ symmetry group of the molecule :   c1 
+
+ the group has the following generators :
+   c1(z)
+
+    1 symmetry operations found
+
+ there are 1 real representations :   a   
+
+ maximum number of shells which are related by symmetry :  1
+
+
+    mo occupation :
+   irrep   mo's   occupied
+    a      608       63
+ 
+ number of basis functions   :                    608
+ number of occupied orbitals :                     63
+ 
+
+ biggest AO integral is expected to be    25.399937282
+  
+           ------------------
+           density functional
+           ------------------
+ PBE0 hybrid functional
+ exchange:    3/4 (LDA+PBE) + 1/4 HF
+ correlation: LDA (PW) + PBE
+
+ iterations will be done with small grid
+  
+ spherical integration : Lebedev's spherical grid
+ spherical gridsize    :                     4
+    i.e. gridpoints    :                   434
+ value for diffuse not defined
+ radial integration    : Chebyshev 2nd kind (scaling 3)
+ radial gridsize       :                     6
+ integration cells     :                    13
+ partition function    : becke
+ partition sharpness   :                     3
+  
+ 
+ Derivatives of quadrature weights will be included
+ 
+  
+           ------------------------
+             RDGRAD - INFORMATION
+           ------------------------
+  
+ Threshold for integral neglect (rithr1): 1E-10
+ Threshold for integral neglect (rithr2): 1E-10
+ Contributions to RI integral batches: 
+  neglected integral batches:                  2259
+  direct contribution:                        15507
+     
+ ****************************************
+ Memory allocated for RDGRAD: 13 MiB
+ ****************************************
+                                            
+     
+
+ nuclear repulsion energy  :   1215.00902238    
+
+  MOs are in ASCII format !
+
+
+ reading orbital data $uhfmo_alpha  from file alpha
+ orbital characterization : scfconv=7
+
+ reading orbital data $uhfmo_beta  from file beta
+ orbital characterization : scfconv=7
+  Deviation of MOs from orthonormality   2.579911943800806E-010
+  W A R N I N G 
+  Deviation of MOs from orthonormality   2.697599157941433E-010
+  W A R N I N G 
+
+    ----------------------------------------
+     S+T+V CONTRIBUTIONS TO ENERGY GRADIENT 
+    ----------------------------------------
+
+ 1e-integral 1st. derivatives will be neglected if expon. factor < 0.917148E-14
+
+
+ setting up bound for integral derivative estimation
+
+ increment for numerical differentiation : 0.00050000
+
+ biggest AO integral is expected to be    25.399937282
+ biggest cartesian 1st derivative AO integral is expected to be    99.097364276
+
+ biggest 1-particle AO density matrix element is expected to be    5.6235237583
+
+ setting up bound for integral derivative estimation
+
+ increment for numerical differentiation : 0.00050000
+
+ biggest AO integral is expected to be    25.399937282
+ biggest cartesian 1st derivative AO integral is expected to be    99.097364276
+
+ 2e-integral 1st. derivatives will be neglected if expon. factor < 0.100000E-06
+ outer boundary for 2e-integral derivative neglection is 0.527026E-09
+
+          Overall gridpoints after grid construction =        151737
+ Ordering of quadrature gridpoints disabled.
+
+ Integrated ground state density     :   123.9999831685918    
+
+ Integrated ground state spin density:   2.000005985255569    
+
+
+          ------------------------------------------------
+           cartesian gradient of the energy (hartree/bohr)
+          ------------------------------------------------
+
+  ATOM      1 c           2 s           3 o           4 pu          5 o 
+dE/dx  0.1191527D-04  0.1715477D-05 -0.1636440D-05 -0.1169363D-04 -0.1073457D-04
+dE/dy -0.2573344D-05 -0.8470776D-05 -0.2528436D-05 -0.2095203D-04 -0.6639564D-05
+dE/dz  0.4671256D-05  0.3773738D-07 -0.9360869D-05  0.6652605D-05 -0.1240219D-04
+
+  ATOM      6 s           7 o           8 o           9 o          10 o 
+dE/dx -0.6175951D-05  0.1119503D-04  0.9087450D-05 -0.9552665D-05  0.4053299D-05
+dE/dy  0.1986342D-04  0.1224801D-04  0.1809453D-04  0.2018892D-04 -0.1776789D-04
+dE/dz -0.4108887D-05 -0.1074548D-04  0.1245822D-04  0.8400682D-05 -0.5484754D-05
+
+  ATOM     11 h          12 h          13 h 
+dE/dx -0.1052641D-06  0.1836123D-05  0.9586574D-07
+dE/dy  0.2642488D-06 -0.5796920D-05 -0.5930200D-05
+dE/dz  0.6317847D-05  0.1112661D-05  0.2451185D-05
+ 
+ resulting FORCE  (fx,fy,fz) = (0.136D-11,-.365D-10,0.109D-10)
+ resulting MOMENT (mx,my,mz) = (0.252D-03,-.844D-04,-.196D-03)
+
+
+ exx =       0.000046 eyy =      -0.000262 ezz =       0.000069
+ eyz =       0.000020 exz =       0.000139 exy =       0.000061
+
+
+ **********************************************************************
+  |maximum component of gradient| : 0.20952035E-04  (atom  4 pu)       
+   gradient norm                  : 0.61086315E-04
+ **********************************************************************
+
+ <getgrd> : data group $grad  is missing 
+
+   ***  cartesian gradients written onto <control>  ***
+
+
+     --- calculation of the energy gradient finished ---
+
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time : 13 minutes and 52 seconds
+         total wall-time : 13 minutes and 53 seconds
+    ------------------------------------------------------------------------
+
+   ****  rdgrad : all done  ****
+
+
+    2018-02-01 10:34:08.545 
+

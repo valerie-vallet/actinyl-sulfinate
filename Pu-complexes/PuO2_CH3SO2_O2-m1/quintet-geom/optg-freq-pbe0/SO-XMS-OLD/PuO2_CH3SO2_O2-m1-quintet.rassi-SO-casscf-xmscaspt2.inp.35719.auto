@@ -1,0 +1,96 @@
+&GATEWAY
+COORD
+$HomeDir/PuO2_CH3SO2_O2-m1-quintet.pbe0.optg.xyz
+BASIS
+ANO-RCC-VTZP
+Group
+Nosym
+ANGM
+0.0 0.0 0.0
+RICD
+
+
+
+End of input
+
+&SEWARD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+End of input
+
+>> COPY $HomeDir/PuO2_CH3SO2_O2-m1-quintet.casscf.ExpOrb INPORB
+&RASSCF
+Spin
+1
+Symmetry
+1
+Nactel
+6 0 0
+Inactive
+81
+Ras2
+6
+CIRoots
+20 20 1
+End of input
+
+>> COPY $Project.JobIph $Project.JobIph_singlets
+
+
+
+&CASPT2
+IPEA
+0.0
+XMUL
+ALL
+THRESHOLDS
+1.0D-09 1.0D-07
+MAXITER
+100
+CONVERGENCE
+1.0D-5
+IMAG
+0.1
+End of input
+
+>> COPY $Project.JobMix $Project.JobMix_singlets
+
+
+
+>> COPY $CurrDir/$Project.JobIph_quintets JOB001
+>> COPY $CurrDir/$Project.JobIph_triplets JOB002
+>> COPY $CurrDir/$Project.JobIph_singlets JOB003
+&RASSI
+EJob
+SPINorbit
+
+
+
+End of input
+
+>> COPY $CurrDir/$Project.JobMix_quintets JOB001
+>> COPY $CurrDir/$Project.JobMix_triplets JOB002
+>> COPY $Project.JobMix_singlets JOB003
+&RASSI
+EJob
+SPINorbit
+
+End of input
+

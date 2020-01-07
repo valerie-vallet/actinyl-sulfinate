@@ -1,0 +1,253 @@
+ operating system is UNIX !
+
+ rdgrad (u-0-11.local) : TURBOMOLE V7.2 ( 21454 ) 4 Oct 2017 at 12:24:43
+ Copyright (C) 2017 TURBOMOLE GmbH, Karlsruhe
+
+
+    2018-01-25 12:19:44.682 
+
+
+ UHF modus switched on !
+
+
+                                 r d g r a d
+
+                          gradient for ridft program 
+
+                        by K.Eichkorn, O.Treutler, H.Oehm, 
+                             M.Haeser and R.Ahlrichs
+                  (Chemical Physics Letters 242 (1995) 652-660)
+                    parallel version: M.v.Arnim  &  R.Ahlrichs
+                            quantum chemistry group
+                             university  karlsruhe
+                                   germany
+
+
+
+
+                          References             
+                                                 
+          Density Functional:                              
+              O. Treutler and R. Ahlrichs                      
+              Efficient Molecular Numerical Integration Schemes
+              J. chem. Phys. 102: 346 (1995)                   
+          Parallel Version:                                
+              Performance of parallel TURBOMOLE for Density    
+              Functional Calculations                          
+              M. v.Arnim and R. Ahlrichs                      
+              J. comp. Chem. 19: 1746 (1998)                   
+          RI-J Method:                                     
+              Auxiliary Basis Sets to approximate Coulomb      
+              Potentials                                       
+              Chem. Phys. Lett. 240: 283 (1995)                
+              K. Eichkorn, O. Treutler, H. Oehm, M. Haeser     
+              and R. Ahlrichs                                  
+              Chem. Phys. Lett. 242: 652 (1995)                
+                                                           
+              Auxiliary Basis Sets for Main Row Atoms and their
+              Use to approximate Coulomb Potentials            
+              K. Eichkorn, F. Weigend, O. Treutler and         
+              R. Ahlrichs                                      
+              Theo. Chem. Acc. 97: 119 (1997)                   
+                                         
+
+
+
+ integral neglect threshold       :  0.22E-12
+ integral storage threshold THIZE :  0.10E-04
+ integral storage threshold THIME :         5
+
+ number of unique ecp types :                     1
+
+          ------------------
+          -ecp- potential(s)
+          ------------------
+
+ center   4  pu def-ecp  (ecp no.  1)  ncore = 60,  lmax = 5
+ PBE0 hybrid functional
+ exchange:    3/4 (LDA+PBE) + 1/4 HF
+ correlation: LDA (PW) + PBE
+ A Hybrid-DFT calculation using the RI-J approximation will be carried out.
+  
+  
+ AUXILIARY BASIS SET information:
+
+ symmetry group of the molecule :   c1 
+
+ the group has the following generators :
+   c1(z)
+
+    1 symmetry operations found
+
+ there are 1 real representations :   a   
+
+ maximum number of shells which are related by symmetry :  1
+
+
+    mo occupation :
+   irrep   mo's   occupied
+    a     1275      100
+ 
+ number of basis functions   :                   1275
+ number of occupied orbitals :                    100
+ 
+
+ biggest AO integral is expected to be    25.399937282
+  
+           ------------------
+           density functional
+           ------------------
+ PBE0 hybrid functional
+ exchange:    3/4 (LDA+PBE) + 1/4 HF
+ correlation: LDA (PW) + PBE
+
+ iterations will be done with small grid
+  
+ spherical integration : Lebedev's spherical grid
+ spherical gridsize    :                     5
+    i.e. gridpoints    :                   590
+ value for diffuse not defined
+ radial integration    : Chebyshev 2nd kind (scaling 3)
+ radial gridsize       :                     8
+ integration cells     :                    31
+ partition function    : becke
+ partition sharpness   :                     3
+  
+ 
+ Derivatives of quadrature weights will be included
+ 
+  
+           ------------------------
+             RDGRAD - INFORMATION
+           ------------------------
+  
+ Threshold for integral neglect (rithr1): 1E-10
+ Threshold for integral neglect (rithr2): 1E-10
+ Contributions to RI integral batches: 
+  neglected integral batches:                 26473
+  direct contribution:                        55742
+     
+ ****************************************
+ Memory allocated for RDGRAD: 52 MiB
+ ****************************************
+                                            
+     
+
+ nuclear repulsion energy  :   2519.74506936    
+
+  MOs are in ASCII format !
+
+
+ reading orbital data $uhfmo_alpha  from file alpha
+ orbital characterization : scfconv=8
+
+ reading orbital data $uhfmo_beta  from file beta
+ orbital characterization : scfconv=8
+  Deviation of MOs from orthonormality   5.236255873342088E-011
+  Deviation of MOs from orthonormality   5.635425459615817E-011
+
+    ----------------------------------------
+     S+T+V CONTRIBUTIONS TO ENERGY GRADIENT 
+    ----------------------------------------
+
+ 1e-integral 1st. derivatives will be neglected if expon. factor < 0.443389E-15
+
+
+ setting up bound for integral derivative estimation
+
+ increment for numerical differentiation : 0.00050000
+
+ biggest AO integral is expected to be    25.399937282
+ biggest cartesian 1st derivative AO integral is expected to be    99.097364276
+
+ biggest 1-particle AO density matrix element is expected to be    5.6224980804
+
+ setting up bound for integral derivative estimation
+
+ increment for numerical differentiation : 0.00050000
+
+ biggest AO integral is expected to be    25.399937282
+ biggest cartesian 1st derivative AO integral is expected to be    99.097364276
+
+ 2e-integral 1st. derivatives will be neglected if expon. factor < 0.100000E-07
+ outer boundary for 2e-integral derivative neglection is 0.527218E-10
+
+          Overall gridpoints after grid construction =        524071
+ Ordering of quadrature gridpoints disabled.
+
+ Integrated ground state density     :   197.0000057895916    
+
+ Integrated ground state spin density:   3.000000381851326    
+
+
+          ------------------------------------------------
+           cartesian gradient of the energy (hartree/bohr)
+          ------------------------------------------------
+
+  ATOM      1 c           2 s           3 o           4 pu          5 o 
+dE/dx -0.1090880D-04  0.5853126D-05  0.1795563D-05 -0.4677408D-05  0.1865586D-05
+dE/dy  0.6418898D-05  0.1511968D-04 -0.8141329D-05 -0.3846583D-05  0.4486166D-05
+dE/dz  0.2978157D-04  0.8650882D-05  0.4274404D-05  0.5795318D-05 -0.7427854D-05
+
+  ATOM      6 s           7 c           8 o           9 o          10 o 
+dE/dx -0.1021934D-04  0.1211689D-04  0.1143524D-04 -0.6110844D-05  0.5369982D-04
+dE/dy -0.1232654D-04 -0.3093545D-05  0.1402776D-04 -0.1064414D-04 -0.1252697D-04
+dE/dz -0.6883421D-05 -0.2409905D-04 -0.1678724D-04  0.1257770D-04  0.4289314D-06
+
+  ATOM     11 o          12 c          13 c          14 c          15 c 
+dE/dx -0.5150636D-04 -0.6249943D-05  0.1090679D-05 -0.4235580D-05  0.2468733D-05
+dE/dy  0.1310457D-04  0.2500610D-05  0.5126419D-05 -0.5644220D-05 -0.2096680D-05
+dE/dz -0.4086823D-05 -0.1558582D-05  0.8704722D-05  0.1516256D-04  0.2940600D-05
+
+  ATOM     16 c          17 h          18 h          19 h          20 h 
+dE/dx  0.9730534D-06  0.1374288D-05 -0.5946119D-05 -0.6731951D-05  0.4053030D-05
+dE/dy -0.1253297D-04  0.4899827D-05 -0.9786185D-07 -0.2307810D-05 -0.4916903D-05
+dE/dz -0.9679607D-06  0.4531289D-06  0.1239339D-04  0.2433982D-05 -0.2103240D-04
+
+  ATOM     21 h          22 c          23 c          24 c          25 c 
+dE/dx  0.2629393D-05  0.6369392D-05 -0.1655033D-05  0.2276326D-05 -0.2485132D-05
+dE/dy -0.2056012D-05  0.1055109D-05 -0.3452375D-05  0.4120493D-05  0.1223313D-05
+dE/dz -0.1772834D-04 -0.6176486D-06 -0.2889823D-05 -0.1311963D-04 -0.5753752D-05
+
+  ATOM     26 c          27 h          28 h          29 h          30 h 
+dE/dx -0.2040218D-05 -0.1418891D-05  0.4262785D-05  0.4183794D-05 -0.3769748D-05
+dE/dy  0.8227264D-05 -0.4046829D-05  0.1161518D-05  0.8815405D-06  0.1607306D-05
+dE/dz  0.7879121D-05 -0.1075679D-05 -0.3613936D-05 -0.4359457D-05  0.5871761D-05
+
+  ATOM     31 h 
+dE/dx  0.1507691D-05
+dE/dy  0.3770255D-05
+dE/dz  0.1465352D-04
+ 
+ resulting FORCE  (fx,fy,fz) = (0.213D-10,-.435D-10,-.452D-12)
+ resulting MOMENT (mx,my,mz) = (0.132D-03,0.333D-04,-.251D-03)
+
+
+ exx =       0.000412 eyy =       0.000557 ezz =       0.000107
+ eyz =      -0.000016 exz =      -0.000078 exy =      -0.000023
+
+
+ **********************************************************************
+  |maximum component of gradient| : 0.53699817E-04  (atom 10 o )       
+   gradient norm                  : 0.10935112E-03
+ **********************************************************************
+
+ <getgrd> : data group $grad  is missing 
+
+   ***  cartesian gradients written onto <control>  ***
+
+
+     --- calculation of the energy gradient finished ---
+
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time :  2 hours 19 minutes and 17 seconds
+         total wall-time :  2 hours 19 minutes and 16 seconds
+    ------------------------------------------------------------------------
+
+   ****  rdgrad : all done  ****
+
+
+    2018-01-25 14:39:00.277 
+

@@ -1,0 +1,141 @@
+$atoms
+c  1,7,12-16,22-26                                                             \
+   basis =c aug-cc-pVTZ                                                        \
+   jbas  =c aug-cc-pVTZ
+s  2,6                                                                         \
+   basis =s aug-cc-pVTZ                                                        \
+   jbas  =s aug-cc-pVTZ
+o  3,5,8-11                                                                    \
+   basis =o aug-cc-pVTZ                                                        \
+   jbas  =o aug-cc-pVTZ
+pu 4                                                                           \
+   basis =pu ecp-60-SVP(6g)                                                    \
+   ecp   =pu def-ecp                                                           \
+   jbas  =pu def-TZVPP
+h  17-21,27-31                                                                 \
+   basis =h aug-cc-pVTZ                                                        \
+   jbas  =h aug-cc-pVTZ
+#
+# NumForce insertion:
+#
+#
+# NumForce insertion:
+#
+$scfconv 8
+$drvopt
+   frequency analysis only nofreeze
+$hessian  file=hessian
+$dipgrad  file=dipgrad
+$grad  file=gradient
+$vibrational normal modes
+$vibrational spectrum
+#
+# end of NumForce insertion.
+#
+$hessian  file=hessian
+$dipgrad  file=dipgrad
+$vibrational normal modes
+$vibrational spectrum
+#
+# end of NumForce insertion.
+#
+$title
+$operating system unix
+$symmetry c1
+$redundant    file=coord
+$user-defined bonds    file=coord
+$coord    file=coord
+$optimize
+ internal   on
+ redundant  on
+ cartesian  off
+ global     off
+ basis      off
+$basis    file=basis
+$ecp    file=basis
+$newecp
+$rundimensions
+   dim(fock,dens)=1144738
+   natoms=31
+   nshell=405
+   nbf(CAO)=1510
+   dim(trafo[SAO<-->AO/CAO])=1983
+   rhfshells=2
+   nbf(AO)=1275
+$uhfmo_alpha    file=alpha
+$uhfmo_beta    file=beta
+$uhf
+$scfiterlimit       150
+$thize     0.10000000E-04
+$thime        5
+$scfintunit
+ unit=30       size=0        file=twoint
+$scfdiis
+$maxcor    500 MiB  per_core
+$interconversion  off
+   qconv=1.d-7
+   maxiter=25
+$coordinateupdate
+   dqmax=0.3
+   interpolate  on
+   statistics    5
+$forceupdate
+   ahlrichs numgeo=0  mingeo=3 maxgeo=4 modus=<g|dq> dynamic fail=0.3
+   threig=0.005  reseig=0.005  thrbig=3.0  scale=1.00  damping=0.0
+$forceapprox    file=forceapprox
+$dft
+   functional pbe0
+   gridsize   m5
+   weight derivatives
+$last SCF energy change = -2264.2245
+$ssquare from ridft
+          3.793 (not to be modified here)
+$charge from ridft
+         -1.000 (not to be modified here)
+$dipole from ridft
+  x    -0.00278698277291    y    -0.00251289332588    z    -0.00002942267095    a.u.
+   | dipole | =    0.0095384889  debye
+$optinfo       file=optinfo
+$hessapprox   file=hessapprox
+$dipgrad    file=dipgrad
+$hessian (projected)    file=hessian
+$vibrational normal modes    file=vib_normal_modes
+$vibrational reduced masses
+   3.6941805144   4.4128608080   6.7525133007   9.3468929643  16.0046072383
+  14.5215913019  10.9155801170   9.4236333825   7.9246382570   7.5455916514
+  14.6234895897   7.7108465539   8.1250109707  10.7064745031  10.8845327821
+   8.8810451201   6.7923862339   9.8597626619  10.3065361029   8.7465273742
+  12.0692781315  11.1988352758  11.5994218540  18.2622484147   6.6034928230
+   6.8231878365  11.7737482058  10.1731136064  14.1060450946   2.8005072778
+   2.8001152975  13.9178831932   3.6633759658   3.6336864855  13.3857941309
+  14.7193477503  14.9779130666   6.4349630450   6.4655678683   2.2863783102
+   2.2821146587   6.8423525596   6.8514697510   1.4919631122   1.4937629964
+  15.9652500618   1.2498251805   1.2492277383  17.6556442258   1.3882610598
+   1.3878121816  16.6127549723   1.3622268161   1.3614049232  15.0446486649
+   1.6215751602   1.6887724037   6.4036178501   5.3119097476   5.8184581451
+   5.4396144138   2.6606421029   2.6636039378   1.5621181790   1.5579747224
+   2.7857649794   2.8087123346   1.0967803977   1.0967957495   1.1432746361
+   1.1432525026   1.4863805733   1.4889026401   4.5279144746   4.5048281100
+   2.2665156652   2.2666687842   2.1174495313   2.1159086879   6.1993304351
+   6.2033667276   5.6594733068   5.6582038539   1.0844979015   1.0844924916
+   1.0876547576   1.0876546913   1.0914265114   1.0913842935   1.0952523234
+   1.0952053771   1.0984555839   1.0984822788
+$nvibro       93
+$vibrational spectrum    file=vibspectrum
+$ricore      500
+$rij
+$jbas    file=auxbasis
+$scfdamp   start=0.700  step=0.050  min=0.050
+$scforbitalshift  closedshell=.05
+$alpha shells
+ a       1-100                                  ( 1 )
+$beta shells
+ a       1-97                                   ( 1 )
+$forceinit on
+ diag = carthess
+$last step     rdgrad
+$orbital_max_rnorm 0.86169618515393E-05
+$subenergy  Etot         E1                  Ej                Ex                 Ec                 En
+-2264.224511424    -8358.064693812     3728.611285942    -147.1279618508    -7.388211061349     2519.745069358
+$end
+$TMPDIR /state/partition2/vallet/285976.phlam-s-sakura

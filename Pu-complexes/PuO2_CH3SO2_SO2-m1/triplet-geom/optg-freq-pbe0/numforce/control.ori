@@ -1,0 +1,121 @@
+$atoms
+c  1                                                                           \
+   basis =c aug-cc-pVTZ                                                        \
+   jbas  =c aug-cc-pVTZ
+s  2,6                                                                         \
+   basis =s aug-cc-pVTZ                                                        \
+   jbas  =s aug-cc-pVTZ
+o  3,5,7-10                                                                    \
+   basis =o aug-cc-pVTZ                                                        \
+   jbas  =o aug-cc-pVTZ
+pu 4                                                                           \
+   basis =pu ecp-60-SVP(6g)                                                    \
+   ecp   =pu def-ecp                                                           \
+   jbas  =pu def-TZVPP
+h  11-13                                                                       \
+   basis =h aug-cc-pVTZ                                                        \
+   jbas  =h aug-cc-pVTZ
+#
+# NumForce insertion:
+#
+$scfconv 7
+$drvopt
+   frequency analysis only nofreeze
+$hessian  file=hessian
+$dipgrad  file=dipgrad
+$grad  file=gradient
+$vibrational normal modes
+$vibrational spectrum
+#
+# end of NumForce insertion.
+#
+$title
+$operating system unix
+$symmetry c1
+$redundant    file=coord
+$user-defined bonds    file=coord
+$coord    file=coord
+$optimize
+ internal   on
+ redundant  on
+ cartesian  off
+ global     off
+ basis      off
+$basis    file=basis
+$ecp    file=basis
+$newecp
+$rundimensions
+   dim(fock,dens)=268858
+   natoms=13
+   nshell=188
+   nbf(CAO)=730
+   dim(trafo[SAO<-->AO/CAO])=977
+   rhfshells=2
+   nbf(AO)=608
+$uhfmo_alpha   file=alpha
+$uhfmo_beta   file=beta
+$uhf
+$scfiterlimit      200
+$pop
+$thize     0.10000000E-04
+$thime        5
+$scfintunit
+ unit=30       size=0        file=twoint
+$scfdiis
+$maxcor   2000 MiB  per_core
+$interconversion  off
+   qconv=1.d-7
+   maxiter=25
+$coordinateupdate
+   dqmax=0.3
+   interpolate  on
+   statistics    5
+$forceupdate
+   ahlrichs numgeo=0  mingeo=3 maxgeo=4 modus=<g|dq> dynamic fail=0.3
+   threig=0.005  reseig=0.005  thrbig=3.0  scale=1.00  damping=0.0
+$forceinit on
+   diag=default
+$forceapprox    file=forceapprox
+$dft
+   functional pbe0
+   gridsize   m4
+   weight derivatives
+$scfdamp   start=0.700  step=0.050  min=0.050
+$scforbitalshift  closedshell=.05
+$ricore      500
+$rij
+$jbas    file=auxbasis
+$last SCF energy change = -1841.1778
+$ssquare from ridft
+          3.003 (not to be modified here)
+$charge from ridft
+         -1.000 (not to be modified here)
+$optinfo       file=optinfo
+$hessapprox   file=hessapprox
+$vibrational reduced masses
+  15.6370028551  26.3961775625  20.0663365548  31.1101356269  16.4209473946
+  19.4977911240   7.3412005438  17.9214719813  10.9108397169   6.1121152176
+   8.1379626383  10.5855502095  20.3917621643  21.0198741538   1.9524978090
+   3.3050888578  14.6541581900   3.2574566919  13.9870366471   4.0448433071
+  18.7494530553   4.3385174681  16.0236386747  10.2984742436   4.4617312036
+  15.7348448582   1.3786887536   6.1074940913   2.3279256362   5.2931457549
+  16.9969971851  11.5754954093  19.9528131977   1.2194781248   1.0497637468
+   1.0534602622   1.0274192960   1.1052387901   1.1070864040
+$nvibro       39
+$alpha shells
+ a       1-63                                   ( 1 )
+$beta shells
+ a       1-61                                   ( 1 )
+$last step     rdgrad
+$dipole from ridft
+  x     0.70045627920759    y     2.61039696499208    z     1.05878644818277    a.u.
+   | dipole | =    7.3780588811  debye
+$dipgrad    file=dipgrad
+$hessian (projected)    file=hessian
+$vibrational normal modes    file=vib_normal_modes
+$vibrational spectrum    file=vibspectrum
+$orbital_max_rnorm 0.66607728140169E-04
+$subenergy  Etot         E1                  Ej                Ex                 Ec                 En
+-1841.177808586    -5182.494230738     2233.791435364    -102.5446422230    -4.939393369449     1215.009022380
+$end
+$TMPDIR /state/partition1/vallet/291116.phlam-s-sakura

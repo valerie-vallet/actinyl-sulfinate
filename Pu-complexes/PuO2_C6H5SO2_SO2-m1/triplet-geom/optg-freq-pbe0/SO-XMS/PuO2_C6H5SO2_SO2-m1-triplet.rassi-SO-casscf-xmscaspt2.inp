@@ -1,0 +1,100 @@
+ &GATEWAY
+   COORD=$HomeDir/PuO2_C6H5SO2_SO2-m1-triplet.pbe0.optg.xyz
+   BASIS=ANO-RCC-VTZP
+   Group=Nosym
+   ANGM=0.0 0.0 0.0
+   RICD
+
+/*
+  Compute integrals with Cholesky decomposition
+*/
+ &SEWARD
+
+>> COPY $HomeDir/PuO2_C6H5SO2_SO2-m1-quintet.rassi-SO-casscf-xmscaspt2.RasOrb INPORB
+ &RASSCF
+   Spin=5
+   Symmetry=1
+   Nactel=4 0 0
+   Inactive=106
+   Ras2=5
+   CIRoots=4 4 1
+>> COPY $Project.JobIph $Project.JobIph_quintets
+
+/*
+  Perform a XMS-CASPT2 calculation for the quintets F states
+*/
+  &CASPT2
+    IPEA=0.0
+    XMUL= ALL
+    THRESHOLDS= 1.0D-09 1.0D-07
+    MAXITER=100
+    CONVERGENCE=1.0D-5
+    IMAG=0.1
+>> COPY $Project.JobMix $Project.JobMix_quintets
+
+
+>> COPY $HomeDir/PuO2_C6H5SO2_SO2-m1-quintet.rassi-SO-casscf-xmscaspt2.RasOrb INPORB
+ &RASSCF
+   Spin=3
+   Symmetry=1
+   Nactel=4 0 0
+   Inactive=106
+   Ras2=5
+   CIRoots=20 20 1
+>> COPY $Project.JobIph $Project.JobIph_triplets
+
+/*
+  Perform a XMS-CASPT2 calculation for the triplet F states
+*/
+  &CASPT2
+    IPEA=0.0
+    XMUL= ALL
+    THRESHOLDS= 1.0D-09 1.0D-07
+    MAXITER=100
+    CONVERGENCE=1.0D-5
+    IMAG=0.1
+>> COPY $Project.JobMix $Project.JobMix_triplets
+
+
+>> COPY $HomeDir/PuO2_C6H5SO2_SO2-m1-quintet.rassi-SO-casscf-xmscaspt2.RasOrb INPORB
+ &RASSCF
+   Spin=1
+   Symmetry=1
+   Nactel=4 0 0
+   Inactive=106
+   Ras2=5
+   CIRoots=20 20 1
+>> COPY $Project.JobIph $Project.JobIph_singlets
+
+/*
+  Perform a XMS-CASPT2 calculation for the singlets F states
+*/
+  &CASPT2
+    IPEA=0.0
+    XMUL= ALL
+    THRESHOLDS= 1.0D-09 1.0D-07
+    MAXITER=100
+    CONVERGENCE=1.0D-5
+    IMAG=0.1
+>> COPY $Project.JobMix $Project.JobMix_singlets
+
+
+/*
+  Perform a RASSI-SO calculation for the CASSCF quintets, triplets, and singlets F states (JobIph file)
+*/
+>> COPY $Project.JobIph_quintets JOB001
+>> COPY $Project.JobIph_triplets JOB002
+>> COPY $Project.JobIph_singlets JOB003
+  &RASSI
+    EJob
+    SPINorbit
+
+/*
+  Perform a RASSI-SO calculation for the XMS-CASPT2 quintets, triplets, and singlets F states (JobIph file)
+*/
+>> COPY $Project.JobMix_quintets JOB001
+>> COPY $Project.JobMix_triplets JOB002
+>> COPY $Project.JobMix_singlets JOB003
+  &RASSI
+    EJob
+    SPINorbit

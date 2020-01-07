@@ -1,0 +1,287 @@
+#############################################################
+#                                                           #
+#                      N u m F o r c e                      #
+#                Numerical Second Derivatives               #
+#                                                           #
+#############################################################
+
+ running on u-1-2.local
+ date: Thu Feb 1 09:49:40 CET 2018
+
+NumForce has been started with the -mfile option, hence it can be
+    run in parallel. This is most efficient if the serial binaries
+    are used and started independently at a time. 
+
+    -> Starting several serial single-point jobs for optimal speed up...
+execute parallel run using NODEFILE: /var/spool/torque/aux//291119.phlam-s-sakura.univ-lille1.fr
+There are 8 free nodes:  u-1-2:1 u-1-2:2 u-1-2:3 u-1-2:4 u-1-2:5 u-1-2:6 u-1-2:7 u-1-2:8 
+all nodes will be used for calculation
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'turbomole/smp'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gcc'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gnuplot'
+login test on u-1-2:1
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'turbomole/smp'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gcc'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gnuplot'
+login test on u-1-2:2
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'turbomole/smp'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gcc'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gnuplot'
+login test on u-1-2:3
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'turbomole/smp'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gcc'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gnuplot'
+login test on u-1-2:4
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'turbomole/smp'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gcc'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gnuplot'
+login test on u-1-2:5
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'turbomole/smp'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gcc'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gnuplot'
+login test on u-1-2:6
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'turbomole/smp'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gcc'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gnuplot'
+login test on u-1-2:7
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'turbomole/smp'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gcc'
+ModuleCmd_Load.c(208):ERROR:105: Unable to locate a modulefile for 'gnuplot'
+login test on u-1-2:8
+#############################################################
+                    
+ NumForce Settings:
+    differentiation increment = 0.01
+    type                      = 'central'
+    dimension of calculation  = 'norm'
+    number of atoms           = 13
+    #CPUs                     = 8
+    machine file              = /var/spool/torque/aux//291119.phlam-s-sakura.univ-lille1.fr
+    restart                   = 
+    gradient check            = on
+    stop after preparation    = 
+    scripts directory         = /home/pcmt/COSMOlogic/turbomole/7.2.1/TURBOMOLE/scripts
+    scratch path              = /state/partition1/vallet/291119.phlam-s-sakura
+                    
+ TURBOMOLE Settings:
+    load directory            = /home/pcmt/COSMOlogic/turbomole/7.2.1/TURBOMOLE/bin/em64t-unknown-linux-gnu
+    SCF-convergence $scfconv  = 7
+    level of calculation      = ri scf
+    program to generate MOs     /home/pcmt/COSMOlogic/turbomole/7.2.1/TURBOMOLE/bin/em64t-unknown-linux-gnu/ridft
+    program for gradients       /home/pcmt/COSMOlogic/turbomole/7.2.1/TURBOMOLE/bin/em64t-unknown-linux-gnu/rdgrad
+                    
+#############################################################
+
+CHECKING GRADIENT NORM
+ ridft ended normally
+ rdgrad ended normally
+   gradient norm                  : 0.61086315E-04
+GRADIENT NORM INDICATES STATIONARY POINT OF ENERGY.
+
+
+ ruecker ended normally 
+TYPE central IS USED.
+number of single point calculations: 78
+
+#############################################################
+
+CALCULATIONS OF GRADIENTS IN DISPLACED GEOMETRIES WILL BE CARRIED OUT NOW
+step xm01 started  (#1 of 78)
+step xm02 started  (#2 of 78)
+step xm03 started  (#3 of 78)
+step xm04 started  (#4 of 78)
+step xm05 started  (#5 of 78)
+step xm06 started  (#6 of 78)
+step xm07 started  (#7 of 78)
+step xm08 started  (#8 of 78)
+step xm09 started  (#9 of 78)
+step xm10 started  (#10 of 78)
+step xm11 started  (#11 of 78)
+step xm12 started  (#12 of 78)
+step xm13 started  (#13 of 78)
+step xp01 started  (#14 of 78)
+step xp02 started  (#15 of 78)
+step xp03 started  (#16 of 78)
+step xp04 started  (#17 of 78)
+step xp05 started  (#18 of 78)
+step xp06 started  (#19 of 78)
+step xp07 started  (#20 of 78)
+step xp08 started  (#21 of 78)
+step xp09 started  (#22 of 78)
+step xp10 started  (#23 of 78)
+step xp11 started  (#24 of 78)
+step xp12 started  (#25 of 78)
+step xp13 started  (#26 of 78)
+step ym01 started  (#27 of 78)
+step ym02 started  (#28 of 78)
+step ym03 started  (#29 of 78)
+step ym04 started  (#30 of 78)
+step ym05 started  (#31 of 78)
+step ym06 started  (#32 of 78)
+step ym07 started  (#33 of 78)
+step ym08 started  (#34 of 78)
+step ym09 started  (#35 of 78)
+step ym10 started  (#36 of 78)
+step ym11 started  (#37 of 78)
+step ym12 started  (#38 of 78)
+step ym13 started  (#39 of 78)
+step yp01 started  (#40 of 78)
+step yp02 started  (#41 of 78)
+step yp03 started  (#42 of 78)
+step yp04 started  (#43 of 78)
+step yp05 started  (#44 of 78)
+step yp06 started  (#45 of 78)
+step yp07 started  (#46 of 78)
+step yp08 started  (#47 of 78)
+step yp09 started  (#48 of 78)
+step yp10 started  (#49 of 78)
+step yp11 started  (#50 of 78)
+step yp12 started  (#51 of 78)
+step yp13 started  (#52 of 78)
+step zm01 started  (#53 of 78)
+step zm02 started  (#54 of 78)
+step zm03 started  (#55 of 78)
+step zm04 started  (#56 of 78)
+step zm05 started  (#57 of 78)
+step zm06 started  (#58 of 78)
+step zm07 started  (#59 of 78)
+step zm08 started  (#60 of 78)
+step zm09 started  (#61 of 78)
+step zm10 started  (#62 of 78)
+step zm11 started  (#63 of 78)
+step zm12 started  (#64 of 78)
+step zm13 started  (#65 of 78)
+step zp01 started  (#66 of 78)
+step zp02 started  (#67 of 78)
+step zp03 started  (#68 of 78)
+step zp04 started  (#69 of 78)
+step zp05 started  (#70 of 78)
+step zp06 started  (#71 of 78)
+step zp07 started  (#72 of 78)
+step zp08 started  (#73 of 78)
+step zp09 started  (#74 of 78)
+step zp10 started  (#75 of 78)
+step zp11 started  (#76 of 78)
+step zp12 started  (#77 of 78)
+step zp13 started  (#78 of 78)
+... all steps done!
+
+
+#############################################################
+
+CALCULATION OF HESSIAN
+
+
+
+ sammler (u-1-2.local) : TURBOMOLE V7.2 ( 21454 ) 2 Oct 2017 at 16:43:05
+ Copyright (C) 2017 TURBOMOLE GmbH, Karlsruhe
+
+
+    2018-02-01 21:47:13.642 
+
+
+ symmetry group of the molecule :   c1 
+
+ the group has the following generators :
+   c1(z)
+
+    1 symmetry operations found
+  sammler for frozen cart. coord....
+ 
+         atomic coordinates
+ 
+    1.8041268      4.2835947      2.0650512      c       
+    3.2373912      1.1676729      1.9368604      s       
+    1.1688202     -0.4704355      3.1305750      o       
+   -0.6689931     -2.1228447     -0.9121419      pu      
+   -2.5939468     -3.7425609     -5.0028068      o       
+   -4.7680698     -5.2146048     -3.7976504      s       
+   -4.6286001     -4.8376452     -0.9367277      o       
+    3.1935162      0.6259306     -0.9076477      o       
+    1.1678186     -4.8580800     -0.7328125      o       
+   -2.5204790      0.6160484     -1.0979180      o       
+    3.0507751      5.6094770      1.0983756      h       
+   -0.0170384      4.1348209      1.1123310      h       
+    1.5746792      4.8086265      4.0445118      h       
+ number of atoms                    13
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time :   0.04 seconds
+         total wall-time :   0.20 seconds
+    ------------------------------------------------------------------------
+
+   ****  sammler : all done  ****
+
+
+    2018-02-01 21:47:13.824 
+
+ sammler ended normally 
+
+
+
+#############################################################
+
+FREQUENCY ANALYSIS IS STARTED NOW
+
+
+aoforce ended normally 
+complete results are in numforce/aoforce.out
+                                                 
+         *  zero point VIBRATIONAL energy  :      0.0601132  Hartree  *
+                                                 
+                               Frequency Analysis
+       mode               1        2        3        4        5        6
+     frequency           0.00     0.00     0.00     0.00     0.00     0.00
+     symmetry                                                             
+        IR                -        -        -        -        -        - 
+intensity (km/mol)       0.00     0.00     0.00     0.00     0.00     0.00
+intensity (  %   )       0.00     0.00     0.00     0.00     0.00     0.00
+       RAMAN              -        -        -        -        -        - 
+       mode               7        8        9       10       11       12
+     frequency          39.74    54.87   109.16   112.70   160.39   176.22
+     symmetry            a        a        a        a        a        a   
+        IR               YES      YES      YES      YES      YES      YES
+intensity (km/mol)       1.85     0.32     0.75     1.40     5.13     8.39
+intensity (  %   )       0.60     0.10     0.25     0.46     1.68     2.74
+       RAMAN             YES      YES      YES      YES      YES      YES
+       mode              13       14       15       16       17       18
+     frequency         186.54   189.81   213.79   236.15   242.11   282.18
+     symmetry            a        a        a        a        a        a   
+        IR               YES      YES      YES      YES      YES      YES
+intensity (km/mol)       4.55    58.49     8.46     3.13     2.94    15.19
+intensity (  %   )       1.49    19.11     2.76     1.02     0.96     4.96
+       RAMAN             YES      YES      YES      YES      YES      YES
+       mode              19       20       21       22       23       24
+     frequency         294.85   319.47   321.20   407.61   520.29   542.73
+     symmetry            a        a        a        a        a        a   
+        IR               YES      YES      YES      YES      YES      YES
+intensity (km/mol)       0.38     1.59    60.37    20.49   105.31    26.53
+intensity (  %   )       0.13     0.52    19.73     6.70    34.41     8.67
+       RAMAN             YES      YES      YES      YES      YES      YES
+       mode              25       26       27       28       29       30
+     frequency         667.90   858.29   925.10   929.22   946.55  1005.89
+     symmetry            a        a        a        a        a        a   
+        IR               YES      YES      YES      YES      YES      YES
+intensity (km/mol)      36.78     1.11   306.01    10.46   194.52   237.62
+intensity (  %   )      12.02     0.36   100.00     3.42    63.56    77.65
+       RAMAN             YES      YES      YES      YES      YES      YES
+       mode              31       32       33       34       35       36
+     frequency        1017.93  1023.45  1056.45  1290.40  1441.68  1449.52
+     symmetry            a        a        a        a        a        a   
+        IR               YES      YES      YES      YES      YES      YES
+intensity (km/mol)      51.78   161.05   202.65    20.08     3.65     6.07
+intensity (  %   )      16.92    52.63    66.22     6.56     1.19     1.98
+       RAMAN             YES      YES      YES      YES      YES      YES
+       mode              37       38       39
+     frequency        3046.38  3154.36  3163.72
+     symmetry            a        a        a   
+        IR               YES      YES      YES
+intensity (km/mol)      23.28     9.58     0.93
+intensity (  %   )       7.61     3.13     0.30
+       RAMAN             YES      YES      YES
+
+#############################################################
+#                END OF NumForce                            #
+#############################################################
+ date: Thu Feb 1 21:47:14 CET 2018

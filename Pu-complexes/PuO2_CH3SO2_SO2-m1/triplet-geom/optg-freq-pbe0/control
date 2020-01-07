@@ -1,0 +1,118 @@
+$title
+$operating system unix
+$symmetry c1
+$redundant    file=coord
+$user-defined bonds    file=coord
+$coord    file=coord
+$optimize
+ internal   on
+ redundant  on
+ cartesian  off
+ global     off
+ basis      off
+$atoms
+c  1                                                                           \
+   basis =c aug-cc-pVTZ                                                        \
+   jbas  =c aug-cc-pVTZ
+s  2,6                                                                         \
+   basis =s aug-cc-pVTZ                                                        \
+   jbas  =s aug-cc-pVTZ
+o  3,5,7-10                                                                    \
+   basis =o aug-cc-pVTZ                                                        \
+   jbas  =o aug-cc-pVTZ
+pu 4                                                                           \
+   basis =pu ecp-60-SVP(6g)                                                    \
+   ecp   =pu def-ecp                                                           \
+   jbas  =pu def-TZVPP
+h  11-13                                                                       \
+   basis =h aug-cc-pVTZ                                                        \
+   jbas  =h aug-cc-pVTZ
+$basis    file=basis
+$ecp    file=basis
+$newecp
+$rundimensions
+   dim(fock,dens)=268858
+   natoms=13
+   nshell=188
+   nbf(CAO)=730
+   dim(trafo[SAO<-->AO/CAO])=977
+   rhfshells=2
+   nbf(AO)=608
+$uhfmo_alpha   file=alpha
+$uhfmo_beta   file=beta
+$uhf
+$scfiterlimit      200
+$pop
+$thize     0.10000000E-04
+$thime        5
+$scfdump
+$scfintunit
+ unit=30       size=0        file=twoint
+$scfdiis
+$maxcor   2000 MiB  per_core
+$drvopt
+   cartesian  on
+   basis      off
+   global     off
+   hessian    on
+   dipole     on
+   nuclear polarizability
+$interconversion  off
+   qconv=1.d-7
+   maxiter=25
+$coordinateupdate
+   dqmax=0.3
+   interpolate  on
+   statistics    5
+$forceupdate
+   ahlrichs numgeo=0  mingeo=3 maxgeo=4 modus=<g|dq> dynamic fail=0.3
+   threig=0.005  reseig=0.005  thrbig=3.0  scale=1.00  damping=0.0
+$forceinit on
+   diag=default
+$forceapprox    file=forceapprox
+$dft
+   functional pbe0
+   gridsize   m4
+   weight derivatives
+$scfconv        7
+$scfdamp   start=0.700  step=0.050  min=0.050
+$scforbitalshift  closedshell=.05
+$ricore      500
+$rij
+$jbas    file=auxbasis
+$last SCF energy change = -.12479859E-07
+$ssquare from ridft
+          3.003 (not to be modified here)
+$charge from ridft
+         -1.000 (not to be modified here)
+$optinfo       file=optinfo
+$hessapprox   file=hessapprox
+$alpha shells
+ a       1-63                                   ( 1 )
+$beta shells
+ a       1-61                                   ( 1 )
+$energy    file=energy
+$grad    file=gradient
+$last step     freeh
+$dipole from force
+  x     0.70035889629210    y     2.61047469049723    z     1.05878265120045    a.u.
+   | dipole | =    7.3781733005  debye
+$orbital_max_rnorm 0.44871325781973E-02
+$subenergy  Etot         E1                  Ej                Ex                 Ec                 En
+-1841.177808535    -5182.494435718     2233.791641403    -102.5446426395    -4.939393961368     1215.009022380
+$TMPDIR /state/partition1/vallet/291116.phlam-s-sakura
+$hessian (projected)  file=hessian
+$dipgrad  file=dipgrad
+$vibrational spectrum    file=vibspectrum
+$vibrational normal modes    file=vib_normal_modes
+$vibrational reduced masses
+   7.5667740720  11.9363112741  24.3617667981  24.9792880513  26.1523019591
+  30.2913733031  19.8583955832  11.5128018599   7.8210006207   5.2806943444
+  15.1546603165  20.1615737309  10.8072399638  18.5184646080  15.7484715031
+   8.8412873962  14.9053355085  17.3924738280   1.1361428893   3.6873676994
+  18.3811415869   4.2675510328  16.2241772927  10.3674429626   4.5590408612
+  15.7967434581   8.8511145751   1.3831731653   2.1372928449   4.5284394515
+  16.2729373431  10.5574014052  19.9326006312   1.2169612281   1.0505513693
+   1.0522189425   1.0276205246   1.1050257132   1.1072284202
+$nvibro       39
+$end

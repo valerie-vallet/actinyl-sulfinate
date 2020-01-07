@@ -1,0 +1,9 @@
+basis={
+ ecp,Pu,ECP60MWB;
+
+! Atomic basis sets
+  default, aug-cc-pVTZ;
+  Pu=ECP60MWB_SEG;
+
+}
+
