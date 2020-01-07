@@ -1,0 +1,33 @@
+/*
+ Define geometry, basis set and point group
+ Start the calculation with a minimal basis set
+*/
+ &GATEWAY
+   COORD=$HomeDir/UO2_C6H5SO2_C6H5SO2-m1.pbe0.optg.xyz
+   BASIS=ANO-RCC-MB    
+   Group=Nosym
+   ANGM=0.0 0.0 0.0
+   RICD
+>> COPY $Project.RunFile $HomeDir
+
+/*
+  Compute integrals with Cholesky decomposition
+*/
+ &SEWARD
+
+/*
+ Perform a CASSCF calculation on the real molecule
+ 1 active electron in 5 (2*5f_delta, 2*5f_phi, O peroxo) orbitals
+*/
+
+ &RASSCF
+   Spin=2
+   Symmetry=1
+   Nactel=1 0 0
+   Inactive=127
+   Ras2=4
+   CIRoots=4 4 1
+   Lumorb
+>> COPY $Project.RasOrb $HomeDir/$Project.RasOrb_doublets
+>> COPY $Project.rasscf.molden $HomeDir/$Project.rasscf_doublets.molden
+

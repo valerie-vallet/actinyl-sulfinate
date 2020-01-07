@@ -1,0 +1,76 @@
+/*
+ Define geometry, basis set and point group
+ Start the calculation with a minimal basis set
+*/
+ &GATEWAY
+   COORD=$HomeDir/UO2_C6H5SO2_C6H5SO2-m1.pbe0.optg.xyz
+   BASIS=ANO-RCC-VTZP    
+   Group=Nosym
+   ANGM=0.0 0.0 0.0
+   RICD
+>> COPY $Project.RunFile $HomeDir
+
+/*
+  Compute integrals with Cholesky decomposition
+*/
+ &SEWARD
+
+>> COPY $HomeDir/UO2_C6H5SO2_C6H5SO2-m1-doublet.casscf.MB.RunFile RUNFIL1
+>> COPY $Project.RunFile RUNFIL2
+>> COPY $HomeDir/UO2_C6H5SO2_C6H5SO2-m1-doublet.casscf.MB.RasOrb_doublets INPORB
+ &EXPBAS &END
+>> COPY $Project.ExpOrb $HomeDir/$Project.ExpOrb_doublets
+
+/*
+ Perform an SCF calculation on the neutral molecule with a closed-shell ground state
+ In Gaussian  98 alpha electrons       97 beta electrons
+ Here we will have 60 electrons more cause we are doing an all-electron calculation
+ &SCF
+   Occupied=127
+*/
+
+/*
+ Perform a CASSCF calculation on the real molecule
+ 1 active electron in 5 (2*5f_delta, 2*5f_phi, O peroxo) orbitals
+*/
+
+>> COPY $HomeDir/$Project.ExpOrb_doublets INPORB
+ &RASSCF
+   Spin=2
+   Symmetry=1
+   Nactel=1 0 0
+   Inactive=127
+   Ras2=4
+   CIRoots=4 4 1
+   Lumorb
+>> COPY $Project.RasOrb $HomeDir/$Project.RasOrb_doublets
+>> COPY $Project.JobIph $HomeDir/$Project.JobIph_doublets
+
+/*
+  Perform a XMS-CASPT2 calculation for the doublets F states
+*/
+  &CASPT2
+    IPEA=0.0
+    XMUL= ALL
+    THRESHOLDS= 1.0D-09 1.0D-07
+    MAXITER=150
+    CONVERGENCE=1.0D-6
+    IMAG=0.1
+>> COPY $Project.JobMix $HomeDir/$Project.JobMix_doublets
+
+/*
+  Perform a RASSI-SO calculation for the CASSCF doublets F states (JobIph file)
+*/
+>> COPY $HomeDir/$Project.JobIph_doublets JOB001
+  &RASSI
+    EJob
+    SPINorbit
+
+/*
+  Perform a RASSI-SO calculation for the XMS-CASPT2 doublets F states (JobIph file)
+*/
+>> COPY $HomeDir/$Project.JobMix_doublets JOB001
+  &RASSI
+    EJob
+    SPINorbit
+

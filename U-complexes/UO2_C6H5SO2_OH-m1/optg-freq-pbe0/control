@@ -1,0 +1,137 @@
+$title
+$operating system unix
+$symmetry c1
+$redundant    file=coord
+$user-defined bonds    file=coord
+$coord    file=coord
+$optimize
+ internal   on
+ redundant  on
+ cartesian  off
+ global     off
+ basis      off
+$atoms
+c  1-6                                                                         \
+   basis =c aug-cc-pVTZ
+s  7                                                                           \
+   basis =s aug-cc-pVTZ
+o  8,11-12,14                                                                  \
+   basis =o aug-cc-pVTZ
+u  9                                                                           \
+   basis =u SVP(6g)                                                            \
+   ecp   =u def-ecp
+o  10                                                                          \
+   basis =o aug-cc-pVTZ
+h  13,15-19                                                                    \
+   basis =h aug-cc-pVTZ
+$basis    file=basis
+$ecp    file=basis
+$newecp
+$rundimensions
+   dim(fock,dens)=469659
+   natoms=19
+   nshell=255
+   nbf(CAO)=966
+   dim(trafo[SAO<-->AO/CAO])=1279
+   rhfshells=2
+   nbf(AO)=811
+$uhfmo_alpha   file=alpha
+$uhfmo_beta   file=beta
+$uhf
+$scfiterlimit       150
+$thize     0.10000000E-04
+$thime        5
+$scfdump
+$scfintunit
+ unit=30       size=0        file=twoint
+$scfdiis
+$maxcor   2000 MiB  per_core
+$drvopt
+   cartesian  on
+   basis      off
+   global     off
+   hessian    on
+   dipole     on
+   nuclear polarizability
+$interconversion  off
+   qconv=1.d-7
+   maxiter=25
+$coordinateupdate
+   dqmax=0.3
+   interpolate  on
+   statistics    5
+$forceupdate
+   ahlrichs numgeo=0  mingeo=3 maxgeo=4 modus=<g|dq> dynamic fail=0.3
+   threig=0.005  reseig=0.005  thrbig=3.0  scale=1.00  damping=0.0
+$energy    file=energy
+$grad    file=gradient
+$forceapprox    file=forceapprox
+$dft
+   functional pbe0
+   gridsize   m5
+   weight derivatives
+$ssquare from dscf
+          0.755 (not to be modified here)
+$charge from dscf
+         -1.000 (not to be modified here)
+$dipole from force
+  x     0.82827007910868    y     1.12484056066046    z    -0.05270375116710    a.u.
+   | dipole | =    3.5530895926  debye
+$last SCF energy change = -.10166286E-06
+$optinfo       file=optinfo
+$hessapprox   file=hessapprox
+$dipgrad    file=dipgrad
+$hessian (projected)    file=hessian
+$vibrational normal modes    file=vib_normal_modes
+$vibrational reduced masses
+   9.0500134659  15.5716256098  14.1551411214  16.7976643142   8.7494000730
+  15.1101211154   4.4808660540   7.2893286888   8.1770218355   9.2030779042
+  10.2340915309   9.9223583763   8.1600307008  16.3352878817   7.7187168206
+  11.6441520397   8.6637806621  14.2442773730   6.7036726050   9.9343340344
+   2.8762646304   8.7767149133   1.1241737116  11.5173234559   3.7083133740
+  12.6007306429   1.1925423790   6.4300328476   6.8423047458   2.0590207705
+   1.6238797910  15.8883459658  15.6436654178   1.2472423355   1.3772716033
+  16.4387093172   1.3317138946   6.9903921944   7.8732056599   1.4290148422
+   2.6871343892   1.5392820844   2.8974782474   1.0963426396   1.1500730053
+   1.5805893971   3.7595320245   2.2830490334   2.0839957090   6.1804230267
+   5.5360886685   1.0933760982   1.0852983968   1.0890527115   1.0933770137
+   1.0978299338   1.0661901098
+$nvibro       57
+$vibrational spectrum    file=vibspectrum
+$scfdamp   start=0.700  step=0.050  min=0.050
+$newcoord
+# cartesian coordinates shifted along normal mode   1 by *******
+   -0.32275787341174      5.26692156247862      1.96732165804021      c
+   -0.31235757925233      5.56490763044815     -0.68846912337434      c
+   -0.06825985032863      7.96930115070326     -1.86678140514397      c
+    0.19079590215879     10.13083730473175     -0.38738383304572      c
+    0.15732425129421      9.85441075554972      2.26697964901887      c
+   -0.10335470633039      7.42732074715882      3.43559623276137      c
+   -0.54674434498380      2.81098463985796     -2.73293155780506      s
+   -2.49650575198480      1.17311177956400     -1.33710283506801      o
+    0.21504201924405     -2.36182928895489      0.17551737966892      u
+    0.93550499618453     -0.75670540539618      3.12291229823928      o
+    2.00822221152141      1.52432941417299     -2.35934763111106      o
+   -2.08111791233533     -5.21605256627513      2.14160033950109      o
+   -2.71633037972139     -6.48477359462559      1.01586035889137      h
+    0.03982830806883     -4.16928724033644     -2.72692220178615      o
+   -0.07810264547719      8.14511305258142     -3.94263454293287      h
+    0.40821400292246     12.02141513991118     -1.30381587842450      h
+    0.33861707599689     11.53244590074494      3.43368604957196      h
+   -0.12274293206025      7.22020502578539      5.51061421185589      h
+   -0.45183183022373      3.36461540784267      2.83761933558187      h
+$natural orbitals    file=natural
+$natural orbital occupation    file=natural
+$scfconv   8
+$scforbitalshift  closedshell=.05
+$subenergy  Etot         E1                  Ej                Ex                 Ec                 En
+-1483.191715888    -4782.839580296     2115.493769217    -95.20851779813    -4.991349382184     1284.353962371
+$forceinit on
+   diag=default
+$alpha shells
+ a       1-66                                   ( 1 )
+$beta shells
+ a       1-65                                   ( 1 )
+$last step     freeh
+$orbital_max_rnorm 0.27696667384008E-04
+$end

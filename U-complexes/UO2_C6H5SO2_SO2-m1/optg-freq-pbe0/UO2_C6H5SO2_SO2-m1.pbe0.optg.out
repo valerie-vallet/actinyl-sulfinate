@@ -1,0 +1,1221 @@
+
+OPTIMIZATION CYCLE 25
+Tue Dec 17 07:47:44 CET 2019
+
+   OpenMP run-time library returned nthreads = 16
+
+ grad (u-0-12.local) : TURBOMOLE rev. V7.4.1 (b987a8a8) compiled 15 Oct 2019 at 12:10:21
+ Copyright (C) 2019 TURBOMOLE GmbH, Karlsruhe
+
+
+    2019-12-17 07:47:45.026 
+
+
+ UHF modus switched on !
+
+
+                             g r a d - program
+
+                reinhart ahlrichs, hans horn & ansgar schaefer
+                 density functional version : oliver treutler
+
+
+                          quantum chemistry group
+                          universitaet  karlsruhe
+                                   germany
+
+
+
+
+                                                 
+                                 References:     
+                                                 
+          Density Functional:                              
+              O. Treutler and R. Ahlrichs                      
+              Efficient Molecular Numerical Integration Schemes
+              J. chem. Phys. 102: 346 (1995)                   
+          Parallel Version:                                
+              Performance of parallel TURBOMOLE for Density    
+              Functional Calculations                          
+              M. v.Arnim and R. Ahlrichs                      
+              J. comp. Chem. 19: 1746 (1998)                   
+                                         
+
+
+
+
+              +--------------------------------------------------+
+              | Atomic coordinate, charge and isotop information |
+              +--------------------------------------------------+
+
+                    atomic coordinates            atom    charge  isotop
+          0.32429929    6.38497917   -0.15721995    c      6.000     0
+          2.60125511    3.81750737   -0.22374891    s     16.000     0
+          1.92819386    2.32043466    2.15789824    o      8.000     0
+          0.26460764   -1.62780039    0.03048440    u     92.000     0
+         -1.45383639   -5.58481043   -2.12833426    o      8.000     0
+         -1.97302981   -7.11092394    0.27188002    s     16.000     0
+         -1.20658893   -5.48199494    2.53417852    o      8.000     0
+          1.67747723    2.21251450   -2.44589872    o      8.000     0
+          3.40904563   -2.92134424   -0.10329708    o      8.000     0
+         -2.90609992   -0.35095186    0.17061774    o      8.000     0
+          1.23000681    8.83505703   -0.29235515    c      6.000     0
+         -0.45232345   10.85208311   -0.24269798    c      6.000     0
+         -3.02415398   10.39030616   -0.05720275    c      6.000     0
+         -3.91566589    7.91953033    0.07696496    c      6.000     0
+         -2.24992742    5.90046117    0.02773239    c      6.000     0
+          3.25040556    9.15904060   -0.43551180    h      1.000     0
+          0.24486967   12.77594142   -0.34767666    h      1.000     0
+         -4.34423439   11.95704529   -0.01626276    h      1.000     0
+         -5.92886527    7.56713097    0.22161756    h      1.000     0
+         -2.91205080    3.96080636    0.12910023    h      1.000     0
+ 
+       center of nuclear mass  :   -0.00128833   -0.00047631    0.00750147
+       center of nuclear charge:   -0.05744330    0.31085891    0.00346748
+
+              +--------------------------------------------------+
+              |               basis set information              |
+              +--------------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    c        6     66     46   aug-cc-pVTZ   [5s4p3d2f|19s6p3d2f]
+    s        2    122     50   aug-cc-pVTZ   [6s5p3d2f|42s17p3d2f]
+    o        6     66     46   aug-cc-pVTZ   [5s4p3d2f|19s6p3d2f]
+    u        1    213    117   SVP(6g)   [10s9p5d4f3g|14s13p10d8f6g]
+    h        5     25     23   aug-cc-pVTZ   [4s3p2d|6s3p2d]
+   ---------------------------------------------------------------------------
+   total:   20   1374    884
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :  186
+   total number of contracted shells         :  276
+   total number of cartesian basis functions : 1055
+   total number of SCF-basis functions       :  884
+
+
+ integral neglect threshold       :  0.32E-12
+ integral storage threshold THIZE :  0.10E-04
+ integral storage threshold THIME :         5
+
+
+ WARNING : cannot change filename for statistics 
+ number of unique ecp types :                     1
+
+ symmetry group of the molecule :   c1 
+
+ the group has the following generators :
+   c1(z)
+
+    1 symmetry operations found
+
+ there are 1 real representations :   a   
+
+ maximum number of shells which are related by symmetry :  1
+
+
+    mo occupation :
+   irrep   mo's   occupied
+    a      884       78
+ 
+ number of basis functions   :                    884
+ number of occupied orbitals :                     78
+ 
+  MOs are in ASCII format !
+
+
+ reading orbital data $uhfmo_alpha  from file alpha
+ orbital characterization : scfconv=8
+
+ reading orbital data $uhfmo_beta  from file beta
+ orbital characterization : scfconv=8
+ time elapsed for calculating density matrices :   1.619 sec
+
+  grad preliminaries : cpu elapsed         5.000 s
+                       wall                1.217 s
+  
+           ------------------
+           density functional
+           ------------------
+ PBE0 hybrid functional
+ exchange:    3/4 (LDA+PBE) + 1/4 HF
+ correlation: LDA (PW) + PBE
+
+ iterations will be done with small grid
+  
+ spherical integration : Lebedev's spherical grid
+ spherical gridsize    :                     5
+    i.e. gridpoints    :                   590
+ value for diffuse not defined
+ radial integration    : Chebyshev 2nd kind (scaling 3)
+ radial gridsize       :                     8
+ integration cells     :                    20
+ partition function    : becke
+ partition sharpness   :                     3
+  
+
+ <rpardf> : input of entry tasksize
+           from data group '$pardft' failed !
+
+               Default values taken
+
+ <rpardf> : input of entry memdiv
+           from data group '$pardft' failed !
+
+               Default values taken
+
+
+
+                    and now featuring
+                             the super-duper gradient    ..... wow .....
+
+
+ ------------------------------------------------------------------------------
+
+            SCF ENERGY GRADIENT with respect to NUCLEAR COORDINATES            
+
+ ------------------------------------------------------------------------------
+
+
+
+    ----------------------------------------
+     S+T+V CONTRIBUTIONS TO ENERGY GRADIENT 
+    ----------------------------------------
+
+ 1e-integral 1st. derivatives will be neglected if expon. factor < 0.100000E-11
+
+  cpu time for 1e-part of gradient :     14.88 sec
+
+
+    -----------------------------------------------
+     TWO ELECTRON CONTRIBUTIONS TO ENERGY GRADIENT 
+    -----------------------------------------------
+
+ biggest 1-particle AO density matrix element is expected to be    5.1826021377
+
+ setting up bound for integral derivative estimation
+
+ increment for numerical differentiation : 0.00050000
+
+ biggest AO integral is expected to be    25.028879086
+ biggest cartesian 1st derivative AO integral is expected to be    98.509992119
+
+ 2e-integral 1st. derivatives will be neglected if expon. factor < 0.100000E-07
+ outer boundary for 2e-integral derivative neglection is 0.620516E-10
+
+  cpu time for 2e-part of gradient :     48.01 min
+
+          Overall gridpoints after grid construction =        353633
+ number of electrons: 0.37422226249     of atom    1
+ number of electrons: 0.24681035505     of atom    1
+ number of electrons: 0.77973068935     of atom    1
+ number of electrons: 0.29856814831     of atom    1
+ number of electrons: 0.28616238540     of atom    1
+ number of electrons: 0.39107507315     of atom    1
+ number of electrons: 0.43812548341     of atom    1
+ number of electrons: 0.31835430736     of atom    1
+ number of electrons: 0.39403923804     of atom    1
+ number of electrons: 0.29601051699     of atom    1
+ number of electrons: 0.41699309662     of atom    1
+ number of electrons: 0.59698860785     of atom    1
+ number of electrons: 0.31019661464     of atom    1
+ number of electrons: 0.41207194535     of atom    1
+ number of electrons: 0.32075404297     of atom    1
+ number of electrons: 0.32646934719     of atom    1
+ number of electrons: 0.88505165657     of atom    2
+ number of electrons: 0.71213944002     of atom    2
+ number of electrons:  1.0733966337     of atom    2
+ number of electrons: 0.94666734834     of atom    2
+ number of electrons: 0.85101741760     of atom    2
+ number of electrons:  1.0600396970     of atom    2
+ number of electrons: 0.96819462594     of atom    2
+ number of electrons: 0.73404672038     of atom    2
+ number of electrons: 0.38046357375     of atom    2
+ number of electrons: 0.83174862174     of atom    2
+ number of electrons: 0.71694876981     of atom    2
+ number of electrons:  1.0378113245     of atom    2
+ number of electrons: 0.85737843492     of atom    2
+ number of electrons:  1.1514243705     of atom    2
+ number of electrons:  1.3857082663     of atom    2
+ number of electrons: 0.95145199923     of atom    2
+ number of electrons: 0.51909827560     of atom    3
+ number of electrons: 0.50021983085     of atom    3
+ number of electrons: 0.58169462918     of atom    3
+ number of electrons: 0.60145889155     of atom    3
+ number of electrons: 0.44656927247     of atom    3
+ number of electrons: 0.66346702594     of atom    3
+ number of electrons: 0.54904258853     of atom    3
+ number of electrons: 0.50648041033     of atom    3
+ number of electrons: 0.35229271047     of atom    3
+ number of electrons: 0.96816842421     of atom    3
+ number of electrons: 0.52840514878     of atom    3
+ number of electrons: 0.55737222423     of atom    3
+ number of electrons: 0.74663594012     of atom    3
+ number of electrons: 0.59593069028     of atom    3
+ number of electrons: 0.45512716329     of atom    3
+ number of electrons: 0.53185360152     of atom    3
+ number of electrons:  1.1334676853     of atom    4
+ number of electrons:  2.6559945978     of atom    4
+ number of electrons:  1.8347646394     of atom    4
+ number of electrons:  2.2526835796     of atom    4
+ number of electrons:  1.4508464508     of atom    4
+ number of electrons:  2.5224014191     of atom    4
+ number of electrons:  1.2374222648     of atom    4
+ number of electrons:  1.5668849540     of atom    4
+ number of electrons:  2.0254625449     of atom    4
+ number of electrons:  1.3881237483     of atom    4
+ number of electrons:  1.5086638963     of atom    4
+ number of electrons:  1.3336502544     of atom    4
+ number of electrons:  2.3885983617     of atom    4
+ number of electrons:  2.2626751589     of atom    4
+ number of electrons:  2.5827098829     of atom    4
+ number of electrons:  1.1463456300     of atom    4
+ number of electrons: 0.85362528409     of atom    5
+ number of electrons: 0.53379161804     of atom    5
+ number of electrons: 0.62079344368     of atom    5
+ number of electrons: 0.50940719457     of atom    5
+ number of electrons: 0.98066226725     of atom    5
+ number of electrons: 0.73924132346     of atom    5
+ number of electrons: 0.46291352489     of atom    5
+ number of electrons: 0.45475826996     of atom    5
+ number of electrons: 0.59714375579     of atom    5
+ number of electrons: 0.61841130803     of atom    5
+ number of electrons: 0.43194545254     of atom    5
+ number of electrons: 0.72280509702     of atom    5
+ number of electrons: 0.49655180697     of atom    5
+ number of electrons: 0.46322141514     of atom    5
+ number of electrons: 0.47064550568     of atom    5
+ number of electrons: 0.31083549913     of atom    5
+ number of electrons:  1.0430225593     of atom    6
+ number of electrons: 0.97688788468     of atom    6
+ number of electrons:  1.0962434405     of atom    6
+ number of electrons: 0.83737334419     of atom    6
+ number of electrons: 0.93276644644     of atom    6
+ number of electrons:  1.0063628933     of atom    6
+ number of electrons:  1.0246084310     of atom    6
+ number of electrons:  1.4206282561     of atom    6
+ number of electrons: 0.78877853547     of atom    6
+ number of electrons: 0.80495152320     of atom    6
+ number of electrons: 0.82612873163     of atom    6
+ number of electrons:  1.1305696992     of atom    6
+ number of electrons: 0.59799831591     of atom    6
+ number of electrons: 0.87307458102     of atom    6
+ number of electrons:  1.0187161262     of atom    6
+ number of electrons:  1.1031868111     of atom    6
+ number of electrons: 0.61558697499     of atom    7
+ number of electrons: 0.47079669414     of atom    7
+ number of electrons: 0.58703630203     of atom    7
+ number of electrons: 0.48816100937     of atom    7
+ number of electrons: 0.46208262233     of atom    7
+ number of electrons: 0.52547556690     of atom    7
+ number of electrons: 0.55970675159     of atom    7
+ number of electrons:  1.1763852604     of atom    7
+ number of electrons: 0.59438579645     of atom    7
+ number of electrons: 0.48865013386     of atom    7
+ number of electrons: 0.47325467447     of atom    7
+ number of electrons: 0.49925117094     of atom    7
+ number of electrons: 0.61114361696     of atom    7
+ number of electrons: 0.69932410106     of atom    7
+ number of electrons: 0.50693041435     of atom    7
+ number of electrons: 0.50885450375     of atom    7
+ number of electrons: 0.49188831247     of atom    8
+ number of electrons: 0.44952394390     of atom    8
+ number of electrons: 0.56434550521     of atom    8
+ number of electrons: 0.58590130350     of atom    8
+ number of electrons: 0.53708384973     of atom    8
+ number of electrons: 0.63798334075     of atom    8
+ number of electrons: 0.70964219065     of atom    8
+ number of electrons: 0.55788337189     of atom    8
+ number of electrons: 0.44340658804     of atom    8
+ number of electrons: 0.98708293409     of atom    8
+ number of electrons: 0.41137582118     of atom    8
+ number of electrons: 0.49404214032     of atom    8
+ number of electrons: 0.58556135649     of atom    8
+ number of electrons: 0.58694864630     of atom    8
+ number of electrons: 0.53497029332     of atom    8
+ number of electrons: 0.52432555000     of atom    8
+ number of electrons: 0.73343904281     of atom    9
+ number of electrons: 0.45026031801     of atom    9
+ number of electrons: 0.44249445843     of atom    9
+ number of electrons:  1.0810097505     of atom    9
+ number of electrons: 0.51987068439     of atom    9
+ number of electrons: 0.60644409836     of atom    9
+ number of electrons: 0.75535836110     of atom    9
+ number of electrons: 0.39156317888     of atom    9
+ number of electrons: 0.51965148895     of atom    9
+ number of electrons: 0.64117136503     of atom    9
+ number of electrons: 0.56384563764     of atom    9
+ number of electrons: 0.57398677897     of atom    9
+ number of electrons: 0.37133823016     of atom    9
+ number of electrons: 0.59657160879     of atom    9
+ number of electrons: 0.49079347539     of atom    9
+ number of electrons: 0.59503235965     of atom    9
+ number of electrons: 0.61239008619     of atom   10
+ number of electrons: 0.62984173205     of atom   10
+ number of electrons: 0.53497765470     of atom   10
+ number of electrons: 0.53883165243     of atom   10
+ number of electrons:  1.0460124193     of atom   10
+ number of electrons: 0.57013994049     of atom   10
+ number of electrons: 0.29105941783     of atom   10
+ number of electrons: 0.59506763388     of atom   10
+ number of electrons: 0.60758615756     of atom   10
+ number of electrons: 0.60416155716     of atom   10
+ number of electrons: 0.63314553036     of atom   10
+ number of electrons: 0.52871600022     of atom   10
+ number of electrons: 0.53269239175     of atom   10
+ number of electrons: 0.62789260186     of atom   10
+ number of electrons: 0.39770319773     of atom   10
+ number of electrons: 0.52570547205     of atom   10
+ number of electrons: 0.22584240850     of atom   11
+ number of electrons: 0.31254401443     of atom   11
+ number of electrons: 0.29357071952     of atom   11
+ number of electrons: 0.22674912709     of atom   11
+ number of electrons: 0.37797218900     of atom   11
+ number of electrons: 0.30613506990     of atom   11
+ number of electrons: 0.30500764458     of atom   11
+ number of electrons: 0.30897596518     of atom   11
+ number of electrons: 0.22411153945     of atom   11
+ number of electrons: 0.31831753204     of atom   11
+ number of electrons: 0.25607729797     of atom   11
+ number of electrons: 0.52947767695     of atom   11
+ number of electrons: 0.39269944298     of atom   11
+ number of electrons: 0.71633407154     of atom   11
+ number of electrons: 0.35419540044     of atom   11
+ number of electrons: 0.36153946200     of atom   11
+ number of electrons: 0.23785263927     of atom   12
+ number of electrons: 0.25372925683     of atom   12
+ number of electrons: 0.32029228389     of atom   12
+ number of electrons: 0.29212001208     of atom   12
+ number of electrons: 0.47874415237     of atom   12
+ number of electrons: 0.59058490763     of atom   12
+ number of electrons: 0.35558278965     of atom   12
+ number of electrons: 0.29510079453     of atom   12
+ number of electrons: 0.27023804492     of atom   12
+ number of electrons: 0.20772214169     of atom   12
+ number of electrons: 0.25756452766     of atom   12
+ number of electrons: 0.28295505678     of atom   12
+ number of electrons: 0.35262073377     of atom   12
+ number of electrons: 0.22590267399     of atom   12
+ number of electrons: 0.73124290885     of atom   12
+ number of electrons: 0.36561606305     of atom   12
+ number of electrons: 0.23000461509     of atom   13
+ number of electrons: 0.37815000774     of atom   13
+ number of electrons: 0.76969581417     of atom   13
+ number of electrons: 0.33506480298     of atom   13
+ number of electrons: 0.36265106186     of atom   13
+ number of electrons: 0.51446854980     of atom   13
+ number of electrons: 0.27355278624     of atom   13
+ number of electrons: 0.26790963584     of atom   13
+ number of electrons: 0.22177351994     of atom   13
+ number of electrons: 0.36675817416     of atom   13
+ number of electrons: 0.31449145138     of atom   13
+ number of electrons: 0.28154332783     of atom   13
+ number of electrons: 0.42774627389     of atom   13
+ number of electrons: 0.30454255422     of atom   13
+ number of electrons: 0.23779830203     of atom   13
+ number of electrons: 0.22477459267     of atom   13
+ number of electrons: 0.25418995694     of atom   14
+ number of electrons: 0.39048360967     of atom   14
+ number of electrons: 0.50976735830     of atom   14
+ number of electrons: 0.35389604749     of atom   14
+ number of electrons: 0.74562963102     of atom   14
+ number of electrons: 0.22361068510     of atom   14
+ number of electrons: 0.16473138773     of atom   14
+ number of electrons: 0.23558393977     of atom   14
+ number of electrons: 0.26208014535     of atom   14
+ number of electrons: 0.27144364795     of atom   14
+ number of electrons: 0.26236498579     of atom   14
+ number of electrons: 0.38227040895     of atom   14
+ number of electrons: 0.35773920538     of atom   14
+ number of electrons: 0.28378932709     of atom   14
+ number of electrons: 0.45130532757     of atom   14
+ number of electrons: 0.35994973517     of atom   14
+ number of electrons: 0.27054053604     of atom   15
+ number of electrons: 0.27716085018     of atom   15
+ number of electrons: 0.35374859733     of atom   15
+ number of electrons: 0.28574460873     of atom   15
+ number of electrons: 0.75123745135     of atom   15
+ number of electrons: 0.40677331907     of atom   15
+ number of electrons: 0.34858751952     of atom   15
+ number of electrons: 0.28269562764     of atom   15
+ number of electrons: 0.31206461821     of atom   15
+ number of electrons: 0.27410413769     of atom   15
+ number of electrons: 0.29762720821     of atom   15
+ number of electrons: 0.41619269723     of atom   15
+ number of electrons: 0.23077467324     of atom   15
+ number of electrons: 0.49130423147     of atom   15
+ number of electrons: 0.22197966207     of atom   15
+ number of electrons: 0.26873537159     of atom   15
+ number of electrons: 0.85775337851E-01 of atom   16
+ number of electrons: 0.57637186152E-01 of atom   16
+ number of electrons: 0.58468312053E-01 of atom   16
+ number of electrons: 0.73908327176E-01 of atom   16
+ number of electrons: 0.71876113313E-01 of atom   16
+ number of electrons: 0.88574081086E-01 of atom   16
+ number of electrons: 0.64574985059E-01 of atom   16
+ number of electrons: 0.86696255296E-01 of atom   16
+ number of electrons: 0.11508167177     of atom   16
+ number of electrons: 0.13181531202     of atom   16
+ number of electrons: 0.11596247218     of atom   16
+ number of electrons: 0.12207940659     of atom   16
+ number of electrons: 0.11181632967     of atom   16
+ number of electrons: 0.11133589836     of atom   16
+ number of electrons: 0.13733690169     of atom   16
+ number of electrons: 0.11270762717     of atom   16
+ number of electrons: 0.78824671566E-01 of atom   17
+ number of electrons: 0.12788666442     of atom   17
+ number of electrons: 0.10021183996     of atom   17
+ number of electrons: 0.93354203199E-01 of atom   17
+ number of electrons: 0.11681850766     of atom   17
+ number of electrons: 0.10050827536     of atom   17
+ number of electrons: 0.94405616977E-01 of atom   17
+ number of electrons: 0.10593319434     of atom   17
+ number of electrons: 0.10425620424     of atom   17
+ number of electrons: 0.83170950585E-01 of atom   17
+ number of electrons: 0.83162205161E-01 of atom   17
+ number of electrons: 0.74495920642E-01 of atom   17
+ number of electrons: 0.93819202994E-01 of atom   17
+ number of electrons: 0.93361693338E-01 of atom   17
+ number of electrons: 0.76680813830E-01 of atom   17
+ number of electrons: 0.80173372298E-01 of atom   17
+ number of electrons: 0.89630981971E-01 of atom   18
+ number of electrons: 0.12662244794     of atom   18
+ number of electrons: 0.99940562043E-01 of atom   18
+ number of electrons: 0.93713814403E-01 of atom   18
+ number of electrons: 0.89066794199E-01 of atom   18
+ number of electrons: 0.61175513613E-01 of atom   18
+ number of electrons: 0.80404481554E-01 of atom   18
+ number of electrons: 0.11416624650     of atom   18
+ number of electrons: 0.13498380546     of atom   18
+ number of electrons: 0.10352043123     of atom   18
+ number of electrons: 0.95204084574E-01 of atom   18
+ number of electrons: 0.85844099561E-01 of atom   18
+ number of electrons: 0.90635428898E-01 of atom   18
+ number of electrons: 0.78863941346E-01 of atom   18
+ number of electrons: 0.93236456686E-01 of atom   18
+ number of electrons: 0.73456800949E-01 of atom   18
+ number of electrons: 0.11301538428     of atom   19
+ number of electrons: 0.67370697148E-01 of atom   19
+ number of electrons: 0.74246056012E-01 of atom   19
+ number of electrons: 0.84108267515E-01 of atom   19
+ number of electrons: 0.11432163540     of atom   19
+ number of electrons: 0.90404104063E-01 of atom   19
+ number of electrons: 0.10877714464     of atom   19
+ number of electrons: 0.10245552288     of atom   19
+ number of electrons: 0.90143011326E-01 of atom   19
+ number of electrons: 0.60079627487E-01 of atom   19
+ number of electrons: 0.11549191439     of atom   19
+ number of electrons: 0.11310204517     of atom   19
+ number of electrons: 0.84434614123E-01 of atom   19
+ number of electrons: 0.11630488743     of atom   19
+ number of electrons: 0.76281494974E-01 of atom   19
+ number of electrons: 0.88832612795E-01 of atom   19
+ number of electrons: 0.11990351974     of atom   20
+ number of electrons: 0.81718329953E-01 of atom   20
+ number of electrons: 0.71382319580E-01 of atom   20
+ number of electrons: 0.82072753869E-01 of atom   20
+ number of electrons: 0.10313652057     of atom   20
+ number of electrons: 0.10229358410     of atom   20
+ number of electrons: 0.10552759471     of atom   20
+ number of electrons: 0.77792964350E-01 of atom   20
+ number of electrons: 0.10832873052     of atom   20
+ number of electrons: 0.80970779940E-01 of atom   20
+ number of electrons: 0.12649030865     of atom   20
+ number of electrons: 0.80134948184E-01 of atom   20
+ number of electrons: 0.12778472285     of atom   20
+ number of electrons: 0.87927728830E-01 of atom   20
+ number of electrons: 0.93271470660E-01 of atom   20
+ number of electrons: 0.81903592218E-01 of atom   20
+
+ Integrated ground state density     :   154.0000006877513    
+
+ Integrated ground state spin density:   2.000002452296124    
+
+
+          ------------------------------------------------
+           cartesian gradient of the energy (hartree/bohr)
+          ------------------------------------------------
+
+  ATOM      1 c           2 s           3 o           4 u           5 o 
+dE/dx -0.2561882D-05 -0.1421304D-05  0.1314183D-04  0.1255088D-04  0.3771688D-05
+dE/dy -0.4506172D-05 -0.1738085D-05 -0.1057782D-04  0.3802699D-04 -0.3248055D-05
+dE/dz -0.8446085D-05  0.8188329D-05 -0.2987598D-04 -0.1734865D-04 -0.4012375D-05
+
+  ATOM      6 s           7 o           8 o           9 o          10 o 
+dE/dx  0.2507165D-05  0.9327881D-05 -0.8707395D-05  0.3637771D-05  0.1201706D-05
+dE/dy -0.5039482D-06 -0.3207346D-04 -0.8573229D-05  0.1243942D-05 -0.4308523D-05
+dE/dz  0.5423600D-05  0.9351742D-05 -0.1641612D-04 -0.1959638D-04  0.5766310D-05
+
+  ATOM     11 c          12 c          13 c          14 c          15 c 
+dE/dx  0.8725219D-06 -0.6648181D-06  0.6118064D-05 -0.1670418D-06  0.2800323D-05
+dE/dy -0.7491495D-05 -0.5670886D-05  0.2441689D-06 -0.3313327D-05  0.1507505D-05
+dE/dz -0.6613445D-05 -0.2442359D-05  0.4710202D-05  0.8660344D-05  0.3676940D-05
+
+  ATOM     16 h          17 h          18 h          19 h          20 h 
+dE/dx -0.1880724D-05 -0.1755407D-06 -0.1187709D-06  0.1685873D-05 -0.2862116D-05
+dE/dy -0.3077635D-05 -0.4867957D-05 -0.3962036D-05 -0.7507351D-06 -0.1381856D-05
+dE/dz -0.1239814D-04 -0.1840747D-05  0.1173279D-04  0.1494788D-04  0.2141010D-05
+ 
+ resulting FORCE  (fx,fy,fz) = (0.391D-04,-.550D-04,-.444D-04)
+ resulting MOMENT (mx,my,mz) = (0.136D-03,0.488D-03,0.119D-03)
+
+
+ exx =      -0.000033 eyy =      -0.000237 ezz =       0.000024
+ eyz =      -0.000001 exz =      -0.000177 exy =      -0.000013
+
+
+ **********************************************************************
+  |maximum component of gradient| : 0.38026994E-04  (atom  4 u )       
+   gradient norm                  : 0.79373359E-04
+ **********************************************************************
+   ***  cartesian gradients written onto <gradient>  ***
+
+
+     --- calculation of the energy gradient finished ---
+
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time : 50 minutes and  8 seconds
+         total wall-time :  3 minutes and 21 seconds
+    ------------------------------------------------------------------------
+
+   ****  grad : all done  ****
+
+
+    2019-12-17 07:51:05.753 
+
+fine, there is no data group "$actual step"
+next step = relax
+
+ statpt (u-0-12.local) : TURBOMOLE rev. V7.4.1 (b987a8a8) compiled 15 Oct 2019 at 12:03:25
+ Copyright (C) 2019 TURBOMOLE GmbH, Karlsruhe
+
+
+    2019-12-17 07:51:05.821 
+
+
+
+                           this is S T A T P T   
+
+
+                     hessian and coordinate update for
+                          stationary point search 
+
+                     by barbara unterreiner, marek sierka,
+                           and reinhart ahlrichs
+
+                          quantum chemistry group
+                          universitaet  karlsruhe
+                                  germany
+
+
+
+
+              +--------------------------------------------------+
+              | Atomic coordinate, charge and isotop information |
+              +--------------------------------------------------+
+
+                    atomic coordinates            atom    charge  isotop
+          0.32429929    6.38497917   -0.15721995    c      6.000     0
+          2.60125511    3.81750737   -0.22374891    s     16.000     0
+          1.92819386    2.32043466    2.15789824    o      8.000     0
+          0.26460764   -1.62780039    0.03048440    u     92.000     0
+         -1.45383639   -5.58481043   -2.12833426    o      8.000     0
+         -1.97302981   -7.11092394    0.27188002    s     16.000     0
+         -1.20658893   -5.48199494    2.53417852    o      8.000     0
+          1.67747723    2.21251450   -2.44589872    o      8.000     0
+          3.40904563   -2.92134424   -0.10329708    o      8.000     0
+         -2.90609992   -0.35095186    0.17061774    o      8.000     0
+          1.23000681    8.83505703   -0.29235515    c      6.000     0
+         -0.45232345   10.85208311   -0.24269798    c      6.000     0
+         -3.02415398   10.39030616   -0.05720275    c      6.000     0
+         -3.91566589    7.91953033    0.07696496    c      6.000     0
+         -2.24992742    5.90046117    0.02773239    c      6.000     0
+          3.25040556    9.15904060   -0.43551180    h      1.000     0
+          0.24486967   12.77594142   -0.34767666    h      1.000     0
+         -4.34423439   11.95704529   -0.01626276    h      1.000     0
+         -5.92886527    7.56713097    0.22161756    h      1.000     0
+         -2.91205080    3.96080636    0.12910023    h      1.000     0
+ 
+       center of nuclear mass  :   -0.00128833   -0.00047631    0.00750147
+       center of nuclear charge:   -0.05744330    0.31085891    0.00346748
+  Keyword $statpt not found - using default options
+ 
+        ***************  Stationary point options ******************
+        ************************************************************
+           Maximum allowed trust radius:           3.000000E-01
+           Minimum allowed trust radius:           1.000000E-03
+           Initial trust radius:                   1.500000E-01
+           GDIIS used if gradient norm <           1.000000E-02
+           Number of previous steps for GDIIS:       5
+           Hessian update method:                  BFGS
+                        *** Convergence criteria ***                
+           Threshold for energy change:            1.000000E-06
+           Threshold for max displacement element: 1.000000E-03
+           Threshold for max gradient element :    1.000000E-04
+           Threshold for RMS of displacement:      5.000000E-04
+           Threshold for RMS of gradient:          5.000000E-04
+        ************************************************************
+ 
+
+ keyword $statp missing in file <control>
+
+  Keyword $statpt not found - using default options
+  actual coordinates :
+         0.324299293744         6.384979166664        -0.157219954121
+         2.601255114147         3.817507373922        -0.223748905442
+         1.928193855091         2.320434663241         2.157898235164
+         0.264607637743        -1.627800387087         0.030484402091
+        -1.453836394439        -5.584810427248        -2.128334257643
+        -1.973029813779        -7.110923935097         0.271880016387
+        -1.206588926141        -5.481994943233         2.534178523344
+         1.677477231321         2.212514500622        -2.445898723869
+         3.409045629019        -2.921344238187        -0.103297078505
+        -2.906099918749        -0.350951863687         0.170617735677
+         1.230006808158         8.835057030451        -0.292355148235
+        -0.452323454197        10.852083112469        -0.242697977235
+        -3.024153977561        10.390306162417        -0.057202752185
+        -3.915665894855         7.919530333235         0.076964959276
+        -2.249927421215         5.900461168589         0.027732389220
+         3.250405564476         9.159040599730        -0.435511795217
+         0.244869668527        12.775941420216        -0.347676655658
+        -4.344234394624        11.957045294183        -0.016262757486
+        -5.928865268100         7.567130972601         0.221617559044
+        -2.912050804232         3.960806361279         0.129100234673
+  actual gradients :
+        -0.000002561882        -0.000004506172        -0.000008446085
+        -0.000001421304        -0.000001738085         0.000008188329
+         0.000013141825        -0.000010577816        -0.000029875980
+         0.000012550878         0.000038026994        -0.000017348648
+         0.000003771688        -0.000003248055        -0.000004012375
+         0.000002507165        -0.000000503948         0.000005423600
+         0.000009327881        -0.000032073464         0.000009351742
+        -0.000008707395        -0.000008573229        -0.000016416116
+         0.000003637771         0.000001243942        -0.000019596376
+         0.000001201706        -0.000004308523         0.000005766310
+         0.000000872522        -0.000007491495        -0.000006613445
+        -0.000000664818        -0.000005670886        -0.000002442359
+         0.000006118064         0.000000244169         0.000004710202
+        -0.000000167042        -0.000003313327         0.000008660344
+         0.000002800323         0.000001507505         0.000003676940
+        -0.000001880724        -0.000003077635        -0.000012398143
+        -0.000000175541        -0.000004867957        -0.000001840747
+        -0.000000118771        -0.000003962036         0.000011732787
+         0.000001685873        -0.000000750735         0.000014947885
+        -0.000002862116        -0.000001381856         0.000002141010
+     Number of symmetry restricted degrees of freedom:    60
+     Constituted by:     3 translational degrees of freedom
+                         3 rotational degrees of freedom
+                      54 internal degrees of freedom
+
+  *************************************************************************
+   ATOM                      CARTESIAN COORDINATES
+    1 c       0.32429929374367      6.38497916666426     -0.15721995412140
+    2 s       2.60125511414746      3.81750737392201     -0.22374890544198
+    3 o       1.92819385509088      2.32043466324117      2.15789823516367
+    4 u       0.26460763774304     -1.62780038708660      0.03048440209139
+    5 o      -1.45383639443936     -5.58481042724784     -2.12833425764257
+    6 s      -1.97302981377880     -7.11092393509665      0.27188001638716
+    7 o      -1.20658892614137     -5.48199494323268      2.53417852334391
+    8 o       1.67747723132081      2.21251450062239     -2.44589872386877
+    9 o       3.40904562901920     -2.92134423818662     -0.10329707850469
+   10 o      -2.90609991874882     -0.35095186368652      0.17061773567707
+   11 c       1.23000680815848      8.83505703045066     -0.29235514823536
+   12 c      -0.45232345419672     10.85208311246867     -0.24269797723529
+   13 c      -3.02415397756087     10.39030616241740     -0.05720275218472
+   14 c      -3.91566589485473      7.91953033323491      0.07696495927594
+   15 c      -2.24992742121476      5.90046116858861      0.02773238922033
+   16 h       3.25040556447599      9.15904059973013     -0.43551179521694
+   17 h       0.24486966852715     12.77594142021628     -0.34767665565787
+   18 h      -4.34423439462399     11.95704529418300     -0.01626275748622
+   19 h      -5.92886526809973      7.56713097260053      0.22161755904396
+   20 h      -2.91205080423174      3.96080636127927      0.12910023467273
+  *************************************************************************
+   ATOM                      CARTESIAN GRADIENTS  
+    1 c      -0.00000256188155     -0.00000450617217     -0.00000844608516
+    2 s      -0.00000142130359     -0.00000173808548      0.00000818832883
+    3 o       0.00001314182521     -0.00001057781646     -0.00002987597954
+    4 u       0.00001255087768      0.00003802699378     -0.00001734864802
+    5 o       0.00000377168837     -0.00000324805461     -0.00000401237536
+    6 s       0.00000250716523     -0.00000050394822      0.00000542360036
+    7 o       0.00000932788059     -0.00003207346437      0.00000935174203
+    8 o      -0.00000870739508     -0.00000857322934     -0.00001641611564
+    9 o       0.00000363777085      0.00000124394167     -0.00001959637629
+   10 o       0.00000120170561     -0.00000430852306      0.00000576630994
+   11 c       0.00000087252185     -0.00000749149510     -0.00000661344540
+   12 c      -0.00000066481812     -0.00000567088594     -0.00000244235920
+   13 c       0.00000611806402      0.00000024416894      0.00000471020230
+   14 c      -0.00000016704175     -0.00000331332672      0.00000866034394
+   15 c       0.00000280032298      0.00000150750503      0.00000367693955
+   16 h      -0.00000188072437     -0.00000307763515     -0.00001239814290
+   17 h      -0.00000017554071     -0.00000486795659     -0.00000184074721
+   18 h      -0.00000011877091     -0.00000396203565      0.00001173278741
+   19 h       0.00000168587307     -0.00000075073509      0.00001494788459
+   20 h      -0.00000286211632     -0.00000138185587      0.00000214100997
+  *************************************************************************
+
+  norm of actual CARTESIAN gradient:  7.93734E-05
+  norm of actual INTERNAL  gradient:  1.27394E-04
+
+  ENERGY =   -1955.8481691950 a.u.; # of cycle =   44
+
+  Approximate Hessian read from $hessapprox data section
+
+  Hessian updated according to BFGS formula
+  Number of zero Hessian eigenvalues:   0
+  FOURTH criterion done:  -0.960619956324206       0.710000000000000     
+  Number of structures for GDIIS interpolation:    3
+  GDIIS step:     0.000446
+
+  Transforming internal coordinate displacements to Cartesian space
+      Iteration   1 residual norm     4.463175E-04
+      Iteration   2 residual norm     6.754228E-08
+      Iteration   3 residual norm     6.350089E-13
+      Transformation converged
+      Residual norm:    6.350089E-13 after    3 iterations
+
+      ****************************************************************** 
+                          CONVERGENCE INFORMATION
+
+                               Converged?     Value      Criterion
+             Energy change         yes      0.0000000   0.0000010
+             RMS of displacement   yes      0.0000607   0.0005000
+             RMS of gradient       yes      0.0000173   0.0005000
+             MAX displacement      yes      0.0004342   0.0010000
+             MAX gradient          yes      0.0000852   0.0001000
+      ****************************************************************** 
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time :   0.07 seconds
+         total wall-time :   0.07 seconds
+    ------------------------------------------------------------------------
+
+   ****  statpt : all done  ****
+
+
+    2019-12-17 07:51:05.879 
+
+fine, there is no data group "$actual step"
+next step = dscf
+
+   OpenMP run-time library returned nthreads = 16
+
+ dscf (u-0-12.local) : TURBOMOLE rev. V7.4.1 (b987a8a8) compiled 15 Oct 2019 at 12:10:21
+ Copyright (C) 2019 TURBOMOLE GmbH, Karlsruhe
+
+
+    2019-12-17 07:51:06.009 
+
+
+
+                             d s c f - program
+
+                   idea & directorship : reinhart ahlrichs
+                   program development : marco haeser
+                                         michael baer
+                           dft version : oliver treutler
+
+
+                          quantum chemistry group
+                          universitaet  karlsruhe
+                                  germany
+
+
+
+
+                          References             
+                                                 
+          TURBOMOLE:                             
+              R. Ahlrichs, M. Baer, M. Haeser, H. Horn, and
+              C. Koelmel
+              Electronic structure calculations on workstation
+              computers: the program system TURBOMOLE
+              Chem. Phys. Lett. 162: 165 (1989)
+          Density Functional:                              
+              O. Treutler and R. Ahlrichs                      
+              Efficient Molecular Numerical Integration Schemes
+              J. Chem. Phys. 102: 346 (1995)                   
+          Parallel Version:                                
+              Performance of parallel TURBOMOLE for Density    
+              Functional Calculations                          
+              M. v. Arnim and R. Ahlrichs                      
+              J. Comp. Chem. 19: 1746 (1998)                   
+                                         
+
+
+
+ UHF mode switched on !
+
+
+              +--------------------------------------------------+
+              | Atomic coordinate, charge and isotop information |
+              +--------------------------------------------------+
+
+                    atomic coordinates            atom    charge  isotop
+          0.32437992    6.38499024   -0.15709788    c      6.000     0
+          2.60137512    3.81754519   -0.22345642    s     16.000     0
+          1.92805453    2.32040907    2.15808038    o      8.000     0
+          0.26459823   -1.62775843    0.03038704    u     92.000     0
+         -1.45368705   -5.58478425   -2.12854931    o      8.000     0
+         -1.97321073   -7.11080906    0.27164966    s     16.000     0
+         -1.20696820   -5.48184255    2.53398933    o      8.000     0
+          1.67785842    2.21259786   -2.44574819    o      8.000     0
+          3.40900937   -2.92139497   -0.10306014    o      8.000     0
+         -2.90610149   -0.35085426    0.17020406    o      8.000     0
+          1.23000144    8.83508393   -0.29253947    c      6.000     0
+         -0.45239551   10.85205784   -0.24297358    c      6.000     0
+         -3.02419974   10.39021999   -0.05724876    c      6.000     0
+         -3.91562075    7.91942930    0.07722202    c      6.000     0
+         -2.24981727    5.90041317    0.02807588    c      6.000     0
+          3.25037946    9.15912592   -0.43585616    h      1.000     0
+          0.24472291   12.77593109   -0.34817906    h      1.000     0
+         -4.34430997   11.95693490   -0.01635191    h      1.000     0
+         -5.92879494    7.56696474    0.22206023    h      1.000     0
+         -2.91188921    3.96075264    0.12966034    h      1.000     0
+ 
+       center of nuclear mass  :   -0.00129521   -0.00044163    0.00745416
+       center of nuclear charge:   -0.05744982    0.31089167    0.00342719
+
+              +--------------------------------------------------+
+              |               basis set information              |
+              +--------------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    c        6     66     46   aug-cc-pVTZ   [5s4p3d2f|19s6p3d2f]
+    s        2    122     50   aug-cc-pVTZ   [6s5p3d2f|42s17p3d2f]
+    o        6     66     46   aug-cc-pVTZ   [5s4p3d2f|19s6p3d2f]
+    u        1    213    117   SVP(6g)   [10s9p5d4f3g|14s13p10d8f6g]
+    h        5     25     23   aug-cc-pVTZ   [4s3p2d|6s3p2d]
+   ---------------------------------------------------------------------------
+   total:   20   1374    884
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :  186
+   total number of contracted shells         :  276
+   total number of cartesian basis functions : 1055
+   total number of SCF-basis functions       :  884
+
+
+ integral neglect threshold       :  0.32E-12
+ integral storage threshold THIZE :  0.10E-04
+ integral storage threshold THIME :         5
+
+ number of unique ecp types :                     1
+
+ symmetry group of the molecule :   c1 
+
+ the group has the following generators :
+   c1(z)
+
+    1 symmetry operations found
+
+ there are 1 real representations :   a   
+
+ maximum number of shells which are related by symmetry :  1
+
+
+    mo occupation :
+   irrep   mo's   occupied
+    a      884       78
+ 
+ number of basis functions   :                    884
+ number of occupied orbitals :                     78
+ 
+
+ closed shell shift switched on 
+ all occupied orbitals are shifted by    0.05000
+
+  
+           ------------------
+           density functional
+           ------------------
+ PBE0 hybrid functional
+ exchange:    3/4 (LDA+PBE) + 1/4 HF
+ correlation: LDA (PW) + PBE
+
+ iterations will be done with small grid
+  
+ spherical integration : Lebedev's spherical grid
+ spherical gridsize    :                     5
+    i.e. gridpoints    :                   590
+ value for diffuse not defined
+ radial integration    : Chebyshev 2nd kind (scaling 3)
+ radial gridsize       :                     8
+ integration cells     :                    20
+ partition function    : becke
+ partition sharpness   :                     3
+  
+
+          ------------------------
+          nuclear repulsion energy  :   1692.92418724    
+          ------------------------
+
+
+         -----------------
+         -S,T+V- integrals
+         -----------------
+
+ 1e-integrals will be neglected if expon. factor < 0.316774E-13
+
+
+          ----------------
+          -ecp-  integrals
+          ----------------
+ 
+   Difference densities algorithm switched on.
+   The maximal number of linear combinations of
+   difference densities is                    20 .
+
+ DIIS switched on: error vector is FDS-SDF
+ Max. Iterations for DIIS is     :   4
+ DIIS matrix (see manual) 
+    Scaling factor of diagonals  :  1.200
+    threshold for scaling factor :  0.000
+
+ scf convergence criterion : increment of total energy < .1000000D-07
+                  and increment of one-electron energy < .1000000D-04
+
+  MOs are in ASCII format !
+
+
+ reading orbital data $uhfmo_alpha  from file alpha
+ orbital characterization : scfconv=8
+
+ reading orbital data $uhfmo_beta  from file beta
+ orbital characterization : scfconv=8
+
+ DSCF restart information will be dumped onto file alpha
+
+          Overall gridpoints after grid construction =        115782
+ 
+                                              current damping :  1.000
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     NORM[dD(SAO)]  TOL
+   1  -1955.8481467236    -6252.7898305     2604.0174965    0.000D+00 0.316D-12
+                             Na = 77.999997767          Nb = 75.999991245    
+                            Exc =  -125.701288364850     N = 153.99998901    
+          max. resid. norm for Fia-block=  2.709D-04 for orbital      1a    alpha
+          max. resid. fock norm         =  1.436D-02 for orbital    883a    alpha
+          Delta Eig. =     0.0008529468 eV 
+ 
+                                              current damping :  0.950
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     NORM[dD(SAO)]  TOL
+   2  -1955.8481468427    -6252.7899503     2604.0176162    0.124D-02 0.200D-12
+                             Na = 77.999997767          Nb = 75.999991245    
+                            Exc =  -125.701291787944     N = 153.99998901    
+          Norm of current diis error: 0.10899E-02
+          max. resid. norm for Fia-block=  1.356D-04 for orbital      1a    alpha
+          max. resid. fock norm         =  7.181D-03 for orbital    883a    alpha
+          Delta Eig. =     0.0004245853 eV 
+ 
+                                              current damping :  0.900
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     NORM[dD(SAO)]  TOL
+   3  -1955.8481468828    -6252.7898933     2604.0175591    0.170D-03 0.149D-12
+                             Na = 77.999997767          Nb = 75.999991245    
+                            Exc =  -125.701292316653     N = 153.99998901    
+          Norm of current diis error: 0.55279E-03
+          max. resid. norm for Fia-block=  6.613D-05 for orbital      1a    alpha
+          max. resid. fock norm         =  3.498D-03 for orbital    883a    alpha
+          Delta Eig. =     0.0003178292 eV 
+ 
+                                              current damping :  0.950
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     NORM[dD(SAO)]  TOL
+   4  -1955.8481468960    -6252.7900032     2604.0176690    0.629D-04 0.125D-12
+                             Na = 77.999997767          Nb = 75.999991245    
+                            Exc =  -125.701292125299     N = 153.99998901    
+          Norm of current diis error: 0.27467E-03
+          max. resid. norm for Fia-block=  3.135D-05 for orbital      1a    alpha
+          max. resid. fock norm         =  1.657D-03 for orbital    883a    alpha
+          Delta Eig. =     0.0003233316 eV 
+ 
+                                              current damping :  1.000
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     NORM[dD(SAO)]  TOL
+   5  -1955.8481469006    -6252.7898706     2604.0175365    0.377D-04 0.115D-12
+                             Na = 77.999997767          Nb = 75.999991245    
+                            Exc =  -125.701292977236     N = 153.99998901    
+          Norm of current diis error: 0.14659E-03
+          max. resid. norm for Fia-block=  1.692D-05 for orbital     78a    alpha
+          max. resid. fock norm         =  8.073D-04 for orbital    883a    alpha
+ mo-orthogonalization: Cholesky decomposition
+          Delta Eig. =     0.0002353834 eV 
+ 
+                                              current damping :  1.050
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     NORM[dD(SAO)]  TOL
+   6  -1955.8481469982    -6252.7900402     2604.0177060    0.222D-04 0.108D-12
+                             Na = 77.999997775          Nb = 75.999991253    
+                            Exc =  -125.701293048174     N = 153.99998903    
+          Norm of current diis error: 0.82219E-04
+          max. resid. norm for Fia-block=  1.635D-05 for orbital     78a    alpha
+          max. resid. fock norm         =  4.037D-04 for orbital    883a    alpha
+          Delta Eig. =     0.0000948490 eV 
+ 
+                                              current damping :  1.100
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     NORM[dD(SAO)]  TOL
+   7  -1955.8481469994    -6252.7898810     2604.0175468    0.156D-04 0.103D-12
+                             Na = 77.999997775          Nb = 75.999991253    
+                            Exc =  -125.701292531124     N = 153.99998903    
+          Norm of current diis error: 0.51718E-04
+          max. resid. norm for Fia-block=  1.606D-05 for orbital     78a    alpha
+          max. resid. fock norm         =  2.068D-04 for orbital    883a    alpha
+          Delta Eig. =     0.0000679619 eV 
+ 
+                                              current damping :  1.150
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     NORM[dD(SAO)]  TOL
+   8  -1955.8481470004    -6252.7900048     2604.0176706    0.114D-04 0.985D-13
+                             Na = 77.999997775          Nb = 75.999991253    
+                            Exc =  -125.701293303987     N = 153.99998903    
+          Norm of current diis error: 0.38190E-04
+          max. resid. norm for Fia-block=  1.577D-05 for orbital     78a    alpha
+          max. resid. fock norm         =  1.083D-04 for orbital    883a    alpha
+          Delta Eig. =     0.0000399764 eV 
+ 
+                                              current damping :  1.200
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     NORM[dD(SAO)]  TOL
+   9  -1955.8481470012    -6252.7899331     2604.0175988    0.620D-05 0.941D-13
+                             Na = 77.999997775          Nb = 75.999991253    
+                            Exc =  -125.701292831135     N = 153.99998903    
+          Norm of current diis error: 0.31870E-04
+          max. resid. norm for Fia-block=  1.624D-05 for orbital     78a    alpha
+          max. resid. fock norm         =  5.793D-05 for orbital    883a    beta 
+          Delta Eig. =     0.0000179091 eV 
+
+ ENERGY CONVERGED !
+
+ Big Grid 
+ e2xc, e2xcold =   -125.70129301   -125.70129301
+          Overall gridpoints after grid construction =        353633
+ 
+                                              current damping :  1.250
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     NORM[dD(SAO)]  TOL
+  10  -1955.8481691912    -6252.7899647     2604.0176083    0.673D-05 0.902D-13
+                             Na = 78.000001592          Nb = 75.999999139    
+                            Exc =  -125.701315200143     N = 154.00000073    
+          max. resid. norm for Fia-block=  1.234D-05 for orbital     78a    alpha
+          max. resid. fock norm         =  3.160D-05 for orbital    883a    alpha
+
+ convergence criteria satisfied after    10 iterations
+
+
+                  ------------------------------------------ 
+                 |  total energy      =  -1955.84816919121  |
+                  ------------------------------------------ 
+                 :  kinetic energy    =   1623.41493954876  :
+                 :  potential energy  =  -3579.26310873997  :
+                 :  virial theorem    =      1.83003116761  :
+                 :  wavefunction norm =      1.00000000000  :
+                  .......................................... 
+
+
+ orbitals $uhfmo_beta  will be written to file beta
+
+ orbitals $uhfmo_alpha  will be written to file alpha
+ 
+ alpha: 
+
+    irrep                 74a         75a         76a         77a         78a   
+ eigenvalues H         -0.16946    -0.15104    -0.12163    -0.07559    -0.05370
+            eV          -4.6113     -4.1099     -3.3097     -2.0569     -1.4612
+ occupation              1.0000      1.0000      1.0000      1.0000      1.0000
+
+    irrep                 79a         80a         81a         82a         83a   
+ eigenvalues H          0.06443     0.06583     0.07736     0.07933     0.09260
+            eV           1.7533      1.7914      2.1050      2.1588      2.5198
+ 
+ beta:  
+
+    irrep                 72a         73a         74a         75a         76a   
+ eigenvalues H         -0.17990    -0.17547    -0.16930    -0.14349    -0.11994
+            eV          -4.8955     -4.7747     -4.6070     -3.9045     -3.2638
+ occupation              1.0000      1.0000      1.0000      1.0000      1.0000
+
+    irrep                 77a         78a         79a         80a         81a   
+ eigenvalues H          0.05347     0.06444     0.06603     0.07736     0.07934
+            eV           1.4550      1.7534      1.7968      2.1052      2.1589
+ 
+
+                                             _ _ _ 
+  IRREP     alpha occ.     beta occ.      tr(D*D-D)
+
+
+ a         78.00000000    76.00000000    -0.50499055
+
+   -------------------------------------------------
+
+   sum     78.00000000    76.00000000    -0.50499055
+
+ <S*S>     2.00998110
+
+ 
+ 
+ 
+ ==============================================================================
+                           electrostatic moments
+ ==============================================================================
+
+ reference point for electrostatic moments:    0.00000   0.00000   0.00000
+
+ 
+              nuc           elec       ->  total
+ ------------------------------------------------------------------------------
+                          charge      
+ ------------------------------------------------------------------------------
+         153.000000    -154.000000      -1.000000
+ a-b                                     2.000000
+ 
+ ------------------------------------------------------------------------------
+                       dipole moment  
+ ------------------------------------------------------------------------------
+   x     -28.112705      27.745829      -0.366876
+   y     163.885432    -162.308624       1.576808
+   z      -1.093231       1.071682      -0.021549
+ 
+   | dipole moment | =     1.6191 a.u. =     4.1153 debye 
+ 
+ ------------------------------------------------------------------------------
+                     quadrupole moment
+ ------------------------------------------------------------------------------
+  xx     675.468223    -782.957783    -107.489560
+  yy    4883.932872   -5000.116500    -116.183628
+  zz     176.505983    -282.098591    -105.592607
+  xy      -0.045091      -1.011640      -1.056731
+  xz     -29.727440      29.769251       0.041811
+  yz    -106.159681     106.443730       0.284049
+ 
+     1/3  trace=    -109.755265
+     anisotropy=       9.963675
+ 
+ ==============================================================================
+ 
+HOMO-LUMO Separation
+ HOMO         :   -0.05369718 H =     -1.46118 eV
+ LUMO         :    0.05346870 H =     +1.45496 eV
+ HOMO-LUMO gap:    0.10716589 H =     +2.91613 eV
+ 
+ ==============================================================================
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time :  3 hours 35 minutes and  9 seconds
+         total wall-time : 13 minutes and 49 seconds
+    ------------------------------------------------------------------------
+
+   ****  dscf : all done  ****
+
+
+    2019-12-17 08:04:54.671 
+
+fine, there is no data group "$actual step"
+next step = grad
+ energy change  : actual value =   0.7000E-08 threshold =   0.1000E-05
+ geom. gradient : actual value =   0.8520E-04 threshold =   0.1000E-03
+
+CONVERGENCY CRITERIA FULFILLED IN CYCLE 25
+

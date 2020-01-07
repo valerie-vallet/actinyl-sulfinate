@@ -1,0 +1,61 @@
+$vibrational spectrum
+#  mode     symmetry     wave number   IR intensity    selection rules
+#                         cm**(-1)        km/mol         IR     RAMAN
+     1                       -0.00         0.00000        -       -
+     2                       -0.00         0.00000        -       -
+     3                       -0.00         0.00000        -       -
+     4                       -0.00         0.00000        -       -
+     5                        0.00         0.00000        -       -
+     6                        0.00         0.00000        -       -
+     7        a              33.61         0.17166       YES     YES
+     8        a              51.21         3.54399       YES     YES
+     9        a              61.57         1.87018       YES     YES
+    10        a              67.51         1.88326       YES     YES
+    11        a             108.21         1.67232       YES     YES
+    12        a             142.08         8.32610       YES     YES
+    13        a             147.72         2.59936       YES     YES
+    14        a             181.82        35.97976       YES     YES
+    15        a             190.93         4.42085       YES     YES
+    16        a             207.11        16.22702       YES     YES
+    17        a             217.23         1.63318       YES     YES
+    18        a             246.05        49.22266       YES     YES
+    19        a             304.59         2.97132       YES     YES
+    20        a             324.48        24.62302       YES     YES
+    21        a             406.39         0.00992       YES     YES
+    22        a             463.23       236.69842       YES     YES
+    23        a             495.62        72.31625       YES     YES
+    24        a             500.05        90.49820       YES     YES
+    25        a             512.93        12.66289       YES     YES
+    26        a             571.21        33.56580       YES     YES
+    27        a             584.68       123.06879       YES     YES
+    28        a             622.82         1.63858       YES     YES
+    29        a             704.88        23.33385       YES     YES
+    30        a             712.50        30.84402       YES     YES
+    31        a             765.52        36.80890       YES     YES
+    32        a             811.31        25.36093       YES     YES
+    33        a             845.36       554.13307       YES     YES
+    34        a             874.16         0.03276       YES     YES
+    35        a             948.26         0.68112       YES     YES
+    36        a             981.48       263.57984       YES     YES
+    37        a             999.67         1.03476       YES     YES
+    38        a            1018.49        28.97294       YES     YES
+    39        a            1026.83       141.15935       YES     YES
+    40        a            1036.41        16.04840       YES     YES
+    41        a            1051.70         2.44787       YES     YES
+    42        a            1102.01         1.48687       YES     YES
+    43        a            1108.69        24.88952       YES     YES
+    44        a            1169.39         0.00423       YES     YES
+    45        a            1199.66         3.27959       YES     YES
+    46        a            1339.70         3.81373       YES     YES
+    47        a            1369.25         1.15544       YES     YES
+    48        a            1476.08        11.17419       YES     YES
+    49        a            1517.43         6.27582       YES     YES
+    50        a            1643.71         0.56502       YES     YES
+    51        a            1646.61         0.98666       YES     YES
+    52        a            3152.12        84.82430       YES     YES
+    53        a            3162.11         6.84434       YES     YES
+    54        a            3171.37         3.28071       YES     YES
+    55        a            3183.25        29.60895       YES     YES
+    56        a            3194.49        51.96578       YES     YES
+    57        a            3898.22        20.90517       YES     YES
+$end
