@@ -1,0 +1,105 @@
+$title
+$operating system unix
+$symmetry c1
+$redundant    file=coord
+$user-defined bonds    file=coord
+$coord    file=coord
+$optimize
+ internal   on
+ redundant  on
+ cartesian  off
+ global     off
+ basis      off
+$atoms
+c  1-6                                                                         \
+   basis =c aug-cc-pVTZ                                                        \
+   jbas  =c aug-cc-pVTZ
+s  7                                                                           \
+   basis =s aug-cc-pVTZ                                                        \
+   jbas  =s aug-cc-pVTZ
+o  8,10                                                                        \
+   basis =o aug-cc-pVTZ                                                        \
+   jbas  =o aug-cc-pVTZ
+h  9,11-15                                                                     \
+   basis =h aug-cc-pVTZ                                                        \
+   jbas  =h aug-cc-pVTZ
+$basis    file=basis
+$rundimensions
+   dim(fock,dens)=212485
+   natoms=15
+   nshell=182
+   nbf(CAO)=649
+   dim(trafo[SAO<-->AO/CAO])=835
+   rhfshells=1
+   nbf(AO)=556
+$scfmo   file=mos
+$closed shells
+ a       1-37                                   ( 2 )
+$scfiterlimit       30
+$thize     0.10000000E-04
+$thime        5
+$scfdump
+$scfintunit
+ unit=30       size=0        file=twoint
+$scfdiis
+$maxcor    500 MiB  per_core
+$scforbitalshift  automatic=.1
+$drvopt
+   cartesian  on
+   basis      off
+   global     off
+   hessian    on
+   dipole     on
+   nuclear polarizability
+$interconversion  off
+   qconv=1.d-7
+   maxiter=25
+$coordinateupdate
+   dqmax=0.3
+   interpolate  on
+   statistics    5
+$forceupdate
+   ahlrichs numgeo=0  mingeo=3 maxgeo=4 modus=<g|dq> dynamic fail=0.3
+   threig=0.005  reseig=0.005  thrbig=3.0  scale=1.00  damping=0.0
+$forceinit on
+   diag=default
+$energy    file=energy
+$grad    file=gradient
+$forceapprox    file=forceapprox
+$dft
+   functional b3-lyp_Gaussian
+   gridsize   m4
+$scfconv   7
+$scfdamp   start=0.700  step=0.050  min=0.050
+$ricore      500
+$rij
+$jbas    file=auxbasis
+$last step     ridft
+$last SCF energy change = -.59369757
+$charge from ridft
+         -0.000 (not to be modified here)
+$dipole from ridft
+  x    -0.83326554697069    y     0.08893043934351    z     0.87016605316654    a.u.
+   | dipole | =    3.0706265834  debye
+$optinfo       file=optinfo
+$hessapprox   file=hessapprox
+$dipgrad    file=dipgrad
+$hessian (projected)    file=hessian
+$vibrational normal modes    file=vib_normal_modes
+$vibrational reduced masses
+   6.0705020357   7.9782084124   9.1357426258   7.6340271956   7.4713685848
+   6.7533405389   5.5079054169   5.1884980305   5.5950766656   4.0451855295
+   1.7826735595   2.6079713859   2.8442953701   9.5798787779   4.9689768963
+   5.2558623883   6.3982980981   2.6284483718   4.4454882084  10.9435579572
+   1.5734350575   1.2479983476   1.3543197693   1.3850687718   1.3523780139
+   6.0662399588   2.4293857842   1.6637520903   2.4262812787   1.1543552978
+   1.1042935170   4.9480883951   1.3690055318   1.3821584380   6.3345074090
+   2.2561566063   2.1615548821   5.7946457143   6.2839581241   1.0854709393
+   1.0883815382   1.0919107861   1.0946475069   1.0982985963   1.0664668625
+$nvibro       45
+$vibrational spectrum    file=vibspectrum
+$orbital_max_rnorm 0.32250923680219E-04
+$subenergy  Etot         E1                  Ej                Ex                 Ec                 En
+-781.0346893287    -2092.038971105     858.7422156631    -59.42751796595    -3.400144049655     515.0897281292
+$end
+$TMPDIR /state/partition1/vallet/295277.phlam-s-sakura

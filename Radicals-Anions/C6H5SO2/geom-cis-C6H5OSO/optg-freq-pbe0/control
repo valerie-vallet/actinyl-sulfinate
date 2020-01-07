@@ -1,0 +1,121 @@
+$tmpdir /state/partition2/vallet/538596.phlam-s-sakura
+$title
+$operating system unix
+$symmetry c1
+$redundant    file=coord
+$user-defined bonds    file=coord
+$coord    file=coord
+$optimize
+ internal   on
+ redundant  on
+ cartesian  off
+ global     off
+ basis      off
+$atoms
+c  1-6                                                                         \
+   basis =c aug-cc-pVTZ
+o  7,14                                                                        \
+   basis =o aug-cc-pVTZ
+s  8                                                                           \
+   basis =s aug-cc-pVTZ
+h  9-13                                                                        \
+   basis =h aug-cc-pVTZ
+$basis    file=basis
+$rundimensions
+   dim(fock,dens)=196521
+   natoms=14
+   nshell=173
+   nbf(CAO)=624
+   dim(trafo[SAO<-->AO/CAO])=806
+   rhfshells=2
+   nbf(AO)=533
+$uhfmo_alpha   file=alpha
+$uhfmo_beta   file=beta
+$uhf
+$scfiterlimit       30
+$thize     0.10000000E-04
+$thime        5
+$scfdump
+$scfintunit
+ unit=30       size=0        file=twoint
+$scfdiis
+$maxcor    2000 MiB  per_core
+$drvopt
+   cartesian  on
+   basis      off
+   global     off
+   hessian    on
+   dipole     on
+   nuclear polarizability
+$interconversion  off
+   qconv=1.d-7
+   maxiter=25
+$coordinateupdate
+   dqmax=0.3
+   interpolate  on
+   statistics    5
+$forceupdate
+   ahlrichs numgeo=0  mingeo=3 maxgeo=4 modus=<g|dq> dynamic fail=0.3
+   threig=0.005  reseig=0.005  thrbig=3.0  scale=1.00  damping=0.0
+$forceinit on
+   diag=default
+$forceapprox    file=forceapprox
+$dft
+   functional pbe0
+   gridsize   m4
+   weight derivatives
+$scfconv        7
+$scfdamp   start=0.700  step=0.050  min=0.050
+$scforbitalshift  closedshell=.05
+$last SCF energy change = -.31865625E-07
+$ssquare from dscf
+          0.757 (not to be modified here)
+$charge from dscf
+          0.000 (not to be modified here)
+$optinfo       file=optinfo
+$hessapprox   file=hessapprox
+$vibrational reduced masses
+   7.6864076884   9.4727633993   9.2283142411   5.6181579854   6.1811488300
+  15.3006489951   6.9504895347   9.8267379615   8.0296014890   5.6905217056
+   6.7051016209   2.9246779361   9.7226274158   4.7996343948   4.2277731376
+   6.5520018462   2.3052787549   4.4778303389   1.8369455756   1.2699990741
+   6.8253672254   1.4817256996   1.3655097897   1.3144327272   6.1568386289
+   1.9967719645   1.4287398166   2.1701111467   1.2175706163   1.9107623671
+   3.6024090817   1.4793063122   5.1034065489   2.3510308339   2.3682605423
+   6.1780038025   6.5236135096   1.0856085450   1.0896564298   1.0934968937
+   1.0974476626   1.0950155190
+$nvibro       42
+$newcoord
+# cartesian coordinates shifted along normal mode   1 by *******
+   -0.57324821113705     -0.67004661616755      0.76507373432531      c
+    2.03579830655990     -1.15285093881604      0.77665604039609      c
+    2.77711907347306     -3.60256512529598      0.04547662470466      c
+    0.93428572185489     -5.53562866316657     -0.66538080556119      c
+   -1.66633879574774     -5.02138420535935     -0.62101996192565      c
+   -2.43475928944124     -2.57622716544835      0.09480733656947      c
+   -1.40163617154729      1.75365507862642      1.53780535343562      o
+   -0.73720973045358      4.04503445330099     -0.77062035868346      s
+    3.43339242921303      0.36489390265096      1.37344855471564      h
+    4.81107284824834     -4.00362233481131      0.05235100972678      h
+    1.52369118870551     -7.44517414963215     -1.24421364949621      h
+   -3.11203876305844     -6.52550783409923     -1.17065036631050      h
+   -4.45096864459673     -2.12670974294462      0.13479488388415      h
+    1.93471395450364      5.31565967268733     -0.23660139765877      o
+$energy    file=energy
+$grad    file=gradient
+$dipole from force
+  x    -0.15789829784168    y    -0.54129191780051    z    -0.52826263293496    a.u.
+   | dipole | =    1.9638988706  debye
+$subenergy  Etot         E1                  Ej                Ex                 Ec                 En
+-779.8249935474    -2046.672900613     832.1477472984    -55.61795304128    -2.534538294066     492.8526511028
+$dipgrad    file=dipgrad
+$hessian (projected)    file=hessian
+$vibrational normal modes    file=vib_normal_modes
+$vibrational spectrum    file=vibspectrum
+$alpha shells
+ a       1-37                                   ( 1 )
+$beta shells
+ a       1-36                                   ( 1 )
+$last step     freeh
+$orbital_max_rnorm 0.23650482807801E-02
+$end

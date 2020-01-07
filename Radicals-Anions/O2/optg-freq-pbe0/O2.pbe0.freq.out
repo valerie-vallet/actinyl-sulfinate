@@ -1,0 +1,746 @@
+
+   OpenMP run-time library returned nthreads =  8
+ operating system is UNIX !
+
+ force (don-0-0.local) : TURBOMOLE V7.2 ( 21285 ) 30 Jun 2017 at 09:40:16
+ Copyright (C) 2017 TURBOMOLE GmbH, Karlsruhe
+
+
+    2017-09-06 23:41:16.712 
+
+
+
+                             T U R B O M O L E   
+
+                          a o f o r c e - program
+
+                        using direct algorithms for
+
+                       SCF level calculations of
+                         * harmonic force constants
+                         * hyperpolarizabilities
+                         * IR and RAMAN intensities
+                         * VCD intensities
+
+                       DFT level calculations of
+                         * harmonic force constants
+                         * IR intensities
+                                                   
+       Stephan Boecker, Peter Deglmann, Filipp Furche and Marco Haeser
+                          Quantum Chemistry Group
+                          Universitaet  Karlsruhe
+                                   Germany
+
+ 
+ 
+
+          OpenMP Shared-Memory Parallelization:  8 CPUs.
+
+            By: Erik P. Almaraz and Filipp Furche
+            Copyright 2009-2011 by UCI and TURBOMOLE GmbH.
+
+ 
+ 
+     References :
+ 
+       RI-J implementation:
+         Peter Deglmann, Klaus May, Filipp Furche, Reinhart Ahlrichs
+                 Chem. Phys. Lett. 384:103 (2004)
+ 
+       Efficiency, technical details:
+         Peter Deglmann, Filipp Furche, Reinhart Ahlrichs
+                 Chem. Phys. Lett. 362:511 (2002)
+ 
+       Search of lowest eigenvalues by iterative diagonalization:
+         Peter Deglmann, Filipp Furche
+                 J. Chem. Phys. 117:9535 (2002)
+ 
+       Vibrational circular dichroism implementation:
+        Kevin Reiter, Michael Kuehn, Florian Weigend
+                 J. Chem. Phys. 146:054102 (2017)  
+ 
+ 
+
+
+              +--------------------------------------------------+
+              | Atomic coordinate, charge and isotop information |
+              +--------------------------------------------------+
+
+                    atomic coordinates            atom    charge  isotop
+          0.00000000    0.00000000   -1.12803647    o      8.000     0
+          0.00000000    0.00000000    1.12803647    o      8.000     0
+ 
+       center of nuclear mass  :    0.00000000    0.00000000    0.00000000
+       center of nuclear charge:    0.00000000    0.00000000    0.00000000
+
+              +--------------------------------------------------+
+              |               basis set information              |
+              +--------------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    o        2     66     46   aug-cc-pVTZ   [5s4p3d2f|19s6p3d2f]
+   ---------------------------------------------------------------------------
+   total:    2    132     92
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :   30
+   total number of contracted shells         :   28
+   total number of cartesian basis functions :  110
+   total number of SCF-basis functions       :   92
+
+ 
+             FOUND RI-J FLAG !
+ 
+
+ NOTE: THIS IS A PRELIMINARY IMPLEMENTATION. THE RI APPROXIMATION IS
+       PRESENTLY USED FOR CPKS CONTRIBUTIONS TO THE HESSIAN ONLY! SEE
+       MANUAL FOR FURTHER DETAILS.
+
+  
+ AUXILIARY BASIS SET information:
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    o        2     70     49   aug-cc-pVTZ   [6s4p3d1f1g|12s5p4d2f1g]
+   ---------------------------------------------------------------------------
+   total:    2    140     98
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :   24
+   total number of contracted shells         :   30
+   total number of cartesian basis functions :  122
+   total number of SCF-basis functions       :   98
+
+
+ symmetry group of the molecule :   d6h
+
+ the group has the following generators :
+   c6(z)
+   c2(x)
+   mirror plane sigma(xy)
+
+   24 symmetry operations found
+
+ there are 12 real representations :
+ a1g  a2g  b1g  b2g  e1g  e2g  a1u  a2u  b1u  b2u  e1u  e2u 
+
+ maximum number of shells which are related by symmetry :  2
+
+
+ determining totally symmetric integral contributions 
+    - equivalent to irreducible tensor elements - 
+ which can be formed within each triple of representations :
+
+             representation triple      contributions
+
+              a1g   a1g   a1g             1
+              a1g   a2g   a2g             1
+              a1g   b1g   b1g             1
+              a1g   b2g   b2g             1
+              a1g   e1g   e1g             1
+              a1g   e2g   e2g             1
+              a1g   a1u   a1u             1
+              a1g   a2u   a2u             1
+              a1g   b1u   b1u             1
+              a1g   b2u   b2u             1
+              a1g   e1u   e1u             1
+              a1g   e2u   e2u             1
+              a2g   a1g   a2g             1
+              a2g   a2g   a1g             1
+              a2g   b1g   b2g             1
+              a2g   b2g   b1g             1
+              a2g   e1g   e1g             1
+              a2g   e2g   e2g             1
+              a2g   a1u   a2u             1
+              a2g   a2u   a1u             1
+              a2g   b1u   b2u             1
+              a2g   b2u   b1u             1
+              a2g   e1u   e1u             1
+              a2g   e2u   e2u             1
+              b1g   a1g   b1g             1
+              b1g   a2g   b2g             1
+              b1g   b1g   a1g             1
+              b1g   b2g   a2g             1
+              b1g   e1g   e2g             1
+              b1g   e2g   e1g             1
+              b1g   a1u   b1u             1
+              b1g   a2u   b2u             1
+              b1g   b1u   a1u             1
+              b1g   b2u   a2u             1
+              b1g   e1u   e2u             1
+              b1g   e2u   e1u             1
+              b2g   a1g   b2g             1
+              b2g   a2g   b1g             1
+              b2g   b1g   a2g             1
+              b2g   b2g   a1g             1
+              b2g   e1g   e2g             1
+              b2g   e2g   e1g             1
+              b2g   a1u   b2u             1
+              b2g   a2u   b1u             1
+              b2g   b1u   a2u             1
+              b2g   b2u   a1u             1
+              b2g   e1u   e2u             1
+              b2g   e2u   e1u             1
+              e1g   a1g   e1g             1
+              e1g   a2g   e1g             1
+              e1g   b1g   e2g             1
+              e1g   b2g   e2g             1
+              e1g   e1g   a1g             1
+              e1g   e1g   a2g             1
+              e1g   e1g   e2g             1
+              e1g   e2g   b1g             1
+              e1g   e2g   b2g             1
+              e1g   e2g   e1g             1
+              e1g   a1u   e1u             1
+              e1g   a2u   e1u             1
+              e1g   b1u   e2u             1
+              e1g   b2u   e2u             1
+              e1g   e1u   a1u             1
+              e1g   e1u   a2u             1
+              e1g   e1u   e2u             1
+              e1g   e2u   b1u             1
+              e1g   e2u   b2u             1
+              e1g   e2u   e1u             1
+              e2g   a1g   e2g             1
+              e2g   a2g   e2g             1
+              e2g   b1g   e1g             1
+              e2g   b2g   e1g             1
+              e2g   e1g   b1g             1
+              e2g   e1g   b2g             1
+              e2g   e1g   e1g             1
+              e2g   e2g   a1g             1
+              e2g   e2g   a2g             1
+              e2g   e2g   e2g             1
+              e2g   a1u   e2u             1
+              e2g   a2u   e2u             1
+              e2g   b1u   e1u             1
+              e2g   b2u   e1u             1
+              e2g   e1u   b1u             1
+              e2g   e1u   b2u             1
+              e2g   e1u   e1u             1
+              e2g   e2u   a1u             1
+              e2g   e2u   a2u             1
+              e2g   e2u   e2u             1
+              a1u   a1g   a1u             1
+              a1u   a2g   a2u             1
+              a1u   b1g   b1u             1
+              a1u   b2g   b2u             1
+              a1u   e1g   e1u             1
+              a1u   e2g   e2u             1
+              a1u   a1u   a1g             1
+              a1u   a2u   a2g             1
+              a1u   b1u   b1g             1
+              a1u   b2u   b2g             1
+              a1u   e1u   e1g             1
+              a1u   e2u   e2g             1
+              a2u   a1g   a2u             1
+              a2u   a2g   a1u             1
+              a2u   b1g   b2u             1
+              a2u   b2g   b1u             1
+              a2u   e1g   e1u             1
+              a2u   e2g   e2u             1
+              a2u   a1u   a2g             1
+              a2u   a2u   a1g             1
+              a2u   b1u   b2g             1
+              a2u   b2u   b1g             1
+              a2u   e1u   e1g             1
+              a2u   e2u   e2g             1
+              b1u   a1g   b1u             1
+              b1u   a2g   b2u             1
+              b1u   b1g   a1u             1
+              b1u   b2g   a2u             1
+              b1u   e1g   e2u             1
+              b1u   e2g   e1u             1
+              b1u   a1u   b1g             1
+              b1u   a2u   b2g             1
+              b1u   b1u   a1g             1
+              b1u   b2u   a2g             1
+              b1u   e1u   e2g             1
+              b1u   e2u   e1g             1
+              b2u   a1g   b2u             1
+              b2u   a2g   b1u             1
+              b2u   b1g   a2u             1
+              b2u   b2g   a1u             1
+              b2u   e1g   e2u             1
+              b2u   e2g   e1u             1
+              b2u   a1u   b2g             1
+              b2u   a2u   b1g             1
+              b2u   b1u   a2g             1
+              b2u   b2u   a1g             1
+              b2u   e1u   e2g             1
+              b2u   e2u   e1g             1
+              e1u   a1g   e1u             1
+              e1u   a2g   e1u             1
+              e1u   b1g   e2u             1
+              e1u   b2g   e2u             1
+              e1u   e1g   a1u             1
+              e1u   e1g   a2u             1
+              e1u   e1g   e2u             1
+              e1u   e2g   b1u             1
+              e1u   e2g   b2u             1
+              e1u   e2g   e1u             1
+              e1u   a1u   e1g             1
+              e1u   a2u   e1g             1
+              e1u   b1u   e2g             1
+              e1u   b2u   e2g             1
+              e1u   e1u   a1g             1
+              e1u   e1u   a2g             1
+              e1u   e1u   e2g             1
+              e1u   e2u   b1g             1
+              e1u   e2u   b2g             1
+              e1u   e2u   e1g             1
+              e2u   a1g   e2u             1
+              e2u   a2g   e2u             1
+              e2u   b1g   e1u             1
+              e2u   b2g   e1u             1
+              e2u   e1g   b1u             1
+              e2u   e1g   b2u             1
+              e2u   e1g   e1u             1
+              e2u   e2g   a1u             1
+              e2u   e2g   a2u             1
+              e2u   e2g   e2u             1
+              e2u   a1u   e2g             1
+              e2u   a2u   e2g             1
+              e2u   b1u   e1g             1
+              e2u   b2u   e1g             1
+              e2u   e1u   b1g             1
+              e2u   e1u   b2g             1
+              e2u   e1u   e1g             1
+              e2u   e2u   a1g             1
+              e2u   e2u   a2g             1
+              e2u   e2u   e2g             1
+       UHF mode switched on !
+
+    mo occupation :
+   irrep   mo's   occupied
+    a1g     14        3
+    a2g      0        0
+    b1g      2        0
+    b2g      2        0
+    e1g      9        1
+    e2g      5        0
+    a1u      0        0
+    a2u     14        2
+    b1u      2        0
+    b2u      2        0
+    e1u      9        1
+    e2u      5        0
+ 
+ number of basis functions   :                     92
+ number of occupied orbitals :                      9
+ 
+ ALPHA-Occupation:                     9
+ BETA-Occupation :                     7
+  MOs are in ASCII format !
+
+
+ reading orbital data $uhfmo_alpha  from file alpha
+ orbital characterization : scfconv=6
+
+ reading orbital data $uhfmo_beta  from file beta
+ orbital characterization : scfconv=6
+ time elapsed for calculating density matrices :   0.021 sec
+
+ number of non-frozen orbitals          :    92
+ number of non-frozen occupied orbitals :     9
+
+ number of non-frozen orbitals          :    92
+ number of non-frozen occupied orbitals :     7
+ Blocking parameters 
+ shells:
+    index      start shell   last shell  start bf    last bf    #bf 
+       1             1          28             1        110    110
+  
+           ----------------------
+               RI - INFORMATION
+           ----------------------
+
+ biggest AO integral is expected to be     4.866064444
+
+ Threshold for integral neglect (rithr2):   0.11E-09
+ Threshold for integral neglect (rithr1):   0.11E-09
+
+ Contributions to RI integral batches: 
+  neglected integral batches:                   196
+  direct contribution:                            0
+  memory contribution:                   210
+ Core memory available (ricore):               500 MiB
+ Core memory needed for (P|Q) and Cholesky:      1 MiB
+ Core memory used for integrals:                 4 MiB
+ 
+ ****************************************
+ Memory allocated for RIDFT: 4 MiB
+ ****************************************
+ 
+  
+           ------------------
+           density functional
+           ------------------
+ PBE0 hybrid functional
+ exchange:    3/4 (LDA+PBE) + 1/4 HF
+ correlation: LDA (PW) + PBE
+
+ iterations will be done with small grid
+  
+ spherical integration : Lebedev's spherical grid
+ spherical gridsize    :                     4
+    i.e. gridpoints    :                   434
+ value for diffuse not defined
+ radial integration    : Chebyshev 2nd kind (scaling 3)
+ radial gridsize       :                     6
+ integration cells     :                     1
+ partition function    : becke
+ partition sharpness   :                     3
+  
+ 
+ Derivatives of quadrature weights will be included
+ 
+ grid rotated due to c3 or c6 main axis
+          Overall gridpoints after grid construction =          2658
+ Ordering of quadrature gridpoints disabled.
+ 
+ 
+ 
+ 
+ OCCUPIED-OCCUPIED TENSOR SPACES :
+
+          IRREP   tensor space dimension   number of roots
+
+           a1g              38                   1
+ 
+ OCCUPIED-VIRTUAL TENSOR SPACES :
+
+          IRREP   tensor space dimension   number of roots
+
+           a1g             138                   1
+ 
+ 
+ 
+ 
+ CONSTRUCTING integral bounds
+
+ setting up bound for integral derivative estimation
+
+ increment for numerical differentiation : 0.00050000
+ 
+ machine precision:   2.220446049250313E-016
+
+ integral neglect threshold       :  0.10E-09
+ integral storage threshold THIZE :  0.10E-04
+ integral storage threshold THIME :         5
+
+ 
+ 
+ 
+ PREPARING NUMERICAL INTEGRATION
+ 
+ Remaining core memory for DFT =                  3999 MB
+ 
+ Memory needed per atom    =                   286 KiB
+ 
+     i. e.                     2 atoms per loop
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state total density: Na =   15.99999866329244    
+
+ Integral of ground state spin density:  Nb =   1.999999475577476    
+
+
+ 
+ 
+ CONSTRUCTING first deriv. of <mu|x,y,z|nu> -> Dip. deriv.
+  dipole integral derivatives will be neglected if
+  expon. factor <0.454545E-10
+      ...terminated. cpu:       0.05       wall:       0.02
+ 
+ 
+ 
+ 
+ CONSTRUCTING first deriv. of  <mu|nu>
+                               <mu|h|nu>    -> RHS
+              second deriv. of <mu|nu>      -> Hessian
+                               <mu|h|nu>    -> Hessian
+                               nucl. rep.   -> Hessian
+     integrals are neglected if expon. factor <  1.000000000000000E-012
+      ...terminated. cpu:       0.33       wall:       0.08
+ 
+ 
+ 
+ 
+ CONSTRUCTING second deriv. of 2e energy    -> Hessian
+   treating Coulomb (and exchange) contribution
+     integrals will be neglected if total contribution <  4.545454545454545E-008
+      ...terminated. cpu:       4.34       wall:       0.88
+   treating exchange-correlation contribution
+      ...terminated. cpu:       2.10       wall:       0.61
+ 
+ 
+ 
+ 
+ CONSTRUCTING S(i,j)xi
+      ...terminated. cpu:       0.00       wall:       0.00
+ 
+ 
+ 
+ 
+ CONSTRUCTING epsilon(i)*S(i,j)xi*S(i,j)chi -> Hessian
+      ...terminated. cpu:       0.00       wall:       0.00
+ 
+ 
+ 
+ 
+ CONSTRUCTING G(a,i)[S(k,l)xi]              -> RHS
+              G(i,j)[S(k,l)xi]*S(i,j)chi    -> Hessian
+ 
+         Maximum core memory set to                   4000 MB
+         This corresponds to                 20483 vectors in CAO basis
+      ...terminated. cpu:       1.43       wall:       0.49
+ 
+ 
+ 
+ 
+ CONSTRUCTING G(mu,nu)[D(kap,lam)]xi
+ 
+          Maximum core memory set to                   4000 MB
+          Atoms treated simultaneously :                     2
+      ...terminated. cpu:       3.61       wall:       0.85
+ 
+ 
+ 
+ 
+ CONSTRUCTING F(a,i)xi                      -> RHS
+              F(i,j)xi*S(i,j)chi            -> Hessian
+ 
+        Maximum core memory set to                  4000 MB
+        This corresponds to                 42459 vectors in CAO basis
+      ...terminated. cpu:       0.02       wall:       0.00
+ 
+ 
+ 
+ 
+ CONSTRUCTING epsilon(i)*S(a,i)xi           -> RHS
+      ...terminated. cpu:       0.05       wall:       0.01
+ 
+ 
+ 
+ 
+ SOLVING CPHF equations
+ 
+ Residuum convergence criterium   :  1.000000000000000E-005
+ 
+ Maximum number of Davidson iterations set to                    25
+  Switching to small grid
+        preparing numerical integration ....
+          Overall gridpoints after grid construction =           897
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state total density: Na =   16.00001557669333    
+
+ Integral of ground state spin density:  Nb =   2.000005669930068    
+
+
+
+
+                       Nonorthonormal Krylov Space Iteration
+
+
+ total number of roots to be determined:   1
+
+
+ maximum core memory set to  4000 MB,
+ corresponding to    20386 vectors in CAO basis
+
+
+ maximum number of simultaneously treated vectors (including degeneracy):        1
+
+
+ Iteration IRREP Converged      Max. Euclidean
+                 roots          residual norm
+
+    1       a1g      0        5.215543624521511D-02
+ 
+    2       a1g      0        1.062370454740525D-02
+ 
+    3       a1g      0        2.178970569516478D-03
+ 
+    4       a1g      0        4.898002496006007D-04
+ 
+    5       a1g      0        4.772205181707212D-05
+ 
+    6       a1g      1        2.980044551495412D-06
+ 
+
+ converged!
+
+  Switching to fine grid
+        preparing numerical integration ....
+          Overall gridpoints after grid construction =          2658
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state total density: Na =   15.99999866329245    
+
+ Integral of ground state spin density:  Nb =   1.999999475577476    
+
+
+
+ Iteration IRREP Converged      Max. Euclidean
+                 roots          residual norm
+
+    7       a1g      0        3.260156604538950D-05
+ 
+
+ NOTE: Residual norms are larger than 1.00D-05 due to mgrid option!
+
+      ...terminated. cpu:      10.85       wall:       3.39
+ 
+ 
+ 
+ 
+ CONSTRUCTING RHS(a,i)xi*U(a,i)chi          -> Hessian
+      ...terminated. cpu:       0.00       wall:       0.00
+ 
+ 
+ 
+ 
+
+            -----------------------
+            permanent dipole moment
+            -----------------------
+
+                                   x                y                z
+    electronic part       :    0.0000000000     0.0000000000    -0.0000000000
+     nuclear   part       :    0.0000000000     0.0000000000     0.0000000000
+     total                :    0.0000000000     0.0000000000    -0.0000000000
+
+ with reference to the point :   0.0000000        0.0000000        0.0000000
+ (given in atomic units)
+    | dipole |       :    0.0000000000  debye
+
+   ***  dipole moment & cartesian dipole gradients written onto
+        $dipole, $dipgrad,  file=<dipgrad>  ***
+
+             -----------------------------------
+             rotational and vibrational analysis
+             -----------------------------------
+
+
+            ==============================================================
+            ATOMIC WEIGHTS (average over the natural occurance of isotops)
+            ==============================================================
+            ('*' denotes special isotop !)
+              1     o                15.99940
+              2     o                15.99940
+
+          -------------------------------------------------
+          CARTESIAN FORCE CONSTANT MATRIX (hartree/bohr**2)
+         (translational & rotational space projected out)
+          -------------------------------------------------
+
+   ATOM              1 o                           2 o 
+                  dx        dy        dz        dx        dy        dz
+   1 o     dx  0.0000000
+           dy  0.0000000 0.0000000
+           dz  0.0000000 0.0000000 0.8789275
+   2 o     dx  0.0000000 0.0000000 0.0000000 0.0000000
+           dy  0.0000000 0.0000000 0.0000000 0.0000000 0.0000000
+           dz  0.0000000 0.0000000-0.8789275 0.0000000 0.0000000 0.8789275
+ 
+
+   *** projected hessian written onto $hessian (projected), file=<hessian> ***
+
+ dipole moment in principle axis system (a.u.) :
+     0.0000000000     0.0000000000    -0.0000000000
+ norm :  9.456140297875448E-016
+
+ rotational constants b for rotations around axis of inertia
+ and optical intensities for (1 <-- 0) transition
+
+   b   :     1.4784759322     1.4784759322     0.0000000000   (cm**(-1))
+   b   :       44323.5934       44323.5934           0.0000     (MHz)
+  int. :     0.0000000000     0.0000000000     0.0000000000     (a.u.)
+
+   x   :     1.0000000000     0.0000000000     0.0000000000
+   y   :     0.0000000000     1.0000000000     0.0000000000
+   z   :     0.0000000000     0.0000000000     1.0000000000
+
+   ***  normal modes written onto $vibrational normal modes, file=<vib_normal_modes>  ***
+
+ keyword $vibrational reduced masses missing in file <control>
+
+
+   ***  vibrational spectroscopic data written onto$vibrational spectrum   
+        file=<vibspectrum>  ***
+
+          ---------------------------------------------------
+          NORMAL MODES and VIBRATIONAL FREQUENCIES (cm**(-1))
+          ---------------------------------------------------
+
+ imaginary wave numbers indicate a negative curvature of the energy surface.
+ zero frequency modes have no physical meaning except being generators of
+ translations and rotations. each vibrational normal mode - given in terms of
+ cartesian displacement vectors of all atoms - has been normalized to unity.
+ to obtain mass-weigthed normal coordinates in a.u. divide the tabulated
+ modes by sqrt(reduced mass * 1822.88853).
+ band intensities or cross sections refer to independent non-degenerate normal
+ modes, that is, the intensities of degenerate modes have yet to be added.
+ dDIP/dQ is the normal mode derivative of the dipole moment.
+
+
+       mode               1        2        3        4        5        6
+
+     frequency           0.00     0.00     0.00     0.00     0.00  1703.90
+
+     symmetry                                                         a1g 
+
+        IR                -        -        -        -        -       NO 
+|dDIP/dQ|   (a.u.)     0.0000   0.0000   0.0000   0.0000   0.0000   0.0000
+intensity (km/mol)       0.00     0.00     0.00     0.00     0.00     0.00
+intensity (  %   )       0.00     0.00     0.00     0.00     0.00     0.00
+ 
+       RAMAN              -        -        -        -        -       YES
+ 
+  1   o           x   0.00000  0.00000  0.00000  1.00000  0.00000  0.00000
+                  y   0.00000  1.00000  0.00000  0.00000  0.00000  0.00000
+                  z  -0.70711  0.00000  0.00000  0.00000  0.00000  0.70711
+  2   o           x   0.00000  0.00000  1.00000  0.00000  0.00000  0.00000
+                  y  -0.00000  0.00000  0.00000  0.00000  1.00000  0.00000
+                  z  -0.70711  0.00000  0.00000  0.00000  0.00000 -0.70711
+
+reduced mass(g/mol)    15.999   15.999   15.999   15.999   15.999   15.999
+ 
+
+         **************************************************************
+         *                                                            *
+         *  zero point VIBRATIONAL energy  :      0.0038818  Hartree  *
+         *    SCF-energy                   :   -150.2302260           *
+         *    SCF + E(vib0)                :   -150.2263442           *
+         *                                                            *
+         **************************************************************
+
+
+
+
+ time elapsed for vibrational analysis     0.06 sec
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time :  27.14 seconds
+         total wall-time :   9.35 seconds
+    ------------------------------------------------------------------------
+
+   ****  force : all done  ****
+
+
+    2017-09-06 23:41:25.900 
+
+aoforce ended normally 

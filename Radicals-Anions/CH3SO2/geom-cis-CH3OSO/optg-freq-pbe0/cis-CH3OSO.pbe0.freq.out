@@ -1,0 +1,768 @@
+
+   OpenMP run-time library returned nthreads =  4
+ operating system is UNIX !
+
+ force (u-0-8.local) : TURBOMOLE V7.3 ( 22142 ) 4 Jul 2018 at 18:12:42
+ Copyright (C) 2018 TURBOMOLE GmbH, Karlsruhe
+
+
+    2019-01-28 16:01:19.996 
+
+
+
+                             T U R B O M O L E   
+
+                          a o f o r c e - program
+
+                        using direct algorithms for
+
+                       SCF level calculations of
+                         * harmonic force constants
+                         * hyperpolarizabilities
+                         * IR and RAMAN intensities
+                         * VCD intensities
+
+                       DFT level calculations of
+                         * harmonic force constants
+                         * IR intensities
+                                                   
+       Stephan Boecker, Peter Deglmann, Filipp Furche and Marco Haeser
+                          Quantum Chemistry Group
+                          Universitaet  Karlsruhe
+                                   Germany
+
+ 
+ 
+
+          OpenMP Shared-Memory Parallelization:  4 CPUs.
+
+            By: Erik P. Almaraz and Filipp Furche
+            Copyright 2009-2011 by UCI and TURBOMOLE GmbH.
+
+ 
+ 
+     References :
+ 
+       RI-J implementation:
+         Peter Deglmann, Klaus May, Filipp Furche, Reinhart Ahlrichs
+                 Chem. Phys. Lett. 384:103 (2004)
+ 
+       Efficiency, technical details:
+         Peter Deglmann, Filipp Furche, Reinhart Ahlrichs
+                 Chem. Phys. Lett. 362:511 (2002)
+ 
+       Search of lowest eigenvalues by iterative diagonalization:
+         Peter Deglmann, Filipp Furche
+                 J. Chem. Phys. 117:9535 (2002)
+ 
+       Vibrational circular dichroism implementation:
+        Kevin Reiter, Michael Kuehn, Florian Weigend
+                 J. Chem. Phys. 146:054102 (2017)  
+ 
+ 
+
+
+              +--------------------------------------------------+
+              | Atomic coordinate, charge and isotop information |
+              +--------------------------------------------------+
+
+                    atomic coordinates            atom    charge  isotop
+          0.10404944    1.48007152    0.24937810    c      6.000     0
+         -0.66071833    0.75349669    2.01752827    h      1.000     0
+          2.16185491    1.59544548    0.36998736    h      1.000     0
+         -0.68125630    3.33725699   -0.14757636    h      1.000     0
+         -0.62894763   -0.08629073   -1.82642244    o      8.000     0
+          0.04913701   -3.08792445   -1.63827810    s     16.000     0
+         -0.34411910   -3.99205550    0.97538317    o      8.000     0
+ 
+       center of nuclear mass  :   -0.15065877   -1.77948459   -0.76984077
+       center of nuclear charge:   -0.13546743   -1.64553495   -0.71425746
+
+              +--------------------------------------------------+
+              |               basis set information              |
+              +--------------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    c        1     66     46   aug-cc-pVTZ   [5s4p3d2f|19s6p3d2f]
+    h        3     25     23   aug-cc-pVTZ   [4s3p2d|6s3p2d]
+    o        2     66     46   aug-cc-pVTZ   [5s4p3d2f|19s6p3d2f]
+    s        1    122     50   aug-cc-pVTZ   [6s5p3d2f|42s17p3d2f]
+   ---------------------------------------------------------------------------
+   total:    7    395    257
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :  135
+   total number of contracted shells         :   85
+   total number of cartesian basis functions :  299
+   total number of SCF-basis functions       :  257
+
+ 
+             FOUND RI-J FLAG !
+ 
+
+ NOTE: THIS IS A PRELIMINARY IMPLEMENTATION. THE RI APPROXIMATION IS
+       PRESENTLY USED FOR CPKS CONTRIBUTIONS TO THE HESSIAN ONLY! SEE
+       MANUAL FOR FURTHER DETAILS.
+
+  
+ AUXILIARY BASIS SET information:
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    c        1     70     49   aug-cc-pVTZ   [6s4p3d1f1g|12s5p4d2f1g]
+    h        3     16     11   aug-cc-pVTZ   [3s1p1d|5s2p1d]
+    o        2     70     49   aug-cc-pVTZ   [6s4p3d1f1g|12s5p4d2f1g]
+    s        1     77     51   aug-cc-pVTZ   [8s4p3d1f1g|14s5p5d2f1g]
+   ---------------------------------------------------------------------------
+   total:    7    335    231
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :   83
+   total number of contracted shells         :   77
+   total number of cartesian basis functions :  282
+   total number of SCF-basis functions       :  231
+
+
+ symmetry group of the molecule :   c1 
+
+ the group has the following generators :
+   c1(z)
+
+    1 symmetry operations found
+
+ there are 1 real representations :   a   
+
+ maximum number of shells which are related by symmetry :  1
+
+
+ determining totally symmetric integral contributions 
+    - equivalent to irreducible tensor elements - 
+ which can be formed within each triple of representations :
+
+             representation triple      contributions
+
+              a     a     a               1
+       UHF mode switched on !
+
+    mo occupation :
+   irrep   mo's   occupied
+    a      257       21
+ 
+ number of basis functions   :                    257
+ number of occupied orbitals :                     21
+ 
+ ALPHA-Occupation:                    21
+ BETA-Occupation :                    20
+  MOs are in ASCII format !
+
+
+ reading orbital data $uhfmo_alpha  from file alpha
+ orbital characterization : scfconv=6
+
+ reading orbital data $uhfmo_beta  from file beta
+ orbital characterization : scfconv=6
+ time elapsed for calculating density matrices :   0.021 sec
+
+ number of non-frozen orbitals          :   257
+ number of non-frozen occupied orbitals :    21
+
+ number of non-frozen orbitals          :   257
+ number of non-frozen occupied orbitals :    20
+ Blocking parameters 
+ shells:
+    index      start shell   last shell  start bf    last bf    #bf 
+       1             1          85             1        299    299
+          size of I/O Block in Byte:               15019368
+  
+           ----------------------
+               RI - INFORMATION
+           ----------------------
+
+ biggest AO integral is expected to be     9.679779311
+
+ Threshold for integral neglect (rithr2):   0.84E-10
+ Threshold for integral neglect (rithr1):   0.84E-10
+
+ Contributions to RI integral batches: 
+  neglected integral batches:                    23
+  direct contribution:                            0
+  memory contribution:                  3632
+ Core memory available (ricore):               500 MiB
+ Core memory needed for (P|Q) and Cholesky:      1 MiB
+ Core memory used for integrals:                96 MiB
+ 
+ ****************************************
+ Memory allocated for RIDFT: 97 MiB
+ ****************************************
+ 
+  
+           ------------------
+           density functional
+           ------------------
+ PBE0 hybrid functional
+ exchange:    3/4 (LDA+PBE) + 1/4 HF
+ correlation: LDA (PW) + PBE
+
+ iterations will be done with small grid
+  
+ spherical integration : Lebedev's spherical grid
+ spherical gridsize    :                     4
+    i.e. gridpoints    :                   434
+ value for diffuse not defined
+ radial integration    : Chebyshev 2nd kind (scaling 3)
+ radial gridsize       :                     6
+ integration cells     :                     7
+ partition function    : becke
+ partition sharpness   :                     3
+  
+ 
+ Derivatives of quadrature weights will be included
+ 
+          Overall gridpoints after grid construction =         73173
+ Ordering of quadrature gridpoints disabled.
+ 
+ 
+ 
+ 
+ OCCUPIED-OCCUPIED TENSOR SPACES :
+
+          IRREP   tensor space dimension   number of roots
+
+           a               841                  15
+ 
+ OCCUPIED-VIRTUAL TENSOR SPACES :
+
+          IRREP   tensor space dimension   number of roots
+
+           a              9696                  15
+ 
+ 
+ 
+ 
+ CONSTRUCTING integral bounds
+
+ setting up bound for integral derivative estimation
+
+ increment for numerical differentiation : 0.00050000
+ 
+ machine precision:   2.220446049250313E-016
+
+ integral neglect threshold       :  0.10E-09
+ integral storage threshold THIZE :  0.10E-04
+ integral storage threshold THIME :         5
+
+ 
+ 
+ 
+ PREPARING NUMERICAL INTEGRATION
+ 
+ Remaining core memory for DFT =                  1957 MB
+ 
+ Memory needed per atom    =                  2102 KiB
+ 
+     i. e.                     7 atoms per loop
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state total density: Na =   40.99999839632464    
+
+ Integral of ground state spin density:  Nb =   1.000000989655021    
+
+
+ 
+ 
+ CONSTRUCTING first deriv. of <mu|x,y,z|nu> -> Dip. deriv.
+  dipole integral derivatives will be neglected if
+  expon. factor <0.167224E-10
+      ...terminated. cpu:       0.09       wall:       0.02
+ 
+ 
+ 
+ 
+ CONSTRUCTING first deriv. of  <mu|nu>
+                               <mu|h|nu>    -> RHS
+              second deriv. of <mu|nu>      -> Hessian
+                               <mu|h|nu>    -> Hessian
+                               nucl. rep.   -> Hessian
+     integrals are neglected if expon. factor <  1.000000000000000E-012
+      ...terminated. cpu:       0.92       wall:       0.30
+ 
+ 
+ 
+ 
+ CONSTRUCTING second deriv. of 2e energy    -> Hessian
+   treating Coulomb (and exchange) contribution
+     integrals will be neglected if total contribution <  1.672240802675585E-008
+      ...terminated. cpu:     241.55       wall:      60.38
+   treating exchange-correlation contribution
+      ...terminated. cpu:     180.48       wall:      45.13
+ 
+ 
+ 
+ 
+ CONSTRUCTING S(i,j)xi
+      ...terminated. cpu:       0.05       wall:       0.01
+ 
+ 
+ 
+ 
+ CONSTRUCTING <i|x,y,z|j>*S(i,j)xi          -> Dip. deriv.
+      ...terminated. cpu:       0.13       wall:       0.03
+ 
+ 
+ 
+ 
+ CONSTRUCTING epsilon(i)*S(i,j)xi*S(i,j)chi -> Hessian
+      ...terminated. cpu:       0.00       wall:       0.00
+ 
+ 
+ 
+ 
+ CONSTRUCTING G(a,i)[S(k,l)xi]              -> RHS
+              G(i,j)[S(k,l)xi]*S(i,j)chi    -> Hessian
+ 
+         Maximum core memory set to                   2000 MB
+         This corresponds to                  1438 vectors in CAO basis
+      ...terminated. cpu:     286.71       wall:      71.67
+ 
+ 
+ 
+ 
+ CONSTRUCTING G(mu,nu)[D(kap,lam)]xi
+ 
+          Maximum core memory set to                   2000 MB
+          Atoms treated simultaneously :                     7
+ max of dfo   71.9818049585697     
+      ...terminated. cpu:     317.62       wall:      79.40
+ 
+ 
+ 
+ 
+ CONSTRUCTING F(a,i)xi                      -> RHS
+              F(i,j)xi*S(i,j)chi            -> Hessian
+ 
+        Maximum core memory set to                  2000 MB
+        This corresponds to                  2637 vectors in CAO basis
+      ...terminated. cpu:       0.36       wall:       0.09
+ 
+ 
+ 
+ 
+ CONSTRUCTING epsilon(i)*S(a,i)xi           -> RHS
+      ...terminated. cpu:       0.29       wall:       0.07
+ 
+ 
+ 
+ 
+ SOLVING CPHF equations
+ 
+ Residuum convergence criterium   :  1.000000000000000E-005
+ 
+ Maximum number of Davidson iterations set to                    25
+  Switching to small grid
+        preparing numerical integration ....
+          Overall gridpoints after grid construction =         20785
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state total density: Na =   41.00002925070964    
+
+ Integral of ground state spin density:  Nb =   1.000006076973715    
+
+
+
+
+                       Nonorthonormal Krylov Space Iteration
+
+
+ total number of roots to be determined: 15
+
+
+ maximum core memory set to  2000 MB,
+ corresponding to     1436 vectors in CAO basis
+
+
+ maximum number of simultaneously treated vectors (including degeneracy):       15
+
+
+ Iteration IRREP Converged      Max. Euclidean
+                 roots          residual norm
+
+    1       a        0        9.894772218311730D-02
+ 
+    2       a        0        1.994328528743723D-02
+ 
+    3       a        0        5.700440803451009D-03
+ 
+    4       a        0        9.901751931375860D-04
+ 
+    5       a        0        1.906035438776280D-04
+ 
+    6       a       13        2.422276380690201D-05
+ 
+    7       a       15        7.070618771453528D-06
+ 
+
+ converged!
+
+  Switching to fine grid
+        preparing numerical integration ....
+          Overall gridpoints after grid construction =         73173
+
+ Calculating ground state density on molecular grid
+
+ Integral of ground state total density: Na =   40.99999839632474    
+
+ Integral of ground state spin density:  Nb =   1.000000989655019    
+
+
+
+ Iteration IRREP Converged      Max. Euclidean
+                 roots          residual norm
+
+    8       a        0        1.157722261406613D-04
+ 
+
+ NOTE: Residual norms are larger than 1.00D-05 due to mgrid option!
+
+      ...terminated. cpu:    1201.07       wall:     300.26
+ 
+ 
+ 
+ 
+ CONSTRUCTING <a|x,y,z|i>*U(a,i)xi          -> Dip. deriv.
+      ...terminated. cpu:       0.05       wall:       0.01
+ 
+ 
+ 
+ 
+ CONSTRUCTING RHS(a,i)xi*U(a,i)chi          -> Hessian
+      ...terminated. cpu:       0.01       wall:       0.00
+ 
+ 
+ 
+ 
+
+            -----------------------
+            permanent dipole moment
+            -----------------------
+
+                                   x                y                z
+    electronic part       :    5.8142506291    68.1970292387    29.1138657651
+     nuclear   part       :   -5.5541647383   -67.4669328137   -29.2845558608
+     total                :    0.2600858908     0.7300964251    -0.1706900958
+
+ with reference to the point :   0.0000000        0.0000000        0.0000000
+ (given in atomic units)
+    | dipole |       :    2.0171766460  debye
+
+   ***  dipole moment & cartesian dipole gradients written onto
+        $dipole, $dipgrad,  file=<dipgrad>  ***
+
+             -----------------------------------
+             rotational and vibrational analysis
+             -----------------------------------
+
+
+            ==============================================================
+            ATOMIC WEIGHTS (average over the natural occurance of isotops)
+            ==============================================================
+            ('*' denotes special isotop !)
+              1     c                12.01115
+              2     h                 1.00797
+              3     h                 1.00797
+              4     h                 1.00797
+              5     o                15.99940
+              6     s                32.06400
+              7     o                15.99940
+
+          -------------------------------------------------
+          CARTESIAN FORCE CONSTANT MATRIX (hartree/bohr**2)
+         (translational & rotational space projected out)
+          -------------------------------------------------
+
+   ATOM              1 c                           2 h 
+                  dx        dy        dz        dx        dy        dz
+   1 c     dx  0.5690684
+           dy -0.0359988 0.5510338
+           dz -0.0287451-0.0789832 0.5002077
+   2 h     dx -0.0932798-0.0396167 0.0907427 0.0921048
+           dy -0.0406348-0.0888954 0.0941707 0.0444131 0.0920920
+           dz  0.0875318 0.0847394-0.2372217-0.0926725-0.0869587 0.2679319
+   3 h     dx -0.3124076-0.0077590-0.0049168-0.0103478 0.0016813-0.0005485
+           dy -0.0038809-0.0508551 0.0032524-0.0124561 0.0008503 0.0005833
+           dz -0.0005031 0.0019408-0.0482907 0.0267053-0.0001343 0.0038994
+   4 h     dx -0.0935627 0.1022350-0.0224234 0.0056153-0.0124158 0.0027090
+           dy  0.0965792-0.2670777 0.0547372 0.0048403-0.0078936 0.0026136
+           dz -0.0247952 0.0642640-0.0589978-0.0120156 0.0229618-0.0027011
+   5 o     dx -0.0715563-0.0204199-0.0380607 0.0061105 0.0078739 0.0039496
+           dy -0.0202245-0.0955388-0.0573868 0.0036330 0.0011129-0.0081041
+           dz -0.0399941-0.0468820-0.1585484-0.0133224-0.0284445-0.0314107
+   6 s     dx  0.0010921 0.0023208 0.0011103 0.0005166-0.0007263-0.0004350
+           dy  0.0033610-0.0549362-0.0177370 0.0000455 0.0036099 0.0066832
+           dz  0.0090958-0.0214554 0.0102079 0.0010676-0.0030811-0.0031848
+   7 o     dx  0.0006458-0.0007614 0.0022930-0.0007196-0.0001915-0.0005343
+           dy  0.0007988 0.0062693 0.0019468-0.0008593-0.0008761 0.0004433
+           dz -0.0025902-0.0036236-0.0073569-0.0005051 0.0014860 0.0026871
+
+   ATOM              3 h                           4 h 
+                  dx        dy        dz        dx        dy        dz
+   3 h     dx  0.3355524
+           dy  0.0139682 0.0512615
+           dz  0.0131553 0.0070890 0.0546119
+   4 h     dx -0.0097186 0.0282203-0.0070398 0.0926808
+           dy -0.0009375 0.0039159 0.0005279-0.1037618 0.2949078
+           dz  0.0014868 0.0002011 0.0005010 0.0276399-0.0506097 0.0664973
+   5 o     dx -0.0026483-0.0240349-0.0311138 0.0044301 0.0039818 0.0077260
+           dy -0.0080473-0.0097483-0.0130363-0.0114817-0.0252545-0.0359557
+           dz -0.0090676-0.0115757-0.0111224 0.0000964-0.0052927-0.0022320
+   6 s     dx -0.0005244-0.0019047-0.0006084 0.0006658-0.0006389 0.0001343
+           dy  0.0015459 0.0052973 0.0040710-0.0029792 0.0007925-0.0021755
+           dz -0.0010946-0.0006561-0.0001933-0.0017092-0.0027153-0.0059591
+   7 o     dx  0.0000944 0.0000880-0.0005955-0.0001107-0.0000631-0.0001762
+           dy -0.0004515-0.0007215-0.0004580 0.0001831 0.0006096 0.0013140
+           dz  0.0009855 0.0011060 0.0005941 0.0007271 0.0007390 0.0028918
+
+   ATOM              5 o                           6 s 
+                  dx        dy        dz        dx        dy        dz
+   5 o     dx  0.0813968
+           dy -0.0174214 0.3473687
+           dz  0.0624900 0.0889018 0.2568724
+   6 s     dx -0.0213763 0.0581142 0.0111388 0.0379435
+           dy  0.0558169-0.2034893-0.0339229-0.0482313 0.3422882
+           dz -0.0014203 0.0055345-0.0566259-0.0911789-0.1038588 0.5496282
+   7 o     dx  0.0036435-0.0045724-0.0113411-0.0183173-0.0095588 0.0852395
+           dy -0.0057964-0.0144507 0.0372160-0.0089338-0.0935623 0.1262321
+           dz -0.0035708 0.0200467 0.0030671 0.0798388 0.1469400-0.4938730
+
+   ATOM              7 o 
+                  dx        dy        dz
+   7 o     dx  0.0147639
+           dy  0.0150592 0.1027316
+           dz -0.0748854-0.1666942 0.4919898
+ 
+
+   *** projected hessian written onto $hessian (projected), file=<hessian> ***
+
+ dipole moment in principle axis system (a.u.) :
+     0.2634776638     0.7294681112    -0.1681557750
+ norm :  0.793612354530416     
+
+ rotational constants b for rotations around axis of inertia
+ and optical intensities for (1 <-- 0) transition
+
+   b   :     0.1297862804     0.4814598199     0.1657106863   (cm**(-1))
+   b   :        3890.8948       14433.8023        4967.8814     (MHz)
+  int. :     0.0694204793     0.5321237253     0.0282763647     (a.u.)
+
+   x   :     0.9999348267    -0.0020365506     0.0112336470
+   y   :     0.0020428059     0.9999977647    -0.0005453912
+   z   :    -0.0112325112     0.0005683038     0.9999367519
+
+   ***  normal modes written onto $vibrational normal modes, file=<vib_normal_modes>  ***
+
+ keyword $vibrational reduced masses missing in file <control>
+
+
+   ***  vibrational spectroscopic data written onto$vibrational spectrum   
+        file=<vibspectrum>  ***
+
+          ---------------------------------------------------
+          NORMAL MODES and VIBRATIONAL FREQUENCIES (cm**(-1))
+          ---------------------------------------------------
+
+ imaginary wave numbers indicate a negative curvature of the energy surface.
+ zero frequency modes have no physical meaning except being generators of
+ translations and rotations. each vibrational normal mode - given in terms of
+ cartesian displacement vectors of all atoms - has been normalized to unity.
+ to obtain mass-weigthed normal coordinates in a.u. divide the tabulated
+ modes by sqrt(reduced mass * 1822.88853).
+ band intensities or cross sections refer to independent non-degenerate normal
+ modes, that is, the intensities of degenerate modes have yet to be added.
+ dDIP/dQ is the normal mode derivative of the dipole moment.
+
+
+       mode               1        2        3        4        5        6
+
+     frequency           0.00     0.00     0.00     0.00     0.00     0.00
+
+     symmetry                                                             
+
+        IR                -        -        -        -        -        - 
+|dDIP/dQ|   (a.u.)     0.0000   0.0000   0.0000   0.0000   0.0000   0.0000
+intensity (km/mol)       0.00     0.00     0.00     0.00     0.00     0.00
+intensity (  %   )       0.00     0.00     0.00     0.00     0.00     0.00
+ 
+       RAMAN              -        -        -        -        -        - 
+ 
+  1   c           x  -0.11016 -0.04263  0.01632  0.09133 -0.03261  0.42069
+                  y   0.24301 -0.12557 -0.02648 -0.19560  0.04946  0.03358
+                  z  -0.28193  0.08564 -0.30108 -0.09697  0.34689 -0.03767
+  2   h           x   0.04073 -0.11424 -0.27579  0.41664 -0.09899  0.48655
+                  y   0.28045 -0.34385  0.10169 -0.23090 -0.10190  0.09263
+                  z  -0.20128 -0.03503 -0.37476  0.02922  0.25598  0.01508
+  3   h           x  -0.10953 -0.04758 -0.00198  0.10417 -0.04759  0.43740
+                  y   0.36914 -0.13968 -0.03855 -0.07834  0.17291 -0.11878
+                  z  -0.41338  0.18351  0.02266 -0.42814  0.48447 -0.17715
+  4   h           x  -0.24325 -0.02718  0.09861 -0.07778 -0.12511  0.53146
+                  y   0.17856 -0.07692 -0.04581 -0.24195  0.02277  0.09126
+                  z  -0.32018  0.28269 -0.55434  0.02074  0.40500  0.01301
+  5   o           x  -0.14561  0.04233  0.33539 -0.15337  0.19872  0.16405
+                  y   0.10356  0.13009 -0.16086 -0.24664  0.12377  0.08513
+                  z  -0.16418 -0.13728 -0.31235  0.02795  0.20914  0.01406
+  6   s           x   0.04171  0.03578  0.27547  0.04710  0.37706 -0.04569
+                  y   0.15202  0.10715 -0.15471 -0.20732  0.15581  0.03513
+                  z  -0.06614 -0.47980  0.00169 -0.06731  0.07762 -0.02784
+  7   o           x   0.25480 -0.07013 -0.15464  0.51833  0.26816  0.06426
+                  y   0.25053 -0.21525  0.02747 -0.21770 -0.02119  0.06777
+                  z   0.00000 -0.60726  0.00000  0.00000  0.00000  0.00000
+
+reduced mass(g/mol)     6.370   15.688    9.023    9.183   10.289    3.756
+
+
+       mode               7        8        9       10       11       12
+
+     frequency          80.10   121.32   259.40   486.71   732.48  1043.13
+
+     symmetry            a        a        a        a        a        a   
+
+        IR               YES      YES      YES      YES      YES      YES
+|dDIP/dQ|   (a.u.)     0.0018   0.0014   0.0023   0.0019   0.0077   0.0102
+intensity (km/mol)       5.89     3.44     9.34     6.16   104.54   183.99
+intensity (  %   )       3.20     1.87     5.08     3.35    56.82   100.00
+ 
+       RAMAN             YES      YES      YES      YES      YES      YES
+ 
+  1   c           x  -0.08794  0.04238 -0.06593 -0.00412 -0.04814  0.16979
+                  y  -0.06897  0.02514  0.32230  0.17039 -0.22415  0.36653
+                  z   0.07771 -0.04139 -0.06418  0.09324 -0.17470  0.48228
+  2   h           x  -0.58724 -0.33132 -0.15858  0.02081 -0.05242  0.05222
+                  y   0.07415  0.40233  0.50867  0.54021 -0.03990  0.05165
+                  z  -0.08036 -0.04802 -0.02400  0.25202 -0.10758  0.26463
+  3   h           x  -0.09720  0.05718 -0.08507 -0.01223 -0.06190  0.15637
+                  y  -0.39061 -0.46723  0.49437  0.32965 -0.01925  0.14263
+                  z   0.54442  0.18311  0.08190  0.04518 -0.14490  0.24726
+  4   h           x   0.29280  0.54742 -0.16713 -0.10361 -0.22854  0.00365
+                  y   0.04779  0.17651  0.21768  0.03194 -0.39308  0.18529
+                  z  -0.12871 -0.33244 -0.36808 -0.37334 -0.55670  0.10536
+  5   o           x   0.12278 -0.12374  0.18308  0.01015  0.20309 -0.10294
+                  y   0.02499 -0.01729  0.03732 -0.21680 -0.41951 -0.43171
+                  z  -0.06265  0.04667  0.07923  0.34709  0.16777 -0.41458
+  6   s           x  -0.08800  0.04615 -0.08827  0.03516 -0.08484 -0.02201
+                  y  -0.02699  0.02593 -0.03975 -0.15117  0.31543  0.08131
+                  z  -0.03170  0.01203  0.01638 -0.18240  0.04080 -0.00443
+  7   o           x   0.14427 -0.01779  0.06919 -0.07154  0.02467  0.00622
+                  y   0.09779 -0.06058 -0.27652  0.33503 -0.01586 -0.03032
+                  z   0.04671 -0.02728 -0.04433 -0.04674 -0.06741  0.02252
+
+reduced mass(g/mol)     2.289    1.483    4.408    7.509    9.047   11.135
+
+
+       mode              13       14       15       16       17       18
+
+     frequency        1167.40  1175.72  1185.79  1456.75  1479.73  1497.19
+
+     symmetry            a        a        a        a        a        a   
+
+        IR               YES      YES      YES      YES      YES      YES
+|dDIP/dQ|   (a.u.)     0.0017   0.0052   0.0039   0.0006   0.0024   0.0027
+intensity (km/mol)       5.06    48.37    27.23     0.71    10.61    12.70
+intensity (  %   )       2.75    26.29    14.80     0.39     5.76     6.90
+ 
+       RAMAN             YES      YES      YES      YES      YES      YES
+ 
+  1   c           x  -0.12443  0.01776 -0.05951 -0.01431  0.03662  0.04410
+                  y  -0.00379  0.09884  0.10950 -0.06815  0.02779 -0.02109
+                  z   0.05185 -0.07971 -0.07427 -0.06514 -0.02941  0.03059
+  2   h           x   0.36453 -0.10599  0.08043  0.11329  0.01903 -0.66270
+                  y   0.25180 -0.43760 -0.44205  0.52800  0.37511  0.19759
+                  z   0.36964 -0.34858 -0.24192  0.24584  0.13259 -0.19571
+  3   h           x  -0.06602  0.01142 -0.03119 -0.05367  0.04479  0.04627
+                  y  -0.36559 -0.14050 -0.42555  0.37523 -0.58305  0.12604
+                  z  -0.61358  0.31965 -0.04336  0.32700  0.10583 -0.59117
+  4   h           x   0.31098  0.04183  0.20663  0.19951 -0.62888 -0.04912
+                  y   0.17148  0.25000  0.35932  0.16998 -0.20814  0.02414
+                  z   0.01050  0.58373  0.57845  0.56382  0.21510  0.33088
+  5   o           x   0.05524 -0.00738  0.03148 -0.00231  0.00778  0.00867
+                  y  -0.00099 -0.06006 -0.05438 -0.03017  0.00592 -0.00653
+                  z  -0.02378  0.02972  0.05098 -0.02206 -0.00599  0.00691
+  6   s           x  -0.00468 -0.02387  0.00828 -0.00093  0.00031 -0.00023
+                  y  -0.00905 -0.04958  0.01982  0.00866 -0.00012 -0.00014
+                  z   0.02819  0.14713 -0.06782 -0.00581 -0.00082 -0.00101
+  7   o           x   0.00914  0.04521 -0.01951 -0.00140 -0.00029  0.00061
+                  y   0.01833  0.10590 -0.03552 -0.00363 -0.00032  0.00074
+                  z  -0.05694 -0.29969  0.12222  0.01100  0.00115  0.00088
+
+reduced mass(g/mol)     1.345    3.568    1.743    1.134    1.043    1.047
+
+
+       mode              19       20       21
+
+     frequency        3048.32  3133.73  3167.39
+
+     symmetry            a        a        a   
+
+        IR               YES      YES      YES
+|dDIP/dQ|   (a.u.)     0.0044   0.0029   0.0016
+intensity (km/mol)      34.80    14.58     4.72
+intensity (  %   )      18.91     7.92     2.56
+ 
+       RAMAN             YES      YES      YES
+ 
+  1   c           x  -0.03420  0.08166  0.02403
+                  y  -0.01751  0.00095 -0.07773
+                  z  -0.02868 -0.04384  0.04789
+  2   h           x  -0.19331 -0.26290  0.19127
+                  y  -0.17457 -0.27304  0.16450
+                  z   0.41546  0.62434 -0.40259
+  3   h           x   0.76840 -0.60135 -0.13876
+                  y   0.03724 -0.02316 -0.02075
+                  z   0.03190 -0.03030  0.00540
+  4   h           x  -0.16143 -0.10199 -0.33751
+                  y   0.36327  0.28159  0.77580
+                  z  -0.07984 -0.07186 -0.17285
+  5   o           x  -0.00015 -0.00038 -0.00002
+                  y  -0.00226 -0.00063 -0.00000
+                  z  -0.00158 -0.00001 -0.00032
+  6   s           x  -0.00011 -0.00001 -0.00005
+                  y   0.00060  0.00033  0.00026
+                  z  -0.00023 -0.00006  0.00027
+  7   o           x  -0.00002 -0.00003  0.00005
+                  y  -0.00003  0.00018 -0.00009
+                  z   0.00043  0.00015 -0.00027
+
+reduced mass(g/mol)     1.033    1.103    1.106
+ 
+
+         **************************************************************
+         *                                                            *
+         *  zero point VIBRATIONAL energy  :      0.0456434  Hartree  *
+         *    SCF-energy                   :   -588.2488118           *
+         *    SCF + E(vib0)                :   -588.2031683           *
+         *                                                            *
+         **************************************************************
+
+
+
+
+ time elapsed for vibrational analysis     0.04 sec
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time : 37 minutes and 32 seconds
+         total wall-time :  9 minutes and 33 seconds
+    ------------------------------------------------------------------------
+
+   ****  force : all done  ****
+
+
+    2019-01-28 16:10:53.026 
+
+aoforce ended normally 

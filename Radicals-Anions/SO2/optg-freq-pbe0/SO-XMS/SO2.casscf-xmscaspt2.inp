@@ -1,0 +1,30 @@
+ &GATEWAY
+   COORD=$HomeDir/SO2.pbe0.optg.xyz
+   BASIS=ANO-RCC-VTZP
+   Group=Nosym
+   ANGM=0.0 0.0 0.0
+   RICD
+
+/*
+  Compute integrals with Cholesky decomposition
+*/
+ &SEWARD
+
+ &RASSCF
+   Spin=1
+   Symmetry=1
+   Nactel=0 0 0
+   Inactive=16
+   Ras2=0
+   CIRoots=1 1 1
+>> COPY $Project.JobIph $Project.JobIph_doublets
+
+/*
+  Perform a XMS-CASPT2 calculation for the doublets F states
+*/
+  &CASPT2
+    IPEA=0.0
+    XMUL= ALL
+>> COPY $Project.JobMix $Project.JobMix_doublets
+
+
