@@ -30,6 +30,7 @@ caspt2-geom/
 
 # Natural Orbitals files
 **/NaturalOrbitals-openmolcas
+**/QTAIM/
 
 # Exclude non-GS spin-states
 Np-complexes/NpO2_CH3SO2_O2-m1/quartet-geom
